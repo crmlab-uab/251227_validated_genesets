@@ -1,3 +1,7 @@
+# Author: C. Ryan Miller
+# Created: 2025-12-28 02:17 CST
+# Commit: 26ec675324c74c530b55664519f79329a3d427d8
+
 # Fetch definitive mouse kinome from authoritative sources
 # Output: mouse_kinome_definitive.csv with Mouse_Symbol, Ensembl_Gene_ID, Entrez_ID, UniProt_ID, MGI_ID, Description
 

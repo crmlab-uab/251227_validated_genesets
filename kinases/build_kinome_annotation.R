@@ -1,3 +1,7 @@
+# Author: C. Ryan Miller
+# Created: 2025-12-28 02:17 CST
+# Commit: 26ec675324c74c530b55664519f79329a3d427d8
+
 ## Read repo-level genesets config if present (allows modular runs)
 if (requireNamespace("yaml", quietly=TRUE)) {
   cfg_candidates <- c("../genesets_config.yaml", "../config/genesets_config.yaml", "genesets_config.yaml")

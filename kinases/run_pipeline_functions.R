@@ -1,3 +1,7 @@
+# Author: C. Ryan Miller
+# Created: 2025-12-28 02:25 CST
+# Commit: 85c49284e5027d5940219124b28324bb8eba3205
+
 #!/usr/bin/env Rscript
 ## Orchestrator: run functions in order (alias matching before external annotations)
 library(data.table)

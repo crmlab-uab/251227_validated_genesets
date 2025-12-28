@@ -1,3 +1,7 @@
+# Author: C. Ryan Miller
+# Created: 2025-12-28 02:17 CST
+# Commit: 26ec675324c74c530b55664519f79329a3d427d8
+
 # fetch_hgnc_kinase_groups.R
 # Fetch HGNC kinase group annotation using the HGNC REST API and save as hgnc_kinase_groups.csv
 
