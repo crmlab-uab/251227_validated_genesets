@@ -1,0 +1,735 @@
+"ensembl_gene_id","external_gene_name","description","Group name","Protein","Metabolic","Lipid","HGNC_ID","HGNC_gene_name","Manning_Group","Manning_Family","Manning_Subfamily","HGNC","Group","Family","SubFamily","kin_group","kh_group"
+"ENSG00000115977","AAK1","AP2 associated kinase 1",NA,"N","N","N","HGNC:19679","AAK1","Other","NAK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000181409","AATK","apoptosis associated tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:21","AATK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000097007","ABL1","ABL proto-oncogene 1, non-receptor tyrosine kinase","Abl family tyrosine kinases","Y","N","N","HGNC:76","ABL1","TK","Abl",NA,"ABL1","TK","Abl",NA,"TK","TK"
+"ENSG00000143322","ABL2","ABL proto-oncogene 2, non-receptor tyrosine kinase","Abl family tyrosine kinases","Y","N","N","HGNC:77","ABL2","TK","Abl",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000159842","ABR","ABR activator of RhoGEF and GTPase",NA,"N","N","N","HGNC:81","ABR",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115170","ACVR1","activin A receptor type 1","Type 1 receptor serine/threonine kinases","Y","N","N","HGNC:171","ACVR1",NA,NA,NA,"ACVR1","TKL","STKR","STKR1",NA,"TKL"
+"ENSG00000135503","ACVR1B","activin A receptor type 1B","Type 1 receptor serine/threonine kinases","Y","N","N","HGNC:172","ACVR1B",NA,NA,NA,"ACVR1B","TKL","STKR","STKR1",NA,"TKL"
+"ENSG00000123612","ACVR1C","activin A receptor type 1C","Type 1 receptor serine/threonine kinases","Y","N","N","HGNC:18123","ACVR1C",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000121989","ACVR2A","activin A receptor type 2A","Type 2 receptor serine/threonine kinases","Y","N","N","HGNC:173","ACVR2A",NA,NA,NA,"ACVR2A","TKL","STKR","STKR2",NA,"TKL"
+"ENSG00000114739","ACVR2B","activin A receptor type 2B","Type 2 receptor serine/threonine kinases","Y","N","N","HGNC:174","ACVR2B",NA,NA,NA,"ACVR2B","TKL","STKR","STKR2",NA,"TKL"
+"ENSG00000139567","ACVRL1","activin A receptor like type 1","Type 1 receptor serine/threonine kinases","Y","N","N","HGNC:175","ACVRL1",NA,NA,NA,"ACVRL1","TKL","STKR","STKR1",NA,"TKL"
+"ENSG00000063761","ADCK1","aarF domain containing kinase 1",NA,"N","N","N","HGNC:19038","ADCK1","Atypical","ABC1","ABC1-B",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000133597","ADCK2","aarF domain containing kinase 2",NA,"N","N","N","HGNC:19039","ADCK2","Atypical","ABC1","ABC1-C",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000173137","ADCK5","aarF domain containing kinase 5",NA,"N","N","N","HGNC:21738","ADCK5","Atypical","ABC1","ABC1-B",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000156110","ADK","adenosine kinase",NA,"N","Y","N","HGNC:257","ADK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000159322","ADPGK","ADP dependent glucokinase",NA,"N","N","N","HGNC:25250","ADPGK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000006530","AGK","acylglycerol kinase",NA,"N","Y","Y","HGNC:21869","AGK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000106992","AK1","adenylate kinase 1","Adenylate kinases","Y","Y","N","HGNC:361","AK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000004455","AK2","adenylate kinase 2","Adenylate kinases","Y","Y","N","HGNC:362","AK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000147853","AK3","adenylate kinase 3","Adenylate kinases","Y","Y","N","HGNC:17376","AK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000162433","AK4","adenylate kinase 4","Adenylate kinases","Y","Y","N","HGNC:363","AK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000233381","AK4P3","adenylate kinase 4 pseudogene 3",NA,"N","N","N","HGNC:21596","AK4P3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000154027","AK5","adenylate kinase 5","Adenylate kinases","Y","Y","N","HGNC:365","AK5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000085231","AK6","adenylate kinase 6","Adenylate kinases","Y","Y","N","HGNC:49151","AK6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000140057","AK7","adenylate kinase 7","Adenylate kinases","Y","Y","N","HGNC:20091","AK7",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000165695","AK8","adenylate kinase 8","Adenylate kinases","Y","Y","N","HGNC:26526","AK8",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000155085","AK9","adenylate kinase 9","Adenylate kinases","Y","Y","N","HGNC:33814","AK9",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000108599","AKAP10","A-kinase anchoring protein 10","A-kinase anchoring proteins","Y","N","N","HGNC:368","AKAP10",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000147081","AKAP4","A-kinase anchoring protein 4","A-kinase anchoring proteins","Y","N","N","HGNC:374","AKAP4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000118507","AKAP7","A-kinase anchoring protein 7","A-kinase anchoring proteins","Y","N","N","HGNC:377","AKAP7",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000011243","AKAP8L","A-kinase anchoring protein 8 like",NA,"N","N","N","HGNC:29857","AKAP8L",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000142208","AKT1","AKT serine/threonine kinase 1","AKT kinase family","Y","Y","Y","HGNC:391","AKT1","AGC","AKT",NA,"AKT1","AGC","Akt",NA,"AGC","AGC"
+"ENSG00000105221","AKT2","AKT serine/threonine kinase 2","AKT kinase family","Y","Y","Y","HGNC:392","AKT2","AGC","AKT",NA,"AKT2","AGC","Akt",NA,"AGC","AGC"
+"ENSG00000117020","AKT3","AKT serine/threonine kinase 3","AKT kinase family","Y","Y","Y","HGNC:393","AKT3","AGC","AKT",NA,"AKT3","AGC","Akt",NA,"AGC","AGC"
+"ENSG00000059573","ALDH18A1","aldehyde dehydrogenase 18 family member A1",NA,"N","Y","N","HGNC:9722","ALDH18A1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000171094","ALK","ALK receptor tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:427","ALK","TK","Alk",NA,"ALK","TK","ALK",NA,"TK","TK"
+"ENSG00000073331","ALPK1","alpha kinase 1",NA,"N","N","N","HGNC:20917","ALPK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198796","ALPK2","alpha kinase 2",NA,"N","N","N","HGNC:20565","ALPK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000136383","ALPK3","alpha kinase 3",NA,"N","N","N","HGNC:17574","ALPK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000135409","AMHR2","anti-Mullerian hormone receptor type 2","Type 2 receptor serine/threonine kinases","Y","N","N","HGNC:465","AMHR2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000170209","ANKK1","ankyrin repeat and kinase domain containing 1",NA,"N","N","N","HGNC:21027","ANKK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000078061","ARAF","A-Raf proto-oncogene, serine/threonine kinase","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:646","ARAF","TKL","RAF",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000149311","ATM","ATM serine/threonine kinase",NA,"N","N","N","HGNC:795","ATM","Atypical","PIKK","ATM",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000175054","ATR","ATR serine/threonine kinase",NA,"N","N","N","HGNC:882","ATR","Atypical","PIKK","ATR",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000087586","AURKA","aurora kinase A","Aurora kinase family","Y","N","N","HGNC:11393","AURKA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000178999","AURKB","aurora kinase B","Aurora kinase family","Y","N","N","HGNC:11390","AURKB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000105146","AURKC","aurora kinase C","Aurora kinase family","Y","N","N","HGNC:11391","AURKC",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101200","AVP","arginine vasopressin",NA,"N","N","N","HGNC:894","AVP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000167601","AXL","AXL receptor tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:905","AXL","TK","Axl",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000009954","BAZ1B","bromodomain adjacent to zinc finger domain 1B",NA,"N","N","N","HGNC:961","BAZ1B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000103507","BCKDK","branched chain keto acid dehydrogenase kinase",NA,"N","N","N","HGNC:16902","BCKDK","Atypical","PDHK",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000186716","BCR","BCR activator of RhoGEF and GTPase",NA,"N","N","N","HGNC:1014","BCR","Atypical","BCR",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000183092","BEGAIN","brain enriched guanylate kinase associated",NA,"N","N","N","HGNC:24163","BEGAIN",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000136573","BLK","BLK proto-oncogene, Src family tyrosine kinase","Src family tyrosine kinases","Y","N","N","HGNC:1057","BLK","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000106605","BLVRA","biliverdin reductase A",NA,"N","Y","N","HGNC:1062","BLVRA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000138756","BMP2K","BMP2 inducible kinase",NA,"N","N","N","HGNC:18041","BMP2K",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000107779","BMPR1A","bone morphogenetic protein receptor type 1A","Type 1 receptor serine/threonine kinases","Y","N","N","HGNC:1076","BMPR1A","TKL","STKR","Type1","BMPR1A","TKL","STKR","STKR1","TKL","TKL"
+"ENSG00000138696","BMPR1B","bone morphogenetic protein receptor type 1B","Type 1 receptor serine/threonine kinases","Y","N","N","HGNC:1077","BMPR1B","TKL","STKR","Type1","BMPR1B","TKL","STKR","STKR1","TKL","TKL"
+"ENSG00000204217","BMPR2","bone morphogenetic protein receptor type 2","Type 2 receptor serine/threonine kinases","Y","N","N","HGNC:1078","BMPR2","TKL","STKR","Type2",NA,NA,NA,NA,"TKL",NA
+"ENSG00000102010","BMX","BMX non-receptor tyrosine kinase","Tec family tyrosine kinases","Y","N","N","HGNC:1079","BMX","TK","Tec",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000157764","BRAF","B-Raf proto-oncogene, serine/threonine kinase","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:1097","BRAF","TKL","RAF",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000204256","BRD2","bromodomain containing 2",NA,"N","N","N","HGNC:1103","BRD2","Atypical","BRD",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000169925","BRD3","bromodomain containing 3",NA,"N","N","N","HGNC:1104","BRD3","Atypical","BRD",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000141867","BRD4","bromodomain containing 4",NA,"N","N","N","HGNC:13575","BRD4","Atypical","BRD",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000137948","BRDT","bromodomain testis associated",NA,"N","N","N","HGNC:1105","BRDT","Atypical","BRD",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000160469","BRSK1","BR serine/threonine kinase 1","BR serine/threonine kinases","Y","N","N","HGNC:18994","BRSK1","CAMK","CAMKL","BRSK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000174672","BRSK2","BR serine/threonine kinase 2","BR serine/threonine kinases","Y","N","N","HGNC:11405","BRSK2","CAMK","CAMKL","BRSK","BRSK2","CAMK","CAMKL","BRSK","CAMK","CAMK"
+"ENSG00000010671","BTK","Bruton tyrosine kinase","Tec family tyrosine kinases","Y","N","N","HGNC:1133","BTK","TK","Tec",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000169679","BUB1","BUB1 mitotic checkpoint serine/threonine kinase","BUB1 mitotic checkpoint serine/threonine kinase family","Y","N","N","HGNC:1148","BUB1","Other","BUB",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000156970","BUB1B","BUB1 mitotic checkpoint serine/threonine kinase B","BUB1 mitotic checkpoint serine/threonine kinase family","Y","N","N","HGNC:1149","BUB1B","Other","BUB",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000288602","C8orf44-SGK3","C8orf44-SGK3 readthrough",NA,"N","N","N","HGNC:48354","C8orf44-SGK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000084774","CAD","carbamoyl-phosphate synthetase 2, aspartate transcarbamylase, and dihydroorotase",NA,"N","Y","N","HGNC:1424","CAD",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198668","CALM1","calmodulin 1","Phosphorylase kinase subunits","Y","N","Y","HGNC:1442","CALM1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143933","CALM2","calmodulin 2","Phosphorylase kinase subunits","Y","N","Y","HGNC:1445","CALM2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000160014","CALM3","calmodulin 3","Phosphorylase kinase subunits","Y","N","Y","HGNC:1449","CALM3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000134072","CAMK1","calcium/calmodulin dependent protein kinase I",NA,"N","N","N","HGNC:1459","CAMK1","CAMK","CAMK1",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000183049","CAMK1D","calcium/calmodulin dependent protein kinase ID",NA,"N","N","N","HGNC:19341","CAMK1D","CAMK","CAMK1",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000008118","CAMK1G","calcium/calmodulin dependent protein kinase IG",NA,"N","N","N","HGNC:14585","CAMK1G","CAMK","CAMK1",NA,"CAMK1G","CAMK","CAMK1",NA,"CAMK","CAMK"
+"ENSG00000070808","CAMK2A","calcium/calmodulin dependent protein kinase II alpha",NA,"N","N","Y","HGNC:1460","CAMK2A","CAMK","CAMK2",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000058404","CAMK2B","calcium/calmodulin dependent protein kinase II beta",NA,"N","N","Y","HGNC:1461","CAMK2B","CAMK","CAMK2",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000145349","CAMK2D","calcium/calmodulin dependent protein kinase II delta",NA,"N","N","Y","HGNC:1462","CAMK2D","CAMK","CAMK2",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000148660","CAMK2G","calcium/calmodulin dependent protein kinase II gamma",NA,"N","N","Y","HGNC:1463","CAMK2G","CAMK","CAMK2",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000152495","CAMK4","calcium/calmodulin dependent protein kinase IV",NA,"N","N","N","HGNC:1464","CAMK4","CAMK","CAMK1",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000004660","CAMKK1","calcium/calmodulin dependent protein kinase kinase 1",NA,"N","N","N","HGNC:1469","CAMKK1","Other","CAMKK","Meta",NA,NA,NA,NA,"Other",NA
+"ENSG00000110931","CAMKK2","calcium/calmodulin dependent protein kinase kinase 2",NA,"N","N","N","HGNC:1470","CAMKK2","Other","CAMKK","Meta",NA,NA,NA,NA,"Other",NA
+"ENSG00000164076","CAMKV","CaM kinase like vesicle associated",NA,"N","N","N","HGNC:28788","CAMKV",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000147044","CASK","calcium/calmodulin dependent serine protein kinase","Membrane associated guanylate kinases","Y","N","N","HGNC:1497","CASK","CAMK","CASK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000108691","CCL2","C-C motif chemokine ligand 2",NA,"N","N","Y","HGNC:10618","CCL2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000274221","CCL3","C-C motif chemokine ligand 3",NA,"N","N","Y",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000271503","CCL5","C-C motif chemokine ligand 5",NA,"N","N","Y","HGNC:10632","CCL5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000108700","CCL8","C-C motif chemokine ligand 8",NA,"N","N","N","HGNC:10635","CCL8",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000110092","CCND1","cyclin D1",NA,"N","N","N","HGNC:1582","CCND1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000105173","CCNE1","cyclin E1",NA,"N","N","N","HGNC:1589","CCNE1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000134480","CCNH","cyclin H","CDK activating kinase complex","Y","N","N","HGNC:1594","CCNH",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143776","CDC42BPA","CDC42 binding protein kinase alpha","CDC42 binding protein kinase family","Y","N","N","HGNC:1737","CDC42BPA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198752","CDC42BPB","CDC42 binding protein kinase beta","CDC42 binding protein kinase family","Y","N","N","HGNC:1738","CDC42BPB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000171219","CDC42BPG","CDC42 binding protein kinase gamma","CDC42 binding protein kinase family","Y","N","N","HGNC:29829","CDC42BPG",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000097046","CDC7","cell division cycle 7","CDC7 kinase family","Y","N","N","HGNC:1745","CDC7","Other","CDC7",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000170312","CDK1","cyclin dependent kinase 1","Cyclin dependent kinases","Y","N","N","HGNC:1722","CDK1","CMGC","CDK","CDK10",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000185324","CDK10","cyclin dependent kinase 10","Cyclin dependent kinases","Y","N","N","HGNC:1770","CDK10","CMGC","CDK","CDK10",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000008128","CDK11A","cyclin dependent kinase 11A","Cyclin dependent kinases","Y","N","N","HGNC:1730","CDK11A","CMGC","CDK","CDK8",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000248333","CDK11B","cyclin dependent kinase 11B","Cyclin dependent kinases","Y","N","N","HGNC:1729","CDK11B","CMGC","CDK","CDK8",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000167258","CDK12","cyclin dependent kinase 12","Cyclin dependent kinases","Y","N","N","HGNC:24224","CDK12",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000065883","CDK13","cyclin dependent kinase 13","Cyclin dependent kinases","Y","N","N","HGNC:1733","CDK13",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000058091","CDK14","cyclin dependent kinase 14","Cyclin dependent kinases","Y","N","N","HGNC:8883","CDK14",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000138395","CDK15","cyclin dependent kinase 15","Cyclin dependent kinases","Y","N","N","HGNC:14434","CDK15",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000102225","CDK16","cyclin dependent kinase 16","Cyclin dependent kinases","Y","N","N","HGNC:8749","CDK16",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000059758","CDK17","cyclin dependent kinase 17","Cyclin dependent kinases","Y","N","N","HGNC:8750","CDK17",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000117266","CDK18","cyclin dependent kinase 18","Cyclin dependent kinases","Y","N","N","HGNC:8751","CDK18",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000155111","CDK19","cyclin dependent kinase 19","Cyclin dependent kinases","Y","N","N","HGNC:19338","CDK19",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000123374","CDK2","cyclin dependent kinase 2","Cyclin dependent kinases","Y","N","N","HGNC:1771","CDK2","CMGC","CDK","CDC2",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000156345","CDK20","cyclin dependent kinase 20","Cyclin dependent kinases","Y","N","N","HGNC:21420","CDK20","CMGC","CDK","CDC2",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000167797","CDK2AP2","cyclin dependent kinase 2 associated protein 2",NA,"N","N","N","HGNC:30833","CDK2AP2","CMGC","CDK","CDC2",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000250506","CDK3","cyclin dependent kinase 3","Cyclin dependent kinases","Y","N","N","HGNC:1772","CDK3","CMGC","CDK","CDC2",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000135446","CDK4","cyclin dependent kinase 4","Cyclin dependent kinases","Y","N","N","HGNC:1773","CDK4","CMGC","CDK","CDK4",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000164885","CDK5","cyclin dependent kinase 5","Cyclin dependent kinases","Y","N","N","HGNC:1774","CDK5","CMGC","CDK","CDK5",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000176749","CDK5R1","cyclin dependent kinase 5 regulatory subunit 1",NA,"N","N","N","HGNC:1775","CDK5R1","CMGC","CDK","CDK5",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000105810","CDK6","cyclin dependent kinase 6","Cyclin dependent kinases","Y","N","N","HGNC:1777","CDK6","CMGC","CDK","CDK4",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000134058","CDK7","cyclin dependent kinase 7","CDK activating kinase complex","Y","N","N","HGNC:1778","CDK7","CMGC","CDK","CDK7",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000132964","CDK8","cyclin dependent kinase 8","Cyclin dependent kinases","Y","N","N","HGNC:1779","CDK8","CMGC","CDK","CDK8",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000136807","CDK9","cyclin dependent kinase 9","Cyclin dependent kinases","Y","N","N","HGNC:1780","CDK9","CMGC","CDK","CDK9",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000100490","CDKL1","cyclin dependent kinase like 1","Cyclin dependent kinases","Y","N","N","HGNC:1781","CDKL1","CMGC","CDKL",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000138769","CDKL2","cyclin dependent kinase like 2","Cyclin dependent kinases","Y","N","N","HGNC:1782","CDKL2","CMGC","CDKL",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000006837","CDKL3","cyclin dependent kinase like 3","Cyclin dependent kinases","Y","N","N","HGNC:15483","CDKL3","CMGC","CDKL",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000205111","CDKL4","cyclin dependent kinase like 4","Cyclin dependent kinases","Y","N","N","HGNC:19287","CDKL4","CMGC","CDKL",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000008086","CDKL5","cyclin dependent kinase like 5","Cyclin dependent kinases","Y","N","N","HGNC:11411","CDKL5","CMGC","CDKL",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000100422","CERK","ceramide kinase",NA,"N","Y","Y","HGNC:19256","CERK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000188452","CERKL","CERK like autophagy regulator",NA,"N","N","N","HGNC:21699","CERKL",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000113163","CERT1","ceramide transporter 1",NA,"N","N","N","HGNC:2205","CERT1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000149554","CHEK1","checkpoint kinase 1","Checkpoint kinase 1 family","Y","N","N","HGNC:1925","CHEK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000183765","CHEK2","checkpoint kinase 2","Checkpoint kinase 2 family","Y","N","N","HGNC:16627","CHEK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000110721","CHKA","choline kinase alpha","Choline kinase family","Y","Y","Y","HGNC:1937","CHKA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000100288","CHKB","choline kinase beta","Choline kinase family","Y","Y","Y","HGNC:1938","CHKB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000213341","CHUK","component of inhibitor of nuclear factor kappa B kinase complex","I kappa B kinases","Y","N","Y","HGNC:1974","CHUK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000179583","CIITA","class II major histocompatibility complex transactivator",NA,"N","N","N","HGNC:7067","CIITA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000112144","CILK1","ciliogenesis associated kinase 1","CILK1, MAK, MOK protein kinase family","Y","N","N","HGNC:21219","CILK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000122966","CIT","citron rho-interacting serine/threonine kinase","DMPK kinase family","Y","N","N","HGNC:1985","CIT",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000166165","CKB","creatine kinase B","Creatine kinase family","Y","Y","N","HGNC:1991","CKB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000104879","CKM","creatine kinase, M-type","Creatine kinase family","Y","Y","N","HGNC:1994","CKM",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000223572","CKMT1A","creatine kinase, mitochondrial 1A","Creatine kinase family","Y","Y","N","HGNC:31736","CKMT1A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000237289","CKMT1B","creatine kinase, mitochondrial 1B","Creatine kinase family","Y","Y","N","HGNC:1995","CKMT1B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000131730","CKMT2","creatine kinase, mitochondrial 2","Creatine kinase family","Y","Y","N","HGNC:1996","CKMT2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000173207","CKS1B","CDC28 protein kinase regulatory subunit 1B",NA,"N","N","N","HGNC:19083","CKS1B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000013441","CLK1","CDC like kinase 1","CDC like kinases","Y","N","N","HGNC:2068","CLK1","CMGC","CLK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000176444","CLK2","CDC like kinase 2","CDC like kinases","Y","N","N","HGNC:2069","CLK2","CMGC","CLK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000179335","CLK3","CDC like kinase 3","CDC like kinases","Y","N","N","HGNC:2071","CLK3","CMGC","CLK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000113240","CLK4","CDC like kinase 4","CDC like kinases","Y","N","N","HGNC:13659","CLK4","CMGC","CLK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000172409","CLP1","cleavage factor polyribonucleotide kinase subunit 1",NA,"N","N","N","HGNC:16999","CLP1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000162368","CMPK1","cytidine/uridine monophosphate kinase 1",NA,"N","Y","N","HGNC:18170","CMPK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000134326","CMPK2","cytidine/uridine monophosphate kinase 2",NA,"N","Y","N","HGNC:27015","CMPK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000142675","CNKSR1","connector enhancer of kinase suppressor of Ras 1",NA,"N","N","N","HGNC:19700","CNKSR1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000068120","COASY","Coenzyme A synthase",NA,"N","N","N","HGNC:29932","COASY",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163050","COQ8A","coenzyme Q8A",NA,"N","N","N","HGNC:16812","COQ8A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000123815","COQ8B","coenzyme Q8B",NA,"N","N","N","HGNC:19041","COQ8B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000085719","CPNE3","copine 3",NA,"N","N","N","HGNC:2316","CPNE3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000182578","CSF1R","colony stimulating factor 1 receptor","Receptor tyrosine kinases","Y","N","N","HGNC:2433","CSF1R",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000103653","CSK","C-terminal Src kinase","Csk family tyrosine kinases","Y","N","N","HGNC:2444","CSK","TK","Csk",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000113712","CSNK1A1","casein kinase 1 alpha 1","Casein kinase 1 family","Y","N","N","HGNC:2451","CSNK1A1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000180138","CSNK1A1L","casein kinase 1 alpha 1 like","Casein kinase 1 family","Y","N","N","HGNC:20289","CSNK1A1L",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000141551","CSNK1D","casein kinase 1 delta","Casein kinase 1 family","Y","N","N","HGNC:2452","CSNK1D",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000213923","CSNK1E","casein kinase 1 epsilon","Casein kinase 1 family","Y","N","N","HGNC:2453","CSNK1E",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000169118","CSNK1G1","casein kinase 1 gamma 1","Casein kinase 1 family","Y","N","N","HGNC:2454","CSNK1G1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000133275","CSNK1G2","casein kinase 1 gamma 2","Casein kinase 1 family","Y","N","N","HGNC:2455","CSNK1G2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000151292","CSNK1G3","casein kinase 1 gamma 3","Casein kinase 1 family","Y","N","N","HGNC:2456","CSNK1G3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101266","CSNK2A1","casein kinase 2 alpha 1",NA,"N","N","N","HGNC:2457","CSNK2A1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000070770","CSNK2A2","casein kinase 2 alpha 2",NA,"N","N","N","HGNC:2459","CSNK2A2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000254598","CSNK2A3","casein kinase 2 alpha 3",NA,"N","N","N","HGNC:2458","CSNK2A3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000204435","CSNK2B","casein kinase 2 beta",NA,"N","N","N","HGNC:2460","CSNK2B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000196730","DAPK1","death associated protein kinase 1","Death associated protein kinases","Y","N","N","HGNC:2674","DAPK1","CAMK","DAPK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000035664","DAPK2","death associated protein kinase 2","Death associated protein kinases","Y","N","N","HGNC:2675","DAPK2","CAMK","DAPK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000167657","DAPK3","death associated protein kinase 3","Death associated protein kinases","Y","N","N","HGNC:2676","DAPK3","CAMK","DAPK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000145041","DCAF1","DDB1 and CUL4 associated factor 1",NA,"N","N","N","HGNC:30911","DCAF1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000156136","DCK","deoxycytidine kinase","Deoxyribonucleoside kinases","Y","Y","N","HGNC:2704","DCK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000133083","DCLK1","doublecortin like kinase 1","Doublecortin like kinase family","Y","N","N","HGNC:2700","DCLK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000170390","DCLK2","doublecortin like kinase 2","Doublecortin like kinase family","Y","N","N","HGNC:19002","DCLK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163673","DCLK3","doublecortin like kinase 3","Doublecortin like kinase family","Y","N","N","HGNC:19005","DCLK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000137332","DDR1","discoidin domain receptor tyrosine kinase 1","Receptor tyrosine kinases","Y","N","N",NA,NA,"TK","DDR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000162733","DDR2","discoidin domain receptor tyrosine kinase 2","Receptor tyrosine kinases","Y","N","N","HGNC:2731","DDR2","TK","DDR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000065357","DGKA","diacylglycerol kinase alpha","Diacylglycerol kinases","Y","Y","Y","HGNC:2849","DGKA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000136267","DGKB","diacylglycerol kinase beta","Diacylglycerol kinases","Y","Y","Y","HGNC:2850","DGKB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000077044","DGKD","diacylglycerol kinase delta","Diacylglycerol kinases","Y","Y","Y","HGNC:2851","DGKD",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000153933","DGKE","diacylglycerol kinase epsilon","Diacylglycerol kinases","Y","Y","Y","HGNC:2852","DGKE",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000058866","DGKG","diacylglycerol kinase gamma","Diacylglycerol kinases","Y","Y","Y","HGNC:2853","DGKG",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000102780","DGKH","diacylglycerol kinase eta","Diacylglycerol kinases","Y","Y","Y","HGNC:2854","DGKH",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000157680","DGKI","diacylglycerol kinase iota","Diacylglycerol kinases","Y","Y","Y","HGNC:2855","DGKI",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000274588","DGKK","diacylglycerol kinase kappa","Diacylglycerol kinases","Y","Y","Y","HGNC:32395","DGKK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000145214","DGKQ","diacylglycerol kinase theta","Diacylglycerol kinases","Y","Y","Y","HGNC:2856","DGKQ",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000149091","DGKZ","diacylglycerol kinase zeta","Diacylglycerol kinases","Y","Y","Y","HGNC:2857","DGKZ",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000114956","DGUOK","deoxyguanosine kinase","Deoxyribonucleoside kinases","Y","Y","N","HGNC:2858","DGUOK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000104936","DMPK","DM1 protein kinase","DMPK kinase family","Y","N","N","HGNC:2933","DMPK","AGC","DMPK","GEK",NA,NA,NA,NA,"AGC",NA
+"ENSG00000175283","DOLK","dolichol kinase",NA,"N","N","N","HGNC:23406","DOLK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000133059","DSTYK","dual serine/threonine and tyrosine protein kinase",NA,"N","N","N","HGNC:29043","DSTYK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000168393","DTYMK","deoxythymidylate kinase",NA,"N","Y","N","HGNC:3061","DTYMK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000157540","DYRK1A","dual specificity tyrosine phosphorylation regulated kinase 1A","Dual-specificity tyrosine-regulated kinase family","Y","N","N","HGNC:3091","DYRK1A","CMGC","DYRK","Dyrk1",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000105204","DYRK1B","dual specificity tyrosine phosphorylation regulated kinase 1B","Dual-specificity tyrosine-regulated kinase family","Y","N","N","HGNC:3092","DYRK1B","CMGC","DYRK","Dyrk1",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000127334","DYRK2","dual specificity tyrosine phosphorylation regulated kinase 2","Dual-specificity tyrosine-regulated kinase family","Y","N","N","HGNC:3093","DYRK2","CMGC","DYRK","Dyrk2",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000143479","DYRK3","dual specificity tyrosine phosphorylation regulated kinase 3","Dual-specificity tyrosine-regulated kinase family","Y","N","N","HGNC:3094","DYRK3","CMGC","DYRK","Dyrk2",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000010219","DYRK4","dual specificity tyrosine phosphorylation regulated kinase 4","Dual-specificity tyrosine-regulated kinase family","Y","N","N","HGNC:3095","DYRK4","CMGC","DYRK","Dyrk2",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000103319","EEF2K","eukaryotic elongation factor 2 kinase",NA,"N","N","N","HGNC:24615","EEF2K","Atypical","Alpha","eEF2K",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000146648","EGFR","epidermal growth factor receptor","Erb-b2 receptor tyrosine kinases","Y","Y","N","HGNC:3236","EGFR","TK","EGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000086232","EIF2AK1","eukaryotic translation initiation factor 2 alpha kinase 1","Eukaryotic translation initiation factor 2 alpha kinases","Y","N","N","HGNC:24921","EIF2AK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000055332","EIF2AK2","eukaryotic translation initiation factor 2 alpha kinase 2","Eukaryotic translation initiation factor 2 alpha kinases","Y","N","N","HGNC:9437","EIF2AK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000172071","EIF2AK3","eukaryotic translation initiation factor 2 alpha kinase 3","Eukaryotic translation initiation factor 2 alpha kinases","Y","N","Y","HGNC:3255","EIF2AK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000128829","EIF2AK4","eukaryotic translation initiation factor 2 alpha kinase 4","Eukaryotic translation initiation factor 2 alpha kinases","Y","N","N","HGNC:19687","EIF2AK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000146904","EPHA1","EPH receptor A1",NA,"N","N","N","HGNC:3385","EPHA1","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000183317","EPHA10","EPH receptor A10",NA,"N","N","N","HGNC:19987","EPHA10","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000142627","EPHA2","EPH receptor A2",NA,"N","N","N","HGNC:3386","EPHA2","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000044524","EPHA3","EPH receptor A3",NA,"N","N","N","HGNC:3387","EPHA3","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000116106","EPHA4","EPH receptor A4",NA,"N","N","N","HGNC:3388","EPHA4","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000145242","EPHA5","EPH receptor A5",NA,"N","N","N","HGNC:3389","EPHA5","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000080224","EPHA6","EPH receptor A6",NA,"N","N","N","HGNC:19296","EPHA6","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000135333","EPHA7","EPH receptor A7",NA,"N","N","N","HGNC:3390","EPHA7","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000070886","EPHA8","EPH receptor A8",NA,"N","N","N","HGNC:3391","EPHA8","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000154928","EPHB1","EPH receptor B1",NA,"N","N","N","HGNC:3392","EPHB1","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000133216","EPHB2","EPH receptor B2",NA,"N","N","N","HGNC:3393","EPHB2","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000182580","EPHB3","EPH receptor B3",NA,"N","N","N","HGNC:3394","EPHB3","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000196411","EPHB4","EPH receptor B4",NA,"N","N","N","HGNC:3395","EPHB4","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000106123","EPHB6","EPH receptor B6",NA,"N","N","N","HGNC:3396","EPHB6","TK","Eph",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000131037","EPS8L1","EPS8 signaling adaptor L1",NA,"N","N","N","HGNC:21295","EPS8L1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000141736","ERBB2","erb-b2 receptor tyrosine kinase 2","Erb-b2 receptor tyrosine kinases","Y","Y","N","HGNC:3430","ERBB2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000065361","ERBB3","erb-b2 receptor tyrosine kinase 3","Erb-b2 receptor tyrosine kinases","Y","N","N","HGNC:3431","ERBB3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000178568","ERBB4","erb-b2 receptor tyrosine kinase 4","Erb-b2 receptor tyrosine kinases","Y","N","N","HGNC:3432","ERBB4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000178607","ERN1","endoplasmic reticulum to nucleus signaling 1",NA,"N","N","Y","HGNC:3449","ERN1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000134398","ERN2","endoplasmic reticulum to nucleus signaling 2",NA,"N","N","N","HGNC:16942","ERN2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000139163","ETNK1","ethanolamine kinase 1","Ethanolamine kinase family","Y","Y","Y","HGNC:24649","ETNK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143845","ETNK2","ethanolamine kinase 2","Ethanolamine kinase family","Y","Y","Y","HGNC:25575","ETNK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000116199","FAM20B","FAM20B glycosaminoglycan xylosylkinase","Golgi associated kinase family","Y","N","N","HGNC:23017","FAM20B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000177706","FAM20C","FAM20C golgi associated secretory pathway kinase","Golgi associated kinase family","Y","N","N","HGNC:22140","FAM20C",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000164896","FASTK","Fas activated serine/threonine kinase",NA,"N","N","N","HGNC:24676","FASTK","Atypical","FAST",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000157353","FCSK","fucose kinase",NA,"N","Y","N","HGNC:29500","FCSK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000151422","FER","FER tyrosine kinase","Fes family tyrosine kinases","Y","N","N","HGNC:3655","FER","TK","Fer",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000182511","FES","FES proto-oncogene, tyrosine kinase","Fes family tyrosine kinases","Y","N","N","HGNC:3657","FES","TK","Fer",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000077782","FGFR1","fibroblast growth factor receptor 1","Receptor tyrosine kinases","Y","Y","N","HGNC:3688","FGFR1","TK","FGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000066468","FGFR2","fibroblast growth factor receptor 2","Receptor tyrosine kinases","Y","Y","N","HGNC:3689","FGFR2","TK","FGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000068078","FGFR3","fibroblast growth factor receptor 3","Receptor tyrosine kinases","Y","Y","N","HGNC:3690","FGFR3","TK","FGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000160867","FGFR4","fibroblast growth factor receptor 4","Receptor tyrosine kinases","Y","N","N","HGNC:3691","FGFR4","TK","FGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000172456","FGGY","FGGY carbohydrate kinase domain containing",NA,"N","N","N","HGNC:25610","FGGY",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000000938","FGR","FGR proto-oncogene, Src family tyrosine kinase","Src family tyrosine kinases","Y","N","N","HGNC:3697","FGR","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000102755","FLT1","fms related receptor tyrosine kinase 1","Receptor tyrosine kinases","Y","N","N","HGNC:3763","FLT1","TK","VEGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000122025","FLT3","fms related receptor tyrosine kinase 3","Receptor tyrosine kinases","Y","Y","N","HGNC:3765","FLT3","TK","PDGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000037280","FLT4","fms related receptor tyrosine kinase 4","Receptor tyrosine kinases","Y","N","N","HGNC:3767","FLT4","TK","VEGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000167363","FN3K","fructosamine 3 kinase",NA,"N","N","N","HGNC:24822","FN3K",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000141560","FN3KRP","fructosamine 3 kinase related protein",NA,"N","N","N","HGNC:25700","FN3KRP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000259030","FPGT-TNNI3K","FPGT-TNNI3K readthrough",NA,"N","N","N","HGNC:42952","FPGT-TNNI3K",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000111816","FRK","fyn related Src family tyrosine kinase","Src family tyrosine kinases","Y","N","N","HGNC:3955","FRK","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000010810","FYN","FYN proto-oncogene, Src family tyrosine kinase","Src family tyrosine kinases","Y","N","Y","HGNC:4037","FYN","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000131482","G6PC1","glucose-6-phosphatase catalytic subunit 1",NA,"N","Y","N","HGNC:4056","G6PC1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000178950","GAK","cyclin G associated kinase",NA,"N","N","N","HGNC:4113","GAK","Other","NAK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000108479","GALK1","galactokinase 1",NA,"N","Y","N","HGNC:4118","GALK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000156958","GALK2","galactokinase 2",NA,"N","Y","N","HGNC:4119","GALK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000106633","GCK","glucokinase","Hexokinase family","Y","Y","N","HGNC:4195","GCK","STE","STE20","KHS",NA,NA,NA,NA,"STE",NA
+"ENSG00000084734","GCKR","glucokinase regulator",NA,"N","N","N","HGNC:4196","GCKR","STE","STE20","KHS",NA,NA,NA,NA,"STE",NA
+"ENSG00000139436","GIT2","GIT ArfGAP 2",NA,"N","N","N","HGNC:4273","GIT2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198814","GK","glycerol kinase","Glycerol kinase family","Y","Y","Y","HGNC:4289","GK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000196475","GK2","glycerol kinase 2","Glycerol kinase family","Y","Y","Y","HGNC:4291","GK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000229894","GK3","glycerol kinase 3","Glycerol kinase family","Y","Y","Y","HGNC:4292","GK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000175066","GK5","glycerol kinase 5","Glycerol kinase family","Y","N","N","HGNC:28635","GK5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000165113","GKAP1","G kinase anchoring protein 1",NA,"N","N","N","HGNC:17496","GKAP1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000168237","GLYCTK","glycerate kinase",NA,"N","Y","Y","HGNC:24247","GLYCTK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000159921","GNE","glucosamine (UDP-N-acetyl)-2-epimerase/N-acetylmannosamine kinase",NA,"N","Y","N","HGNC:23657","GNE",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000185974","GRK1","G protein-coupled receptor kinase 1","G protein-coupled receptor kinase family","Y","N","N","HGNC:10013","GRK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000173020","GRK2","G protein-coupled receptor kinase 2","G protein-coupled receptor kinase family","Y","N","N","HGNC:289","GRK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000100077","GRK3","G protein-coupled receptor kinase 3","G protein-coupled receptor kinase family","Y","N","N","HGNC:290","GRK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000125388","GRK4","G protein-coupled receptor kinase 4","G protein-coupled receptor kinase family","Y","N","N","HGNC:4543","GRK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198873","GRK5","G protein-coupled receptor kinase 5","G protein-coupled receptor kinase family","Y","N","N","HGNC:4544","GRK5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198055","GRK6","G protein-coupled receptor kinase 6","G protein-coupled receptor kinase family","Y","N","N","HGNC:4545","GRK6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000114124","GRK7","G protein-coupled receptor kinase 7","G protein-coupled receptor kinase family","Y","N","N","HGNC:17031","GRK7",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000105723","GSK3A","glycogen synthase kinase 3 alpha","Glycogen synthase kinase 3 family","Y","N","N","HGNC:4616","GSK3A","CMGC","GSK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000082701","GSK3B","glycogen synthase kinase 3 beta","Glycogen synthase kinase 3 family","Y","N","Y","HGNC:4617","GSK3B","CMGC","GSK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000070019","GUCY2C","guanylate cyclase 2C",NA,"N","Y","N","HGNC:4688","GUCY2C",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000132518","GUCY2D","guanylate cyclase 2D, retinal",NA,"N","Y","N","HGNC:4689","GUCY2D",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101890","GUCY2F","guanylate cyclase 2F, retinal",NA,"N","Y","N","HGNC:4691","GUCY2F",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143774","GUK1","guanylate kinase 1",NA,"N","Y","N","HGNC:4693","GUK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000177602","HASPIN","histone H3 associated protein kinase",NA,"N","N","N","HGNC:19682","HASPIN","Other","Haspin",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000101336","HCK","HCK proto-oncogene, Src family tyrosine kinase","Src family tyrosine kinases","Y","N","N","HGNC:4840","HCK","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000185359","HGS","hepatocyte growth factor-regulated tyrosine kinase substrate",NA,"N","N","N","HGNC:4897","HGS",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163349","HIPK1","homeodomain interacting protein kinase 1","Homeodomain interacting protein kinase family","Y","N","N","HGNC:19006","HIPK1","CMGC","DYRK","HIPK",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000064393","HIPK2","homeodomain interacting protein kinase 2","Homeodomain interacting protein kinase family","Y","N","N","HGNC:14402","HIPK2","CMGC","DYRK","HIPK",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000110422","HIPK3","homeodomain interacting protein kinase 3","Homeodomain interacting protein kinase family","Y","N","N","HGNC:4915","HIPK3","CMGC","DYRK","HIPK",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000160396","HIPK4","homeodomain interacting protein kinase 4","Homeodomain interacting protein kinase family","Y","N","N","HGNC:19007","HIPK4","CMGC","DYRK","HIPK",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000156515","HK1","hexokinase 1","Hexokinase family","Y","Y","N","HGNC:4922","HK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000159399","HK2","hexokinase 2","Hexokinase family","Y","Y","N","HGNC:4923","HK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000160883","HK3","hexokinase 3","Hexokinase family","Y","Y","N","HGNC:4925","HK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000156510","HKDC1","hexokinase domain containing 1","Hexokinase family","Y","Y","N","HGNC:23302","HKDC1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000109854","HTATIP2","HIV-1 Tat interactive protein 2",NA,"N","N","N","HGNC:16637","HTATIP2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000142149","HUNK","hormonally up-regulated Neu-associated kinase","HUNK family kinases","Y","N","N","HGNC:13326","HUNK","CAMK","CAMKL","HUNK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000188266","HYKK","hydroxylysine kinase",NA,"N","N","N","HGNC:34403","HYKK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000148057","IDNK","IDNK gluconokinase",NA,"N","N","N","HGNC:31367","IDNK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000140443","IGF1R","insulin like growth factor 1 receptor",NA,"N","N","N","HGNC:5465","IGF1R","TK","InsR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000104365","IKBKB","inhibitor of nuclear factor kappa B kinase subunit beta","I kappa B kinases","Y","N","Y","HGNC:5960","IKBKB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000263528","IKBKE","inhibitor of nuclear factor kappa B kinase subunit epsilon","I kappa B kinases","Y","N","Y","HGNC:14552","IKBKE",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000269335","IKBKG","inhibitor of nuclear factor kappa B kinase regulatory subunit gamma",NA,"N","N","Y","HGNC:5961","IKBKG",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000166333","ILK","integrin linked kinase",NA,"N","N","N","HGNC:6040","ILK","TKL","MLK","ILK",NA,NA,NA,NA,"TKL",NA
+"ENSG00000132323","ILKAP","ILK associated serine/threonine phosphatase",NA,"N","N","N","HGNC:15566","ILKAP","TKL","MLK","ILK",NA,NA,NA,NA,"TKL",NA
+"ENSG00000171105","INSR","insulin receptor",NA,"N","N","N","HGNC:6091","INSR","TK","InsR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000027644","INSRR","insulin receptor related receptor",NA,"N","N","N","HGNC:6093","INSRR","TK","InsR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000176095","IP6K1","inositol hexakisphosphate kinase 1",NA,"N","Y","N","HGNC:18360","IP6K1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000068745","IP6K2","inositol hexakisphosphate kinase 2",NA,"N","Y","N","HGNC:17313","IP6K2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000161896","IP6K3","inositol hexakisphosphate kinase 3",NA,"N","Y","N","HGNC:17269","IP6K3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000151151","IPMK","inositol polyphosphate multikinase",NA,"N","Y","N","HGNC:20739","IPMK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000127080","IPPK","inositol-pentakisphosphate 2-kinase",NA,"N","Y","N","HGNC:14645","IPPK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000184216","IRAK1","interleukin 1 receptor associated kinase 1",NA,"N","N","Y","HGNC:6112","IRAK1","TKL","IRAK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000134070","IRAK2","interleukin 1 receptor associated kinase 2",NA,"N","N","N","HGNC:6113","IRAK2","TKL","IRAK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000090376","IRAK3","interleukin 1 receptor associated kinase 3",NA,"N","N","N","HGNC:17020","IRAK3","TKL","IRAK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000198001","IRAK4","interleukin 1 receptor associated kinase 4",NA,"N","N","Y","HGNC:17967","IRAK4","TKL","IRAK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000113263","ITK","IL2 inducible T cell kinase","Tec family tyrosine kinases","Y","N","N","HGNC:6171","ITK","TK","Tec",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000100605","ITPK1","inositol-tetrakisphosphate 1-kinase",NA,"N","Y","N","HGNC:6177","ITPK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000137825","ITPKA","inositol-trisphosphate 3-kinase A",NA,"N","Y","N","HGNC:6178","ITPKA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143772","ITPKB","inositol-trisphosphate 3-kinase B",NA,"N","Y","N","HGNC:6179","ITPKB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000086544","ITPKC","inositol-trisphosphate 3-kinase C",NA,"N","Y","N","HGNC:14897","ITPKC",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000162434","JAK1","Janus kinase 1","Jak family tyrosine kinases","Y","N","N","HGNC:6190","JAK1","TK","JakA",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000096968","JAK2","Janus kinase 2","Jak family tyrosine kinases","Y","N","Y","HGNC:6192","JAK2","TK","JakA",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000105639","JAK3","Janus kinase 3","Jak family tyrosine kinases","Y","N","N","HGNC:6193","JAK3","TK","JakA",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000160145","KALRN","kalirin RhoGEF kinase",NA,"N","N","N","HGNC:4814","KALRN",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000128052","KDR","kinase insert domain receptor","Receptor tyrosine kinases","Y","N","N","HGNC:6307","KDR","TK","VEGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000138030","KHK","ketohexokinase",NA,"N","Y","N","HGNC:6315","KHK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000157404","KIT","KIT proto-oncogene, receptor tyrosine kinase","Receptor tyrosine kinases","Y","Y","N","HGNC:6342","KIT","TK","PDGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000141068","KSR1","kinase suppressor of ras 1",NA,"N","N","N","HGNC:6465","KSR1","TKL","RAF",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000171435","KSR2","kinase suppressor of ras 2",NA,"N","N","N","HGNC:18610","KSR2","TKL","RAF",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000131023","LATS1","large tumor suppressor kinase 1","Large tumor suppressor kinase family","Y","N","N","HGNC:6514","LATS1","AGC","NDR",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000150457","LATS2","large tumor suppressor kinase 2","Large tumor suppressor kinase family","Y","N","N","HGNC:6515","LATS2","AGC","NDR",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000182866","LCK","LCK proto-oncogene, Src family tyrosine kinase","Src family tyrosine kinases","Y","N","N","HGNC:6524","LCK","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000106683","LIMK1","LIM domain kinase 1","LIMK/TESK kinase family","Y","N","N","HGNC:6613","LIMK1","TKL","LISK","LIMK",NA,NA,NA,NA,"TKL",NA
+"ENSG00000182541","LIMK2","LIM domain kinase 2","LIMK/TESK kinase family","Y","N","N","HGNC:6614","LIMK2","TKL","LISK","LIMK",NA,NA,NA,NA,"TKL",NA
+"ENSG00000164715","LMTK2","lemur tyrosine kinase 2","Receptor tyrosine kinases","Y","N","N","HGNC:17880","LMTK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000142235","LMTK3","lemur tyrosine kinase 3","Receptor tyrosine kinases","Y","N","N","HGNC:19295","LMTK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000155530","LRGUK","leucine rich repeats and guanylate kinase domain containing",NA,"N","N","N","HGNC:21964","LRGUK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000154237","LRRK1","leucine rich repeat kinase 1",NA,"N","N","N","HGNC:18608","LRRK1","TKL","LRRK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000188906","LRRK2","leucine rich repeat kinase 2",NA,"N","N","N","HGNC:18618","LRRK2","TKL","LRRK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000062524","LTK","leukocyte receptor tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:6721","LTK","TK","Alk",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000254087","LYN","LYN proto-oncogene, Src family tyrosine kinase","Src family tyrosine kinases","Y","N","Y","HGNC:6735","LYN","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000187391","MAGI2","membrane associated guanylate kinase, WW and PDZ domain containing 2","Membrane associated guanylate kinases","Y","N","N","HGNC:18957","MAGI2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000111837","MAK","male germ cell associated kinase","CILK1, MAK, MOK protein kinase family","Y","N","N","HGNC:6816","MAK","CMGC","RCK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000169032","MAP2K1","mitogen-activated protein kinase kinase 1","Mitogen-activated protein kinase kinases","Y","Y","Y","HGNC:6840","MAP2K1","STE","STE7",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000126934","MAP2K2","mitogen-activated protein kinase kinase 2","Mitogen-activated protein kinase kinases","Y","Y","Y","HGNC:6842","MAP2K2","STE","STE7",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000034152","MAP2K3","mitogen-activated protein kinase kinase 3","Mitogen-activated protein kinase kinases","Y","N","Y","HGNC:6843","MAP2K3","STE","STE7",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000065559","MAP2K4","mitogen-activated protein kinase kinase 4","Mitogen-activated protein kinase kinases","Y","N","Y","HGNC:6844","MAP2K4","STE","STE7",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000137764","MAP2K5","mitogen-activated protein kinase kinase 5","Mitogen-activated protein kinase kinases","Y","N","N","HGNC:6845","MAP2K5","STE","STE7",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000108984","MAP2K6","mitogen-activated protein kinase kinase 6","Mitogen-activated protein kinase kinases","Y","N","Y","HGNC:6846","MAP2K6","STE","STE7",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000076984","MAP2K7","mitogen-activated protein kinase kinase 7","Mitogen-activated protein kinase kinases","Y","N","Y","HGNC:6847","MAP2K7","STE","STE7",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000095015","MAP3K1","mitogen-activated protein kinase kinase kinase 1","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6848","MAP3K1","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000130758","MAP3K10","mitogen-activated protein kinase kinase kinase 10","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6849","MAP3K10","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000173327","MAP3K11","mitogen-activated protein kinase kinase kinase 11","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6850","MAP3K11","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000139625","MAP3K12","mitogen-activated protein kinase kinase kinase 12","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6851","MAP3K12","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000073803","MAP3K13","mitogen-activated protein kinase kinase kinase 13","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6852","MAP3K13","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000006062","MAP3K14","mitogen-activated protein kinase kinase kinase 14","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6853","MAP3K14","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000180815","MAP3K15","mitogen-activated protein kinase kinase kinase 15","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:31689","MAP3K15","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000176601","MAP3K19","mitogen-activated protein kinase kinase kinase 19","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:26249","MAP3K19","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000169967","MAP3K2","mitogen-activated protein kinase kinase kinase 2","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6854","MAP3K2","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000091436","MAP3K20","mitogen-activated protein kinase kinase kinase 20","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:17797","MAP3K20","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000143674","MAP3K21","mitogen-activated protein kinase kinase kinase 21","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:29798","MAP3K21","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000198909","MAP3K3","mitogen-activated protein kinase kinase kinase 3","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6855","MAP3K3","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000085511","MAP3K4","mitogen-activated protein kinase kinase kinase 4","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6856","MAP3K4","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000197442","MAP3K5","mitogen-activated protein kinase kinase kinase 5","Mitogen-activated protein kinase kinase kinases","Y","N","Y","HGNC:6857","MAP3K5","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000142733","MAP3K6","mitogen-activated protein kinase kinase kinase 6","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6858","MAP3K6","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000135341","MAP3K7","mitogen-activated protein kinase kinase kinase 7","Mitogen-activated protein kinase kinase kinases","Y","N","Y","HGNC:6859","MAP3K7","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000107968","MAP3K8","mitogen-activated protein kinase kinase kinase 8","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6860","MAP3K8","STE","STE11",NA,NA,NA,NA,NA,"STE",NA
+"ENSG00000006432","MAP3K9","mitogen-activated protein kinase kinase kinase 9","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:6861","MAP3K9",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000104814","MAP4K1","mitogen-activated protein kinase kinase kinase kinase 1","Mitogen-activated protein kinase kinase kinase kinases","Y","N","N","HGNC:6863","MAP4K1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000168067","MAP4K2","mitogen-activated protein kinase kinase kinase kinase 2","Mitogen-activated protein kinase kinase kinase kinases","Y","N","N","HGNC:6864","MAP4K2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000011566","MAP4K3","mitogen-activated protein kinase kinase kinase kinase 3","Mitogen-activated protein kinase kinase kinase kinases","Y","N","N","HGNC:6865","MAP4K3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000071054","MAP4K4","mitogen-activated protein kinase kinase kinase kinase 4","Mitogen-activated protein kinase kinase kinase kinases","Y","N","N","HGNC:6866","MAP4K4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000012983","MAP4K5","mitogen-activated protein kinase kinase kinase kinase 5","Mitogen-activated protein kinase kinase kinase kinases","Y","N","N","HGNC:6867","MAP4K5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000100030","MAPK1","mitogen-activated protein kinase 1","Mitogen-activated protein kinases","Y","Y","Y","HGNC:6871","MAPK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000109339","MAPK10","mitogen-activated protein kinase 10","Mitogen-activated protein kinases","Y","Y","Y","HGNC:6872","MAPK10",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000185386","MAPK11","mitogen-activated protein kinase 11","Mitogen-activated protein kinases","Y","N","Y","HGNC:6873","MAPK11",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000188130","MAPK12","mitogen-activated protein kinase 12","Mitogen-activated protein kinases","Y","N","Y","HGNC:6874","MAPK12",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000156711","MAPK13","mitogen-activated protein kinase 13","Mitogen-activated protein kinases","Y","N","Y","HGNC:6875","MAPK13",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000112062","MAPK14","mitogen-activated protein kinase 14","Mitogen-activated protein kinases","Y","N","Y","HGNC:6876","MAPK14",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000181085","MAPK15","mitogen-activated protein kinase 15","Mitogen-activated protein kinases","Y","N","N","HGNC:24667","MAPK15",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000102882","MAPK3","mitogen-activated protein kinase 3","Mitogen-activated protein kinases","Y","Y","Y","HGNC:6877","MAPK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000141639","MAPK4","mitogen-activated protein kinase 4","Mitogen-activated protein kinases","Y","N","N","HGNC:6878","MAPK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000069956","MAPK6","mitogen-activated protein kinase 6","Mitogen-activated protein kinases","Y","N","N","HGNC:6879","MAPK6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000166484","MAPK7","mitogen-activated protein kinase 7","Mitogen-activated protein kinases","Y","N","N","HGNC:6880","MAPK7",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000107643","MAPK8","mitogen-activated protein kinase 8","Mitogen-activated protein kinases","Y","Y","Y","HGNC:6881","MAPK8",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000050748","MAPK9","mitogen-activated protein kinase 9","Mitogen-activated protein kinases","Y","Y","Y","HGNC:6886","MAPK9",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000162889","MAPKAPK2","MAPK activated protein kinase 2","MAPK activated protein kinases","Y","N","N","HGNC:6887","MAPKAPK2","CAMK","MAPKAPK","MAPKAPK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000114738","MAPKAPK3","MAPK activated protein kinase 3","MAPK activated protein kinases","Y","N","N","HGNC:6888","MAPKAPK3","CAMK","MAPKAPK","MAPKAPK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000089022","MAPKAPK5","MAPK activated protein kinase 5","MAPK activated protein kinases","Y","N","N","HGNC:6889","MAPKAPK5","CAMK","MAPKAPK","MAPKAPK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000116141","MARK1","microtubule affinity regulating kinase 1","Microtubule affinity regulating kinases","Y","N","N","HGNC:6896","MARK1","CAMK","CAMKL","MARK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000072518","MARK2","microtubule affinity regulating kinase 2","Microtubule affinity regulating kinases","Y","N","N","HGNC:3332","MARK2","CAMK","CAMKL","MARK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000075413","MARK3","microtubule affinity regulating kinase 3","Microtubule affinity regulating kinases","Y","N","N","HGNC:6897","MARK3","CAMK","CAMKL","MARK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000007047","MARK4","microtubule affinity regulating kinase 4","Microtubule affinity regulating kinases","Y","N","N","HGNC:13538","MARK4","CAMK","CAMKL","MARK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000105613","MAST1","microtubule associated serine/threonine kinase 1","Microtubule associated serine/threonine kinase family","Y","N","N","HGNC:19034","MAST1","AGC","MAST",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000086015","MAST2","microtubule associated serine/threonine kinase 2","Microtubule associated serine/threonine kinase family","Y","N","N","HGNC:19035","MAST2","AGC","MAST",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000099308","MAST3","microtubule associated serine/threonine kinase 3","Microtubule associated serine/threonine kinase family","Y","N","N","HGNC:19036","MAST3","AGC","MAST",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000069020","MAST4","microtubule associated serine/threonine kinase family member 4","Microtubule associated serine/threonine kinase family","Y","N","N","HGNC:19037","MAST4","AGC","MAST",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000120539","MASTL","microtubule associated serine/threonine kinase like","Microtubule associated serine/threonine kinase family","Y","N","N","HGNC:19042","MASTL","AGC","MAST",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000007264","MATK","megakaryocyte-associated tyrosine kinase","Csk family tyrosine kinases","Y","N","N","HGNC:6906","MATK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000165304","MELK","maternal embryonic leucine zipper kinase","MELK family kinases","Y","N","N","HGNC:16870","MELK","CAMK","CAMKL","MELK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000153208","MERTK","MER proto-oncogene, tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:7027","MERTK","TK","Axl",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000105976","MET","MET proto-oncogene, receptor tyrosine kinase","Receptor tyrosine kinases","Y","Y","N","HGNC:7029","MET","TK","Met",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000141503","MINK1","misshapen like kinase 1",NA,"N","N","N","HGNC:17565","MINK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000079277","MKNK1","MAPK interacting serine/threonine kinase 1","MAPK activated protein kinases","Y","N","N","HGNC:7110","MKNK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000099875","MKNK2","MAPK interacting serine/threonine kinase 2","MAPK activated protein kinases","Y","N","N","HGNC:7111","MKNK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000168404","MLKL","mixed lineage kinase domain like pseudokinase",NA,"N","N","N","HGNC:26617","MLKL","TKL","TKL-Unique",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000108960","MMD","monocyte to macrophage differentiation associated",NA,"N","N","N","HGNC:7153","MMD",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000136297","MMD2","monocyte to macrophage differentiation associated 2",NA,"N","N","N","HGNC:30133","MMD2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000080823","MOK","MOK protein kinase","CILK1, MAK, MOK protein kinase family","Y","N","N","HGNC:9833","MOK","CMGC","RCK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000172680","MOS","MOS proto-oncogene, serine/threonine kinase",NA,"N","N","N","HGNC:7199","MOS","Other","MOS",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000164078","MST1R","macrophage stimulating 1 receptor","Receptor tyrosine kinases","Y","N","N","HGNC:7381","MST1R","STE","STE20","MST",NA,NA,NA,NA,"STE",NA
+"ENSG00000198793","MTOR","mechanistic target of rapamycin kinase",NA,"N","Y","N","HGNC:3942","MTOR",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000030304","MUSK","muscle associated receptor tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:7525","MUSK","TK","Musk",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000110921","MVK","mevalonate kinase",NA,"N","N","N","HGNC:7530","MVK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000065534","MYLK","myosin light chain kinase","Myosin light chain kinase family","Y","N","N","HGNC:7590","MYLK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101306","MYLK2","myosin light chain kinase 2","Myosin light chain kinase family","Y","N","N","HGNC:16243","MYLK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000140795","MYLK3","myosin light chain kinase 3","Myosin light chain kinase family","Y","N","N","HGNC:29826","MYLK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000145949","MYLK4","myosin light chain kinase family member 4","Myosin light chain kinase family","Y","N","N","HGNC:27972","MYLK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000095777","MYO3A","myosin IIIA",NA,"N","N","N","HGNC:7601","MYO3A","STE","STE20","NinaC",NA,NA,NA,NA,"STE",NA
+"ENSG00000071909","MYO3B","myosin IIIB",NA,"N","N","N","HGNC:15576","MYO3B","STE","STE20","NinaC",NA,NA,NA,NA,"STE",NA
+"ENSG00000008130","NADK","NAD kinase",NA,"N","Y","N","HGNC:29831","NADK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000152620","NADK2","NAD kinase 2, mitochondrial",NA,"N","Y","N","HGNC:26404","NADK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000124357","NAGK","N-acetylglucosamine kinase",NA,"N","Y","N","HGNC:17174","NAGK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000137601","NEK1","NIMA related kinase 1","NIMA related kinase family","Y","N","N","HGNC:7744","NEK1","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000163491","NEK10","NIMA related kinase 10","NIMA related kinase family","Y","N","N","HGNC:18592","NEK10","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000114670","NEK11","NIMA related kinase 11","NIMA related kinase family","Y","N","N","HGNC:18593","NEK11","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000117650","NEK2","NIMA related kinase 2","NIMA related kinase family","Y","N","N","HGNC:7745","NEK2","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000136098","NEK3","NIMA related kinase 3","NIMA related kinase family","Y","N","N","HGNC:7746","NEK3","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000114904","NEK4","NIMA related kinase 4","NIMA related kinase family","Y","N","N","HGNC:11399","NEK4","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000197168","NEK5","NIMA related kinase 5","NIMA related kinase family","Y","N","N","HGNC:7748","NEK5","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000119408","NEK6","NIMA related kinase 6","NIMA related kinase family","Y","N","N","HGNC:7749","NEK6","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000151414","NEK7","NIMA related kinase 7","NIMA related kinase family","Y","N","N","HGNC:13386","NEK7","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000160602","NEK8","NIMA related kinase 8","NIMA related kinase family","Y","N","N","HGNC:13387","NEK8","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000119638","NEK9","NIMA related kinase 9","NIMA related kinase family","Y","N","N","HGNC:18591","NEK9","Other","NEK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000177453","NIM1K","NIM1 serine/threonine protein kinase","NIM1K family kinases","Y","N","N","HGNC:28646","NIM1K","CAMK","CAMKL","NIM1",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000087095","NLK","nemo like kinase","Mitogen-activated protein kinases","Y","N","N","HGNC:29858","NLK","CMGC","MAPK","nmo",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000239672","NME1","NME/NM23 nucleoside diphosphate kinase 1",NA,"N","Y","N","HGNC:7849","NME1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000011052","NME1-NME2","NME1-NME2 readthrough",NA,"N","Y","N","HGNC:33531","NME1-NME2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000243678","NME2","NME/NM23 nucleoside diphosphate kinase 2",NA,"N","Y","N","HGNC:7850","NME2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000103024","NME3","NME/NM23 nucleoside diphosphate kinase 3",NA,"N","Y","N","HGNC:7851","NME3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000103202","NME4","NME/NM23 nucleoside diphosphate kinase 4",NA,"N","Y","N","HGNC:7852","NME4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000172113","NME6","NME/NM23 nucleoside diphosphate kinase 6",NA,"N","Y","N","HGNC:20567","NME6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143156","NME7","NME/NM23 family member 7",NA,"N","Y","N","HGNC:20461","NME7",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000106733","NMRK1","nicotinamide riboside kinase 1",NA,"N","Y","N","HGNC:26057","NMRK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000077009","NMRK2","nicotinamide riboside kinase 2",NA,"N","Y","N","HGNC:17871","NMRK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000162408","NOL9","nucleolar protein 9",NA,"N","N","N","HGNC:26265","NOL9",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000169418","NPR1","natriuretic peptide receptor 1",NA,"N","Y","N","HGNC:7943","NPR1",NA,NA,NA,"NPR1","RGC","RGC",NA,NA,"RGC"
+"ENSG00000159899","NPR2","natriuretic peptide receptor 2",NA,"N","Y","N","HGNC:7944","NPR2",NA,NA,NA,"NPR2","RGC","RGC",NA,NA,"RGC"
+"ENSG00000115216","NRBP1","nuclear receptor binding protein 1",NA,"N","N","N","HGNC:7993","NRBP1","Other","NRBP",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000185189","NRBP2","nuclear receptor binding protein 2",NA,"N","N","N","HGNC:19339","NRBP2","Other","NRBP",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000123572","NRK","Nik related kinase",NA,"N","N","N","HGNC:25391","NRK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198400","NTRK1","neurotrophic receptor tyrosine kinase 1","Receptor tyrosine kinases","Y","Y","N","HGNC:8031","NTRK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000148053","NTRK2","neurotrophic receptor tyrosine kinase 2","Receptor tyrosine kinases","Y","N","N","HGNC:8032","NTRK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000140538","NTRK3","neurotrophic receptor tyrosine kinase 3","Receptor tyrosine kinases","Y","Y","N","HGNC:8033","NTRK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000074590","NUAK1","NUAK family kinase 1","NUAK family kinases","Y","N","N","HGNC:14311","NUAK1","CAMK","CAMKL","NuaK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000163545","NUAK2","NUAK family kinase 2","NUAK family kinases","Y","N","N","HGNC:29558","NUAK2","CAMK","CAMKL","NuaK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000154358","OBSCN","obscurin, cytoskeletal calmodulin and titin-interacting RhoGEF","Myosin light chain kinase family","Y","N","N","HGNC:15719","OBSCN","CAMK","Trio",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000172939","OXSR1","oxidative stress responsive kinase 1",NA,"N","N","N","HGNC:8508","OXSR1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000124507","PACSIN1","protein kinase C and casein kinase substrate in neurons 1",NA,"N","N","N","HGNC:8570","PACSIN1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000149269","PAK1","p21 (RAC1) activated kinase 1",NA,"N","N","N","HGNC:8590","PAK1","STE","STE20","PAKA",NA,NA,NA,NA,"STE",NA
+"ENSG00000180370","PAK2","p21 (RAC1) activated kinase 2",NA,"N","N","N","HGNC:8591","PAK2","STE","STE20","PAKA",NA,NA,NA,NA,"STE",NA
+"ENSG00000077264","PAK3","p21 (RAC1) activated kinase 3",NA,"N","N","N","HGNC:8592","PAK3","STE","STE20","PAKA",NA,NA,NA,NA,"STE",NA
+"ENSG00000130669","PAK4","p21 (RAC1) activated kinase 4",NA,"N","N","N","HGNC:16059","PAK4","STE","STE20","PAKB",NA,NA,NA,NA,"STE",NA
+"ENSG00000101349","PAK5","p21 (RAC1) activated kinase 5",NA,"N","N","N","HGNC:15916","PAK5","STE","STE20","PAKB",NA,NA,NA,NA,"STE",NA
+"ENSG00000137843","PAK6","p21 (RAC1) activated kinase 6",NA,"N","N","N","HGNC:16061","PAK6","STE","STE20","PAKB",NA,NA,NA,NA,"STE",NA
+"ENSG00000129116","PALLD","palladin, cytoskeletal associated protein",NA,"N","N","N","HGNC:17068","PALLD",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000152520","PAN3","poly(A) specific ribonuclease subunit PAN3",NA,"N","N","N","HGNC:29991","PAN3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000152782","PANK1","pantothenate kinase 1","Pantothenate kinase family","Y","N","N","HGNC:8598","PANK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000125779","PANK2","pantothenate kinase 2","Pantothenate kinase family","Y","N","N","HGNC:15894","PANK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000120137","PANK3","pantothenate kinase 3","Pantothenate kinase family","Y","N","N","HGNC:19365","PANK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000138801","PAPSS1","3'-phosphoadenosine 5'-phosphosulfate synthase 1",NA,"N","Y","N","HGNC:8603","PAPSS1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198682","PAPSS2","3'-phosphoadenosine 5'-phosphosulfate synthase 2",NA,"N","Y","N","HGNC:8604","PAPSS2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115687","PASK","PAS domain containing serine/threonine kinase","PASK family kinases","Y","N","N","HGNC:17270","PASK","CAMK","CAMKL","PASK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000168078","PBK","PDZ binding kinase",NA,"N","N","N","HGNC:18282","PBK","Other","TOPK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000124253","PCK1","phosphoenolpyruvate carboxykinase 1",NA,"N","Y","N","HGNC:8724","PCK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000100889","PCK2","phosphoenolpyruvate carboxykinase 2, mitochondrial",NA,"N","Y","N","HGNC:8725","PCK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000134853","PDGFRA","platelet derived growth factor receptor alpha","Receptor tyrosine kinases","Y","Y","N","HGNC:8803","PDGFRA","TK","PDGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000113721","PDGFRB","platelet derived growth factor receptor beta","Receptor tyrosine kinases","Y","Y","N","HGNC:8804","PDGFRB","TK","PDGFR",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000175087","PDIK1L","PDLIM1 interacting kinase 1 like",NA,"N","N","N","HGNC:18981","PDIK1L",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000152256","PDK1","pyruvate dehydrogenase kinase 1",NA,"N","Y","N","HGNC:8809","PDK1","AGC","PKB",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000005882","PDK2","pyruvate dehydrogenase kinase 2",NA,"N","N","N","HGNC:8810","PDK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000067992","PDK3","pyruvate dehydrogenase kinase 3",NA,"N","N","N","HGNC:8811","PDK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000004799","PDK4","pyruvate dehydrogenase kinase 4",NA,"N","N","N","HGNC:8812","PDK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000140992","PDPK1","3-phosphoinositide dependent protein kinase 1",NA,"N","Y","Y","HGNC:8816","PDPK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000160209","PDXK","pyridoxal kinase",NA,"N","Y","N","HGNC:8819","PDXK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000173517","PEAK1","pseudopodium enriched atypical kinase 1","PEAK pseudokinase family","Y","N","N","HGNC:29431","PEAK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000188305","PEAK3","PEAK family member 3","PEAK pseudokinase family","Y","N","N","HGNC:24793","PEAK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000158571","PFKFB1","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase 1","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase family","Y","Y","N","HGNC:8872","PFKFB1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000123836","PFKFB2","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase 2","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase family","Y","Y","N","HGNC:8873","PFKFB2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000170525","PFKFB3","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase 3","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase family","Y","Y","N","HGNC:8874","PFKFB3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000114268","PFKFB4","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase 4","6-phosphofructo-2-kinase/fructose-2,6-biphosphatase family","Y","Y","N","HGNC:8875","PFKFB4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000141959","PFKL","phosphofructokinase, liver type","Phosphofructokinase family","Y","Y","N","HGNC:8876","PFKL",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000152556","PFKM","phosphofructokinase, muscle","Phosphofructokinase family","Y","Y","N","HGNC:8877","PFKM",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000067057","PFKP","phosphofructokinase, platelet","Phosphofructokinase family","Y","Y","N","HGNC:8878","PFKP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000102144","PGK1","phosphoglycerate kinase 1",NA,"N","N","N","HGNC:8896","PGK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000170950","PGK2","phosphoglycerate kinase 2",NA,"N","N","N","HGNC:8898","PGK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000164776","PHKG1","phosphorylase kinase catalytic subunit gamma 1","Phosphorylase kinase subunits","Y","N","N","HGNC:8930","PHKG1","CAMK","PHK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000156873","PHKG2","phosphorylase kinase catalytic subunit gamma 2","Phosphorylase kinase subunits","Y","N","N","HGNC:8931","PHKG2","CAMK","PHK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000155252","PI4K2A","phosphatidylinositol 4-kinase type 2 alpha",NA,"N","Y","N","HGNC:30031","PI4K2A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000038210","PI4K2B","phosphatidylinositol 4-kinase type 2 beta",NA,"N","Y","N","HGNC:18215","PI4K2B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000241973","PI4KA","phosphatidylinositol 4-kinase alpha","PI4KA lipid kinase complex","Y","Y","N","HGNC:8983","PI4KA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143393","PI4KB","phosphatidylinositol 4-kinase beta",NA,"N","Y","N","HGNC:8984","PI4KB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000011405","PIK3C2A","phosphatidylinositol-4-phosphate 3-kinase catalytic subunit type 2 alpha","Phosphatidylinositol 3-kinase family","Y","Y","N","HGNC:8971","PIK3C2A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000133056","PIK3C2B","phosphatidylinositol-4-phosphate 3-kinase catalytic subunit type 2 beta","Phosphatidylinositol 3-kinase family","Y","Y","N","HGNC:8972","PIK3C2B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000139144","PIK3C2G","phosphatidylinositol-4-phosphate 3-kinase catalytic subunit type 2 gamma","Phosphatidylinositol 3-kinase family","Y","Y","N","HGNC:8973","PIK3C2G",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000078142","PIK3C3","phosphatidylinositol 3-kinase catalytic subunit type 3","Phosphatidylinositol 3-kinase family","Y","Y","N","HGNC:8974","PIK3C3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000121879","PIK3CA","phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha","Phosphatidylinositol 3-kinase family","Y","Y","Y","HGNC:8975","PIK3CA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000051382","PIK3CB","phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit beta","Phosphatidylinositol 3-kinase family","Y","Y","Y","HGNC:8976","PIK3CB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000171608","PIK3CD","phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit delta","Phosphatidylinositol 3-kinase family","Y","Y","Y","HGNC:8977","PIK3CD",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000105851","PIK3CG","phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit gamma","Phosphatidylinositol 3-kinase family","Y","Y","N","HGNC:8978","PIK3CG",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000145675","PIK3R1","phosphoinositide-3-kinase regulatory subunit 1",NA,"N","Y","Y","HGNC:8979","PIK3R1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000196455","PIK3R4","phosphoinositide-3-kinase regulatory subunit 4",NA,"N","N","N","HGNC:8982","PIK3R4","Other","VPS15",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000141506","PIK3R5","phosphoinositide-3-kinase regulatory subunit 5",NA,"N","N","N","HGNC:30035","PIK3R5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115020","PIKFYVE","phosphoinositide kinase, FYVE-type zinc finger containing",NA,"N","Y","N","HGNC:23785","PIKFYVE",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000137193","PIM1","Pim-1 proto-oncogene, serine/threonine kinase","PIM kinase family","Y","N","N","HGNC:8986","PIM1","CAMK","PIM",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000102096","PIM2","Pim-2 proto-oncogene, serine/threonine kinase","PIM kinase family","Y","N","N","HGNC:8987","PIM2","CAMK","PIM",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000198355","PIM3","Pim-3 proto-oncogene, serine/threonine kinase","PIM kinase family","Y","N","N","HGNC:19310","PIM3","CAMK","PIM",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000158828","PINK1","PTEN induced kinase 1",NA,"N","N","N","HGNC:14581","PINK1","Other","NKF2",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000150867","PIP4K2A","phosphatidylinositol-5-phosphate 4-kinase type 2 alpha",NA,"N","Y","N","HGNC:8997","PIP4K2A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000276293","PIP4K2B","phosphatidylinositol-5-phosphate 4-kinase type 2 beta",NA,"N","Y","N","HGNC:8998","PIP4K2B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000166908","PIP4K2C","phosphatidylinositol-5-phosphate 4-kinase type 2 gamma",NA,"N","Y","N","HGNC:23786","PIP4K2C",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143398","PIP5K1A","phosphatidylinositol-4-phosphate 5-kinase type 1 alpha",NA,"N","Y","N","HGNC:8994","PIP5K1A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000107242","PIP5K1B","phosphatidylinositol-4-phosphate 5-kinase type 1 beta",NA,"N","Y","N","HGNC:8995","PIP5K1B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000186111","PIP5K1C","phosphatidylinositol-4-phosphate 5-kinase type 1 gamma",NA,"N","Y","N","HGNC:8996","PIP5K1C",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000167103","PIP5KL1","phosphatidylinositol-4-phosphate 5-kinase like 1",NA,"N","Y","N","HGNC:28711","PIP5KL1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000162878","PKDCC","protein kinase domain containing, cytoplasmic","Divergent protein kinase domain family","Y","N","N","HGNC:25123","PKDCC",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143627","PKLR","pyruvate kinase L/R",NA,"N","Y","N","HGNC:9020","PKLR",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000067225","PKM","pyruvate kinase M1/2",NA,"N","Y","N","HGNC:9021","PKM",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000127564","PKMYT1","protein kinase, membrane associated tyrosine/threonine 1",NA,"N","N","N","HGNC:29650","PKMYT1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000123143","PKN1","protein kinase N1","C2 domain containing protein kinases","Y","N","N","HGNC:9405","PKN1","AGC","PKN",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000065243","PKN2","protein kinase N2","C2 domain containing protein kinases","Y","N","N","HGNC:9406","PKN2","AGC","PKN",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000160447","PKN3","protein kinase N3","C2 domain containing protein kinases","Y","N","N","HGNC:17999","PKN3","AGC","PKN",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000166851","PLK1","polo like kinase 1","Polo like kinase family","Y","N","N","HGNC:9077","PLK1","Other","PLK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000145632","PLK2","polo like kinase 2","Polo like kinase family","Y","N","N","HGNC:19699","PLK2","Other","PLK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000173846","PLK3","polo like kinase 3","Polo like kinase family","Y","N","N","HGNC:2154","PLK3","Other","PLK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000142731","PLK4","polo like kinase 4","Polo like kinase family","Y","N","N","HGNC:11397","PLK4","Other","PLK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000185988","PLK5","polo like kinase 5 (inactive)","Polo like kinase family","Y","N","N","HGNC:27001","PLK5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163344","PMVK","phosphomevalonate kinase",NA,"N","N","N","HGNC:9141","PMVK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000130822","PNCK","pregnancy up-regulated nonubiquitous CaM kinase",NA,"N","N","N","HGNC:13415","PNCK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000039650","PNKP","polynucleotide kinase 3'-phosphatase",NA,"N","N","N","HGNC:9154","PNKP",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000185900","POMK","protein O-mannose kinase",NA,"N","N","N","HGNC:26267","POMK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000168781","PPIP5K1","diphosphoinositol pentakisphosphate kinase 1",NA,"N","Y","N","HGNC:29023","PPIP5K1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000145725","PPIP5K2","diphosphoinositol pentakisphosphate kinase 2",NA,"N","Y","N","HGNC:29035","PPIP5K2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000170836","PPM1D","protein phosphatase, Mg2+/Mn2+ dependent 1D",NA,"N","N","N","HGNC:9277","PPM1D",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000108819","PPP1R9B","protein phosphatase 1 regulatory subunit 9B",NA,"N","N","N","HGNC:9298","PPP1R9B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000275342","PRAG1","PEAK1 related, kinase-activating pseudokinase 1","PEAK pseudokinase family","Y","N","N","HGNC:25438","PRAG1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000132356","PRKAA1","protein kinase AMP-activated catalytic subunit alpha 1","Protein kinase AMP-activated catalytic subunit alpha family","Y","N","N","HGNC:9376","PRKAA1",NA,NA,NA,"PRKAA1","CAMK","CAMKL","AMPK",NA,"CAMK"
+"ENSG00000162409","PRKAA2","protein kinase AMP-activated catalytic subunit alpha 2","Protein kinase AMP-activated catalytic subunit alpha family","Y","N","N","HGNC:9377","PRKAA2",NA,NA,NA,"PRKAA2","CAMK","CAMKL","AMPK",NA,"CAMK"
+"ENSG00000072062","PRKACA","protein kinase cAMP-activated catalytic subunit alpha","Protein kinase A family","Y","N","N","HGNC:9380","PRKACA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000142875","PRKACB","protein kinase cAMP-activated catalytic subunit beta","Protein kinase A family","Y","N","N","HGNC:9381","PRKACB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000165059","PRKACG","protein kinase cAMP-activated catalytic subunit gamma","Protein kinase A family","Y","N","N","HGNC:9382","PRKACG",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000106617","PRKAG2","protein kinase AMP-activated non-catalytic subunit gamma 2","Protein kinase AMP-activated non-catalytic subunit gamma family","Y","N","N","HGNC:9386","PRKAG2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115592","PRKAG3","protein kinase AMP-activated non-catalytic subunit gamma 3","Protein kinase AMP-activated non-catalytic subunit gamma family","Y","N","N","HGNC:9387","PRKAG3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000108946","PRKAR1A","protein kinase cAMP-dependent type I regulatory subunit alpha","Protein kinase A subunits","Y","N","N","HGNC:9388","PRKAR1A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000114302","PRKAR2A","protein kinase cAMP-dependent type II regulatory subunit alpha","Protein kinase A subunits","Y","N","N","HGNC:9391","PRKAR2A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000154229","PRKCA","protein kinase C alpha","C2 domain containing protein kinases","Y","Y","Y","HGNC:9393","PRKCA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000166501","PRKCB","protein kinase C beta","C2 domain containing protein kinases","Y","Y","Y","HGNC:9395","PRKCB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163932","PRKCD","protein kinase C delta","C2 domain containing protein kinases","Y","N","N","HGNC:9399","PRKCD",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000171132","PRKCE","protein kinase C epsilon","C2 domain containing protein kinases","Y","N","Y","HGNC:9401","PRKCE",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000126583","PRKCG","protein kinase C gamma","C2 domain containing protein kinases","Y","Y","Y","HGNC:9402","PRKCG",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000027075","PRKCH","protein kinase C eta","C2 domain containing protein kinases","Y","N","N","HGNC:9403","PRKCH",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163558","PRKCI","protein kinase C iota","Protein kinase C family","Y","N","N","HGNC:9404","PRKCI",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000065675","PRKCQ","protein kinase C theta","C2 domain containing protein kinases","Y","N","N","HGNC:9410","PRKCQ",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000067606","PRKCZ","protein kinase C zeta","Protein kinase C family","Y","N","Y","HGNC:9412","PRKCZ",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000184304","PRKD1","protein kinase D1","Protein kinase D family","Y","N","N","HGNC:9407","PRKD1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000105287","PRKD2","protein kinase D2","Protein kinase D family","Y","N","N","HGNC:17293","PRKD2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115825","PRKD3","protein kinase D3","Protein kinase D family","Y","N","N","HGNC:9408","PRKD3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000253729","PRKDC","protein kinase, DNA-activated, catalytic subunit",NA,"N","N","N","HGNC:9413","PRKDC",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000185532","PRKG1","protein kinase cGMP-dependent 1","Protein kinase G family","Y","N","N","HGNC:9414","PRKG1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000138669","PRKG2","protein kinase cGMP-dependent 2","Protein kinase G family","Y","N","N","HGNC:9416","PRKG2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000180228","PRKRA","protein activator of interferon induced protein kinase EIF2AK2",NA,"N","N","N","HGNC:9438","PRKRA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000183943","PRKX","protein kinase cAMP-dependent X-linked catalytic subunit","Protein kinase A family","Y","N","N","HGNC:9441","PRKX","AGC","PKA",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000112739","PRP4K","pre-mRNA processing factor kinase PRP4K",NA,"N","N","N","HGNC:17346","PRP4K","CMGC","DYRK","PRP4",NA,NA,NA,NA,"CMGC",NA
+"ENSG00000147224","PRPS1","phosphoribosyl pyrophosphate synthetase 1",NA,"N","Y","N","HGNC:9462","PRPS1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000229937","PRPS1L1","phosphoribosyl pyrophosphate synthetase 1 like 1",NA,"N","Y","N","HGNC:9463","PRPS1L1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101911","PRPS2","phosphoribosyl pyrophosphate synthetase 2",NA,"N","Y","N","HGNC:9465","PRPS2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000159792","PSKH1","protein serine kinase H1","Protein serine kinase H family","Y","N","N","HGNC:9529","PSKH1","CAMK","PSK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000147613","PSKH2","protein serine kinase H2","Protein serine kinase H family","Y","N","N","HGNC:18997","PSKH2","CAMK","PSK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000179988","PSTK","phosphoseryl-tRNA kinase",NA,"N","Y","N","HGNC:28578","PSTK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000169398","PTK2","protein tyrosine kinase 2","PTK2 family tyrosine kinases","Y","N","Y","HGNC:9611","PTK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000120899","PTK2B","protein tyrosine kinase 2 beta","PTK2 family tyrosine kinases","Y","N","N","HGNC:9612","PTK2B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101213","PTK6","protein tyrosine kinase 6","PTK6 family tyrosine kinases","Y","N","N","HGNC:9617","PTK6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000112655","PTK7","protein tyrosine kinase 7 (inactive)","Receptor tyrosine kinases","Y","N","N","HGNC:9618","PTK7",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000173482","PTPRM","protein tyrosine phosphatase receptor type M",NA,"N","N","N","HGNC:9675","PTPRM",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000168297","PXK","PX domain containing serine/threonine kinase like",NA,"N","N","N","HGNC:23326","PXK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000132155","RAF1","Raf-1 proto-oncogene, serine/threonine kinase","Mitogen-activated protein kinase kinase kinases","Y","Y","Y","HGNC:9829","RAF1","TKL","RAF",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000101265","RASSF2","Ras association domain family member 2",NA,"N","N","N","HGNC:9883","RASSF2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000171174","RBKS","ribokinase",NA,"N","N","N","HGNC:30325","RBKS",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000165731","RET","ret proto-oncogene","Receptor tyrosine kinases","Y","Y","N","HGNC:9967","RET","TK","Ret",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000135002","RFK","riboflavin kinase",NA,"N","Y","N","HGNC:30324","RFK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000124784","RIOK1","RIO kinase 1",NA,"N","N","N","HGNC:18656","RIOK1","Atypical","RIO","RIO1",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000058729","RIOK2","RIO kinase 2",NA,"N","N","N","HGNC:18999","RIOK2","Atypical","RIO","RIO2",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000101782","RIOK3","RIO kinase 3",NA,"N","N","N","HGNC:11451","RIOK3","Atypical","RIO","RIO3",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000137275","RIPK1","receptor interacting serine/threonine kinase 1",NA,"N","N","N","HGNC:10019","RIPK1","TKL","RIPK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000104312","RIPK2","receptor interacting serine/threonine kinase 2",NA,"N","N","N","HGNC:10020","RIPK2","TKL","RIPK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000129465","RIPK3","receptor interacting serine/threonine kinase 3",NA,"N","N","N","HGNC:10021","RIPK3","TKL","RIPK",NA,NA,NA,NA,NA,"TKL",NA
+"ENSG00000183421","RIPK4","receptor interacting serine/threonine kinase 4",NA,"N","N","N","HGNC:496","RIPK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000135828","RNASEL","ribonuclease L",NA,"N","N","N","HGNC:10050","RNASEL","Other","Other-Unique",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000067900","ROCK1","Rho associated coiled-coil containing protein kinase 1","Rho associated coiled-coil containing protein kinase family","Y","N","Y","HGNC:10251","ROCK1","AGC","DMPK","ROCK",NA,NA,NA,NA,"AGC",NA
+"ENSG00000134318","ROCK2","Rho associated coiled-coil containing protein kinase 2","Rho associated coiled-coil containing protein kinase family","Y","N","Y","HGNC:10252","ROCK2","AGC","DMPK","ROCK",NA,NA,NA,NA,"AGC",NA
+"ENSG00000185483","ROR1","receptor tyrosine kinase like orphan receptor 1","Receptor tyrosine kinases","Y","N","N","HGNC:10256","ROR1","TK","Ror",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000169071","ROR2","receptor tyrosine kinase like orphan receptor 2","Receptor tyrosine kinases","Y","N","N","HGNC:10257","ROR2","TK","Ror",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000047936","ROS1","ROS proto-oncogene 1, receptor tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:10261","ROS1","TK","Sev",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000117676","RPS6KA1","ribosomal protein S6 kinase A1","MAPK activated protein kinases","Y","N","N","HGNC:10430","RPS6KA1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000071242","RPS6KA2","ribosomal protein S6 kinase A2","MAPK activated protein kinases","Y","N","N","HGNC:10431","RPS6KA2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000177189","RPS6KA3","ribosomal protein S6 kinase A3","MAPK activated protein kinases","Y","N","N","HGNC:10432","RPS6KA3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000162302","RPS6KA4","ribosomal protein S6 kinase A4","MAPK activated protein kinases","Y","N","N","HGNC:10433","RPS6KA4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000100784","RPS6KA5","ribosomal protein S6 kinase A5","MAPK activated protein kinases","Y","N","N","HGNC:10434","RPS6KA5",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000072133","RPS6KA6","ribosomal protein S6 kinase A6","MAPK activated protein kinases","Y","N","N","HGNC:10435","RPS6KA6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000108443","RPS6KB1","ribosomal protein S6 kinase B1","Ribosomal protein S6 kinase family","Y","Y","N","HGNC:10436","RPS6KB1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000175634","RPS6KB2","ribosomal protein S6 kinase B2","Ribosomal protein S6 kinase family","Y","Y","N","HGNC:10437","RPS6KB2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000136643","RPS6KC1","ribosomal protein S6 kinase C1","Ribosomal protein S6 kinase family","Y","N","N","HGNC:10439","RPS6KC1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198208","RPS6KL1","ribosomal protein S6 kinase like 1","Ribosomal protein S6 kinase family","Y","N","N","HGNC:20222","RPS6KL1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000167524","RSKR","ribosomal protein S6 kinase related","Ribosomal protein S6 kinase family","Y","N","N","HGNC:26314","RSKR",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163785","RYK","receptor like tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:10481","RYK","TK","Ryk",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000188322","SBK1","SH3 domain binding kinase 1",NA,"N","N","N","HGNC:17699","SBK1","Other","NKF1",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000187550","SBK2","SH3 domain binding kinase family member 2",NA,"N","N","N","HGNC:34416","SBK2","Other","NKF1",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000231274","SBK3","SH3 domain binding kinase family member 3",NA,"N","N","N","HGNC:44121","SBK3","Other","NKF1",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000142186","SCYL1","SCY1 like pseudokinase 1","SCY1 like pseudokinases","Y","N","N","HGNC:14372","SCYL1","Other","SCY1",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000136021","SCYL2","SCY1 like pseudokinase 2","SCY1 like pseudokinases","Y","N","N","HGNC:19286","SCYL2","Other","SCY1",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000000457","SCYL3","SCY1 like pseudokinase 3","SCY1 like pseudokinases","Y","N","N","HGNC:19285","SCYL3","Other","SCY1",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000086475","SEPHS1","selenophosphate synthetase 1",NA,"N","Y","N","HGNC:19685","SEPHS1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000179918","SEPHS2","selenophosphate synthetase 2",NA,"N","Y","N","HGNC:19686","SEPHS2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000118515","SGK1","serum/glucocorticoid regulated kinase 1","Serum/glucocorticoid regulated kinase family","Y","N","N","HGNC:10810","SGK1","AGC","SGK",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000101049","SGK2","serum/glucocorticoid regulated kinase 2","Serum/glucocorticoid regulated kinase family","Y","N","N","HGNC:13900","SGK2","AGC","SGK",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000104205","SGK3","serum/glucocorticoid regulated kinase family member 3","Serum/glucocorticoid regulated kinase family","Y","N","N","HGNC:10812","SGK3","AGC","SGK",NA,NA,NA,NA,NA,"AGC",NA
+"ENSG00000198964","SGMS1","sphingomyelin synthase 1",NA,"N","Y","Y","HGNC:29799","SGMS1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000164023","SGMS2","sphingomyelin synthase 2",NA,"N","Y","Y","HGNC:28395","SGMS2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000147010","SH3KBP1","SH3 domain containing kinase binding protein 1",NA,"N","N","N","HGNC:13867","SH3KBP1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000197417","SHPK","sedoheptulokinase",NA,"N","N","N","HGNC:1492","SHPK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000142178","SIK1","salt inducible kinase 1","SIK family kinases","Y","N","N","HGNC:11142","SIK1","CAMK","CAMKL","QIK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000170145","SIK2","salt inducible kinase 2","SIK family kinases","Y","N","N","HGNC:21680","SIK2","CAMK","CAMKL","QIK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000160584","SIK3","SIK family kinase 3","SIK family kinases","Y","N","N","HGNC:29165","SIK3","CAMK","CAMKL","QIK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000145604","SKP2","S-phase kinase associated protein 2",NA,"N","N","N","HGNC:10901","SKP2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000065613","SLK","STE20 like kinase",NA,"N","N","N","HGNC:11088","SLK","STE","STE20","SLK",NA,NA,NA,NA,"STE",NA
+"ENSG00000157106","SMG1","SMG1 nonsense mediated mRNA decay associated PI3K related kinase",NA,"N","N","N","HGNC:30045","SMG1","Atypical","PIKK","SMG1",NA,NA,NA,NA,"Atypical",NA
+"ENSG00000163788","SNRK","SNF related kinase","SNRK family kinases","Y","N","N","HGNC:30598","SNRK","CAMK","CAMKL","SNRK",NA,NA,NA,NA,"CAMK",NA
+"ENSG00000072195","SPEG","striated muscle enriched protein kinase","Myosin light chain kinase family","Y","N","N","HGNC:16901","SPEG","CAMK","Trio",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000286095","SPEGNB","SPEG neighbor",NA,"N","N","N","HGNC:51251","SPEGNB","CAMK","Trio",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000176170","SPHK1","sphingosine kinase 1","Sphingosine kinase family","Y","Y","Y","HGNC:11240","SPHK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000063176","SPHK2","sphingosine kinase 2","Sphingosine kinase family","Y","Y","Y","HGNC:18859","SPHK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000197122","SRC","SRC proto-oncogene, non-receptor tyrosine kinase","Src family tyrosine kinases","Y","N","Y","HGNC:11283","SRC","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000125508","SRMS","src-related kinase lacking C-terminal regulatory tyrosine and N-terminal myristylation sites","PTK6 family tyrosine kinases","Y","N","N","HGNC:11298","SRMS","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000096063","SRPK1","SRSF protein kinase 1","SRSF protein kinase family","Y","N","N","HGNC:11305","SRPK1","CMGC","SRPK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000135250","SRPK2","SRSF protein kinase 2","SRSF protein kinase family","Y","N","N","HGNC:11306","SRPK2","CMGC","SRPK",NA,NA,NA,NA,NA,"CMGC",NA
+"ENSG00000184343","SRPK3","SRSF protein kinase 3","SRSF protein kinase family","Y","N","N","HGNC:11402","SRPK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000072786","STK10","serine/threonine kinase 10",NA,"N","N","N","HGNC:11388","STK10",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000118046","STK11","serine/threonine kinase 11","STK11 family kinases","Y","N","N","HGNC:11389","STK11",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115661","STK16","serine/threonine kinase 16",NA,"N","N","N","HGNC:11394","STK16",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000164543","STK17A","serine/threonine kinase 17a","Death associated protein kinases","Y","N","N","HGNC:11395","STK17A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000081320","STK17B","serine/threonine kinase 17b","Death associated protein kinases","Y","N","N","HGNC:11396","STK17B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000102572","STK24","serine/threonine kinase 24",NA,"N","N","N","HGNC:11403","STK24",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115694","STK25","serine/threonine kinase 25",NA,"N","N","N","HGNC:11404","STK25",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000134602","STK26","serine/threonine kinase 26",NA,"N","N","N","HGNC:18174","STK26",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000104375","STK3","serine/threonine kinase 3",NA,"N","N","N","HGNC:11406","STK3","CAMK","CAMK-Unique",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000196335","STK31","serine/threonine kinase 31",NA,"N","N","N","HGNC:11407","STK31",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000169302","STK32A","serine/threonine kinase 32A","Serine/threonine kinase 32 family","Y","N","N","HGNC:28317","STK32A",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000152953","STK32B","serine/threonine kinase 32B","Serine/threonine kinase 32 family","Y","N","N","HGNC:14217","STK32B",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000165752","STK32C","serine/threonine kinase 32C","Serine/threonine kinase 32 family","Y","N","N","HGNC:21332","STK32C",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000130413","STK33","serine/threonine kinase 33","STK33 family kinases","Y","N","N","HGNC:14568","STK33","CAMK","CAMK-Unique",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000125834","STK35","serine/threonine kinase 35",NA,"N","N","N","HGNC:16254","STK35",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000163482","STK36","serine/threonine kinase 36",NA,"N","N","N","HGNC:17209","STK36",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000112079","STK38","serine/threonine kinase 38","Serine/threonine kinase 38 family","Y","N","N","HGNC:17847","STK38",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000211455","STK38L","serine/threonine kinase 38 like","Serine/threonine kinase 38 family","Y","N","N","HGNC:17848","STK38L",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198648","STK39","serine/threonine kinase 39",NA,"N","N","N","HGNC:17717","STK39",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101109","STK4","serine/threonine kinase 4",NA,"N","N","N","HGNC:11408","STK4",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000196182","STK40","serine/threonine kinase 40","Tribbles pseudokinase family","Y","N","N","HGNC:21373","STK40",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198870","STKLD1","serine/threonine kinase like domain containing 1",NA,"N","N","N","HGNC:28669","STKLD1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000266173","STRADA","STE20 related adaptor alpha",NA,"N","N","N","HGNC:30172","STRADA",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000082146","STRADB","STE20 related adaptor beta",NA,"N","N","N","HGNC:13205","STRADB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000060140","STYK1","serine/threonine/tyrosine kinase 1","Receptor tyrosine kinases","Y","N","N","HGNC:18889","STYK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000165025","SYK","spleen associated tyrosine kinase","Syk family tyrosine kinases","Y","N","N","HGNC:11491","SYK","TK","Syk",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000100324","TAB1","TGF-beta activated kinase 1 (MAP3K7) binding protein 1",NA,"N","N","Y","HGNC:18157","TAB1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000147133","TAF1","TATA-box binding protein associated factor 1",NA,"N","N","N","HGNC:11535","TAF1","Atypical","TAF1",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000122728","TAF1L","TATA-box binding protein associated factor 1 like",NA,"N","N","N","HGNC:18056","TAF1L","Atypical","TAF1",NA,NA,NA,NA,NA,"Atypical",NA
+"ENSG00000160551","TAOK1","TAO kinase 1","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:29259","TAOK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000149930","TAOK2","TAO kinase 2","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:16835","TAOK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000135090","TAOK3","TAO kinase 3","Mitogen-activated protein kinase kinase kinases","Y","N","N","HGNC:18133","TAOK3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000145348","TBCK","TBC1 domain containing kinase",NA,"N","N","N","HGNC:28261","TBCK","Other","TBCK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000183735","TBK1","TANK binding kinase 1","I kappa B kinases","Y","N","Y","HGNC:11584","TBK1","Other","IKK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000135605","TEC","tec protein tyrosine kinase","Tec family tyrosine kinases","Y","N","N","HGNC:11719","TEC","TK","Tec",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000120156","TEK","TEK receptor tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:11724","TEK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000107140","TESK1","testis associated actin remodelling kinase 1","LIMK/TESK kinase family","Y","N","N","HGNC:11731","TESK1","TKL","LISK","TESK",NA,NA,NA,NA,"TKL",NA
+"ENSG00000070759","TESK2","testis associated actin remodelling kinase 2","LIMK/TESK kinase family","Y","N","N","HGNC:11732","TESK2","TKL","LISK","TESK",NA,NA,NA,NA,"TKL",NA
+"ENSG00000121101","TEX14","testis expressed 14, intercellular bridge forming factor",NA,"N","N","N","HGNC:11737","TEX14",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000106799","TGFBR1","transforming growth factor beta receptor 1","Type 1 receptor serine/threonine kinases","Y","N","N","HGNC:11772","TGFBR1","TKL","STKR","Type1","TGFBR1","TKL","STKR","STKR1","TKL","TKL"
+"ENSG00000163513","TGFBR2","transforming growth factor beta receptor 2","Type 2 receptor serine/threonine kinases","Y","N","N","HGNC:11773","TGFBR2","TKL","STKR","Type2",NA,NA,NA,NA,"TKL",NA
+"ENSG00000066056","TIE1","tyrosine kinase with immunoglobulin like and EGF like domains 1","Receptor tyrosine kinases","Y","N","N","HGNC:11809","TIE1","TK","Tie",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000167900","TK1","thymidine kinase 1","Deoxyribonucleoside kinases","Y","Y","N","HGNC:11830","TK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000166548","TK2","thymidine kinase 2","Deoxyribonucleoside kinases","Y","Y","N","HGNC:11831","TK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000149476","TKFC","triokinase and FMN cyclase",NA,"N","Y","Y","HGNC:24552","TKFC",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198586","TLK1","tousled like kinase 1",NA,"N","N","N","HGNC:11841","TLK1","Other","TLK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000146872","TLK2","tousled like kinase 2",NA,"N","N","N","HGNC:11842","TLK2","Other","TLK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000154310","TNIK","TRAF2 and NCK interacting kinase",NA,"N","N","N","HGNC:30765","TNIK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000174292","TNK1","tyrosine kinase non receptor 1","TNK family tyrosine kinases","Y","N","N","HGNC:11940","TNK1","TK","Ack",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000061938","TNK2","tyrosine kinase non receptor 2","TNK family tyrosine kinases","Y","N","N","HGNC:19297","TNK2",NA,NA,NA,"TNK2","TK","Ack",NA,NA,"TK"
+"ENSG00000116783","TNNI3K","TNNI3 interacting kinase",NA,"N","N","N","HGNC:19661","TNNI3K",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198900","TOP1","DNA topoisomerase I",NA,"N","N","N","HGNC:11986","TOP1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000172315","TP53RK","TP53 regulating kinase",NA,"N","N","N","HGNC:16197","TP53RK",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000196511","TPK1","thiamin pyrophosphokinase 1",NA,"N","Y","N","HGNC:17358","TPK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000283900","TPTEP2-CSNK1E","TPTEP2-CSNK1E readthrough",NA,"N","N","N","HGNC:53829","TPTEP2-CSNK1E",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000173334","TRIB1","tribbles pseudokinase 1","Tribbles pseudokinase family","Y","N","N","HGNC:16891","TRIB1",NA,NA,NA,"TRIB1","CAMK","Trbl",NA,NA,"CAMK"
+"ENSG00000071575","TRIB2","tribbles pseudokinase 2","Tribbles pseudokinase family","Y","N","N","HGNC:30809","TRIB2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000101255","TRIB3","tribbles pseudokinase 3","Tribbles pseudokinase family","Y","N","N","HGNC:16228","TRIB3",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000122779","TRIM24","tripartite motif containing 24",NA,"N","N","N","HGNC:11812","TRIM24",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000130726","TRIM28","tripartite motif containing 28",NA,"N","N","N","HGNC:16384","TRIM28",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000038382","TRIO","trio Rho guanine nucleotide exchange factor",NA,"N","N","N","HGNC:12303","TRIO","CAMK","Trio",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000119121","TRPM6","transient receptor potential cation channel subfamily M member 6",NA,"N","N","N","HGNC:17995","TRPM6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000092439","TRPM7","transient receptor potential cation channel subfamily M member 7",NA,"N","N","N","HGNC:17994","TRPM7",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000212122","TSSK1B","testis specific serine kinase 1B","Testis specific serine kinase family","Y","N","N","HGNC:14968","TSSK1B","CAMK","TSSK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000206203","TSSK2","testis specific serine kinase 2","Testis specific serine kinase family","Y","N","N","HGNC:11401","TSSK2","CAMK","TSSK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000162526","TSSK3","testis specific serine kinase 3","Testis specific serine kinase family","Y","N","N","HGNC:15473","TSSK3","CAMK","TSSK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000139908","TSSK4","testis specific serine kinase 4","Testis specific serine kinase family","Y","N","N","HGNC:19825","TSSK4","CAMK","TSSK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000178093","TSSK6","testis specific serine kinase 6","Testis specific serine kinase family","Y","N","N","HGNC:30410","TSSK6",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000146216","TTBK1","tau tubulin kinase 1",NA,"N","N","N","HGNC:19140","TTBK1","CK1","TTBK",NA,NA,NA,NA,NA,"CK1",NA
+"ENSG00000128881","TTBK2","tau tubulin kinase 2",NA,"N","N","N","HGNC:19141","TTBK2","CK1","TTBK",NA,NA,NA,NA,NA,"CK1",NA
+"ENSG00000112742","TTK","TTK protein kinase",NA,"N","N","N","HGNC:12401","TTK","Other","TTK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000155657","TTN","titin","Myosin light chain kinase family","Y","N","N","HGNC:12403","TTN","CAMK","MLCK",NA,NA,NA,NA,NA,"CAMK",NA
+"ENSG00000074966","TXK","TXK tyrosine kinase","Tec family tyrosine kinases","Y","N","N","HGNC:12434","TXK","TK","Tec",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000105397","TYK2","tyrosine kinase 2","Jak family tyrosine kinases","Y","N","N","HGNC:12440","TYK2","TK","JakA",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000092445","TYRO3","TYRO3 protein tyrosine kinase","Receptor tyrosine kinases","Y","N","N","HGNC:12446","TYRO3","TK","Axl",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000130717","UCK1","uridine-cytidine kinase 1",NA,"N","Y","N","HGNC:14859","UCK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000143179","UCK2","uridine-cytidine kinase 2",NA,"N","Y","N","HGNC:12562","UCK2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000198276","UCKL1","uridine-cytidine kinase 1 like 1",NA,"N","Y","N","HGNC:15938","UCKL1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000152332","UHMK1","U2AF homology motif kinase 1",NA,"N","N","N","HGNC:19683","UHMK1",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000177169","ULK1","unc-51 like autophagy activating kinase 1",NA,"N","N","N","HGNC:12558","ULK1","Other","ULK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000083290","ULK2","unc-51 like autophagy activating kinase 2",NA,"N","N","N","HGNC:13480","ULK2","Other","ULK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000140474","ULK3","unc-51 like kinase 3",NA,"N","N","N","HGNC:19703","ULK3","Other","ULK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000168038","ULK4","unc-51 like kinase 4",NA,"N","N","N","HGNC:15784","ULK4","Other","ULK",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000100749","VRK1","VRK serine/threonine kinase 1",NA,"N","N","N","HGNC:12718","VRK1","CK1","VRK",NA,NA,NA,NA,NA,"CK1",NA
+"ENSG00000028116","VRK2","VRK serine/threonine kinase 2",NA,"N","N","N","HGNC:12719","VRK2","CK1","VRK",NA,NA,NA,NA,NA,"CK1",NA
+"ENSG00000105053","VRK3","VRK serine/threonine kinase 3",NA,"N","N","N","HGNC:18996","VRK3","CK1","VRK",NA,NA,NA,NA,NA,"CK1",NA
+"ENSG00000123154","WDR83","WD repeat domain 83",NA,"N","N","N","HGNC:32672","WDR83",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000166483","WEE1","WEE1 G2 checkpoint kinase",NA,"N","N","N","HGNC:12761","WEE1","Other","WEE",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000214102","WEE2","WEE2 oocyte meiosis inhibiting kinase",NA,"N","N","N","HGNC:19684","WEE2",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000226033","WHR1","winged helix repair factor 1",NA,"N","N","N",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000060237","WNK1","WNK lysine deficient protein kinase 1","WNK lysine deficient protein kinases","Y","N","N","HGNC:14540","WNK1","Other","Wnk",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000165238","WNK2","WNK lysine deficient protein kinase 2","WNK lysine deficient protein kinases","Y","N","N","HGNC:14542","WNK2","Other","Wnk",NA,"WNK2","Other","WNK",NA,"Other","Other"
+"ENSG00000196632","WNK3","WNK lysine deficient protein kinase 3","WNK lysine deficient protein kinases","Y","N","N","HGNC:14543","WNK3","Other","Wnk",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000126562","WNK4","WNK lysine deficient protein kinase 4","WNK lysine deficient protein kinases","Y","N","N","HGNC:14544","WNK4","Other","Wnk",NA,NA,NA,NA,NA,"Other",NA
+"ENSG00000093217","XYLB","xylulokinase",NA,"N","N","N","HGNC:12839","XYLB",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000176105","YES1","YES proto-oncogene 1, Src family tyrosine kinase","Src family tyrosine kinases","Y","N","N","HGNC:12841","YES1","TK","Src",NA,NA,NA,NA,NA,"TK",NA
+"ENSG00000164924","YWHAZ","tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein zeta",NA,"N","N","N","HGNC:12855","YWHAZ",NA,NA,NA,NA,NA,NA,NA,NA,NA
+"ENSG00000115085","ZAP70","zeta chain of T cell receptor associated protein kinase 70","Syk family tyrosine kinases","Y","N","N","HGNC:12858","ZAP70","TK","Syk",NA,NA,NA,NA,NA,"TK",NA

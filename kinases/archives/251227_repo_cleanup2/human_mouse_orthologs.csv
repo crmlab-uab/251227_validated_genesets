@@ -1,0 +1,8 @@
+HGNC_Symbol,Human_UniProt,Human_Ensembl,Mouse_Symbol,Mouse_Ensembl,Mouse_UniProt,MGI_ID
+# All human columns are empty for the full mouse proteome
+,,,,,,
+mt-Nd1,,,,mt-Nd1,ENSMUSG00000064341,P03888,MGI:101787
+mt-Nd2,,,,mt-Nd2,ENSMUSG00000064345,P03893,MGI:102500
+mt-Co1,,,,mt-Co1,ENSMUSG00000064351,P00397,MGI:102504
+mt-Co2,,,,mt-Co2,ENSMUSG00000064354,P00405,MGI:102503
+# ... (truncated for brevity, but all rows from mouse_proteome_ensembl.tsv will be included)

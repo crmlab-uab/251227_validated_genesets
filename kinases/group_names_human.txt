@@ -1,0 +1,127 @@
+5-bisphosphate 3-kinase catalytic subunit alpha"
+5-bisphosphate 3-kinase catalytic subunit beta"
+5-bisphosphate 3-kinase catalytic subunit delta"
+5-bisphosphate 3-kinase catalytic subunit gamma"
+6-biphosphatase 1"
+6-biphosphatase 2"
+6-biphosphatase 3"
+6-biphosphatase 4"
+Adenylate kinases
+A-kinase anchoring proteins
+AKT kinase family
+ aspartate transcarbamylase
+Aurora kinase family
+BR serine/threonine kinases
+BUB1 mitotic checkpoint serine/threonine kinase family
+C2 domain containing protein kinases
+Casein kinase 1 family
+CDC42 binding protein kinase family
+CDC7 kinase family
+CDC like kinases
+CDK activating kinase complex
+Checkpoint kinase 1 family
+Checkpoint kinase 2 family
+Choline kinase family
+"CILK1
+Creatine kinase family
+Csk family tyrosine kinases
+Cyclin dependent kinases
+ cytoplasmic"
+ cytoskeletal associated protein"
+ cytoskeletal calmodulin and titin-interacting RhoGEF"
+Death associated protein kinases
+Deoxyribonucleoside kinases
+Diacylglycerol kinases
+DMPK kinase family
+ DNA-activated
+Doublecortin like kinase family
+Dual-specificity tyrosine-regulated kinase family
+Erb-b2 receptor tyrosine kinases
+Ethanolamine kinase family
+Eukaryotic translation initiation factor 2 alpha kinases
+Fes family tyrosine kinases
+ FYVE-type zinc finger containing"
+Glycerol kinase family
+Glycogen synthase kinase 3 family
+Golgi associated kinase family
+G protein-coupled receptor kinase family
+Hexokinase family
+Homeodomain interacting protein kinase family
+HUNK family kinases
+I kappa B kinases
+ intercellular bridge forming factor"
+Jak family tyrosine kinases
+ kinase-activating pseudokinase 1"
+Large tumor suppressor kinase family
+LIMK/TESK kinase family
+ liver type"
+MAPK activated protein kinases
+MAPK interacting serine/threonine kinase family
+MELK family kinases
+Membrane associated guanylate kinases
+ membrane associated tyrosine/threonine 1"
+ Mg2+/Mn2+ dependent 1D"
+Microtubule affinity regulating kinases
+Microtubule associated serine/threonine kinase family
+ mitochondrial"
+ mitochondrial 1A"
+ mitochondrial 1B"
+ mitochondrial 2"
+Mitogen-activated protein kinase kinase kinase kinases
+Mitogen-activated protein kinase kinase kinases
+Mitogen-activated protein kinase kinases
+Mitogen-activated protein kinases
+ M-type"
+ muscle"
+Myosin light chain kinase family
+NIM1K family kinases
+NIMA related kinase family
+ non-receptor tyrosine kinase"
+NUAK family kinases
+Pantothenate kinase family
+PASK family kinases
+PEAK pseudokinase family
+Phosphatidylinositol 3-kinase family
+Phosphorylase kinase subunits
+PI4KA lipid kinase complex
+ platelet"
+Polo like kinase family
+Protein kinase A family
+Protein kinase AMP-activated catalytic subunit alpha family
+Protein kinase AMP-activated non-catalytic subunit gamma family
+Protein kinase A subunits
+Protein kinase C family
+Protein kinase D family
+Protein kinase G family
+Protein kinase N family
+Protein serine kinase H family
+PTK2 family tyrosine kinases
+PTK6 family tyrosine kinases
+ receptor tyrosine kinase"
+Receptor tyrosine kinases
+ retinal"
+Rho associated coiled-coil containing protein kinase family
+Ribosomal protein S6 kinase family
+SCY1 like pseudokinases
+ serine/threonine kinase"
+Serine/threonine kinase 32 family
+Serine/threonine kinase 38 family
+Serum/glucocorticoid regulated kinase family
+SIK family kinases
+SNRK family kinases
+Sphingosine kinase family
+ Src family tyrosine kinase"
+Src family tyrosine kinases
+SRSF protein kinase family
+STK11 family kinases
+STK33 family kinases
+Syk family tyrosine kinases
+Tec family tyrosine kinases
+Testis specific serine kinase family
+TNK family tyrosine kinases
+Tribbles pseudokinase family
+Type 1 receptor serine/threonine kinases
+Type 2 receptor serine/threonine kinases
+ tyrosine kinase"
+WNK lysine deficient protein kinases
+ WW and PDZ domain containing 2"

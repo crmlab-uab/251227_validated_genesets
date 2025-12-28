@@ -1,0 +1,9 @@
+Fetching KinHub human kinase table...
+No encoding supplied: defaulting to UTF-8.
+Parsed 476 human kinases from KinHub
+Mapping to mouse orthologs via BioMart...
+BioMart error:  HTTP 500 Internal Server Error. 
+Retrying in 30 seconds...
+BioMart failed after retry:  HTTP 500 Internal Server Error. 
+Error: BioMart mapping failed. No orthologs returned.
+Execution halted

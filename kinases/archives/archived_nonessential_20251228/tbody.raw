@@ -1,0 +1,232 @@
+  <tbody>
+    <tr>
+      <td>ABL1</td>
+      <td>ABL</td>
+      <td>ABL1</td>
+      <td>Tyrosine-protein kinase ABL1</td>
+      <td>TK</td>
+      <td>Abl</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/P00519" target="_blank">P00519</a></td>
+    </tr>
+    <tr>
+      <td>ACK</td>
+      <td>ACK</td>
+      <td>TNK2</td>
+      <td>Activated CDC42 kinase 1</td>
+      <td>TK</td>
+      <td>Ack</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/Q07912" target="_blank">Q07912</a></td>
+    </tr>
+    <tr>
+      <td>ACTR2</td>
+      <td>ACTR2</td>
+      <td>ACVR2A</td>
+      <td>Activin receptor type-2A</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR2</td>
+      <td><a href="http://www.uniprot.org/uniprot/P27037" target="_blank">P27037</a></td>
+    </tr>
+    <tr>
+      <td>ACTR2B</td>
+      <td>ACTR2B</td>
+      <td>ACVR2B</td>
+      <td>Activin receptor type-2B</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR2</td>
+      <td><a href="http://www.uniprot.org/uniprot/Q13705" target="_blank">Q13705</a></td>
+    </tr>
+    <tr>
+      <td>ADCK4</td>
+      <td>ADCK4</td>
+      <td>ADCK4</td>
+      <td>Uncharacterized aarF domain-containing protein kinase 4</td>
+      <td>Atypical</td>
+      <td>ABC1</td>
+      <td>ABC1-A</td>
+      <td><a href="http://www.uniprot.org/uniprot/Q96D53" target="_blank">Q96D53</a></td>
+    </tr>
+    <tr>
+      <td>Trb1</td>
+      <td>Trb1</td>
+      <td>TRIB1</td>
+      <td>Tribbles homolog 1</td>
+      <td>CAMK</td>
+      <td>Trbl</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/Q96RU8" target="_blank">Q96RU8</a></td>
+    </tr>
+    <tr>
+      <td>BRSK2</td>
+      <td>BRSK2</td>
+      <td>BRSK2</td>
+      <td>Serine/threonine-protein kinase BRSK2</td>
+      <td>CAMK</td>
+      <td>CAMKL</td>
+      <td>BRSK</td>
+      <td><a href="http://www.uniprot.org/uniprot/Q8IWQ3" target="_blank">Q8IWQ3</a></td>
+    </tr>
+    <tr>
+      <td>Wnk2</td>
+      <td>Wnk2</td>
+      <td>WNK2</td>
+      <td>Serine/threonine-protein kinase WNK2</td>
+      <td>Other</td>
+      <td>WNK</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/Q9Y3S1" target="_blank">Q9Y3S1</a></td>
+    </tr>
+    <tr>
+      <td>AKT1</td>
+      <td>AKT1</td>
+      <td>AKT1</td>
+      <td>RAC-alpha serine/threonine-protein kinase</td>
+      <td>AGC</td>
+      <td>Akt</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/P31749" target="_blank">P31749</a></td>
+    </tr>
+    <tr>
+      <td>AKT2</td>
+      <td>AKT2</td>
+      <td>AKT2</td>
+      <td>RAC-beta serine/threonine-protein kinase</td>
+      <td>AGC</td>
+      <td>Akt</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/P31751" target="_blank">P31751</a></td>
+    </tr>
+    <tr>
+      <td>AKT3</td>
+      <td>AKT3</td>
+      <td>AKT3</td>
+      <td>RAC-gamma serine/threonine-protein kinase</td>
+      <td>AGC</td>
+      <td>Akt</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/Q9Y243" target="_blank">Q9Y243</a></td>
+    </tr>
+    <tr>
+      <td>CaMK1g</td>
+      <td>CaMK1g</td>
+      <td>CAMK1G</td>
+      <td>Calcium/calmodulin-dependent protein kinase type 1G</td>
+      <td>CAMK</td>
+      <td>CAMK1</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/Q96NX5" target="_blank">Q96NX5</a></td>
+    </tr>
+    <tr>
+      <td>ALK</td>
+      <td>ALK</td>
+      <td>ALK</td>
+      <td>ALK tyrosine kinase receptor</td>
+      <td>TK</td>
+      <td>ALK</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/Q9UM73" target="_blank">Q9UM73</a></td>
+    </tr>
+    <tr>
+      <td>ALK1</td>
+      <td>ALK1</td>
+      <td>ACVRL1</td>
+      <td>Serine/threonine-protein kinase receptor R3</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR1</td>
+      <td><a href="http://www.uniprot.org/uniprot/P37023" target="_blank">P37023</a></td>
+    </tr>
+    <tr>
+      <td>ALK2</td>
+      <td>ALK2</td>
+      <td>ACVR1</td>
+      <td>Activin receptor type-1</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR1</td>
+      <td><a href="http://www.uniprot.org/uniprot/Q04771" target="_blank">Q04771</a></td>
+    </tr>
+    <tr>
+      <td>BMPR1A</td>
+      <td>BMPR1A</td>
+      <td>BMPR1A</td>
+      <td>Bone morphogenetic protein receptor type-1A</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR1</td>
+      <td><a href="http://www.uniprot.org/uniprot/P36894" target="_blank">P36894</a></td>
+    </tr>
+    <tr>
+      <td>ALK4</td>
+      <td>ALK4</td>
+      <td>ACVR1B</td>
+      <td>Activin receptor type-1B</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR1</td>
+      <td><a href="http://www.uniprot.org/uniprot/P36896" target="_blank">P36896</a></td>
+    </tr>
+    <tr>
+      <td>TGFbR1</td>
+      <td>TGFbR1</td>
+      <td>TGFBR1</td>
+      <td>TGF-beta receptor type-1</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR1</td>
+      <td><a href="http://www.uniprot.org/uniprot/P36897" target="_blank">P36897</a></td>
+    </tr>
+    <tr>
+      <td>BMPR1B</td>
+      <td>BMPR1B</td>
+      <td>BMPR1B</td>
+      <td>Bone morphogenetic protein receptor type-1B</td>
+      <td>TKL</td>
+      <td>STKR</td>
+      <td>STKR1</td>
+      <td><a href="http://www.uniprot.org/uniprot/O00238" target="_blank">O00238</a></td>
+    </tr>
+    <tr>
+      <td>AMPKa1</td>
+      <td>AMPKa1</td>
+      <td>PRKAA1</td>
+      <td>5'-AMP-activated protein kinase catalytic subunit alpha-1</td>
+      <td>CAMK</td>
+      <td>CAMKL</td>
+      <td>AMPK</td>
+      <td><a href="http://www.uniprot.org/uniprot/Q13131" target="_blank">Q13131</a></td>
+    </tr>
+    <tr>
+      <td>AMPKa2</td>
+      <td>AMPKa2</td>
+      <td>PRKAA2</td>
+      <td>5'-AMP-activated protein kinase catalytic subunit alpha-2</td>
+      <td>CAMK</td>
+      <td>CAMKL</td>
+      <td>AMPK</td>
+      <td><a href="http://www.uniprot.org/uniprot/P54646" target="_blank">P54646</a></td>
+    </tr>
+    <tr>
+      <td>ANPa</td>
+      <td>ANPa</td>
+      <td>NPR1</td>
+      <td>Atrial natriuretic peptide receptor 1</td>
+      <td>RGC</td>
+      <td>RGC</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/P16066" target="_blank">P16066</a></td>
+    </tr>
+    <tr>
+      <td>ANPb</td>
+      <td>ANPb</td>
+      <td>NPR2</td>
+      <td>Atrial natriuretic peptide receptor 2</td>
+      <td>RGC</td>
+      <td>RGC</td>
+      <td></td>
+      <td><a href="http://www.uniprot.org/uniprot/P20594" target="_blank">P20594</a></td>
+    </tr>
+    <tr>
