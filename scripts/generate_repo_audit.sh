@@ -51,7 +51,7 @@ done < docs/file_inventory.txt
 cat >> "$out" <<'EOF'
 
 ## Summary Recommendations
-- Consolidate canonical files under `data/genesets/sources/` and `data/genesets/custom/` for project-specific sets.
+- Consolidate canonical files under `genesets/sources/` and `genesets/custom/` for project-specific sets.
 - Add per-file metadata and checksums (manifest present but expand entries).
 - Run downstream tools against `manifest.yaml` to centralize paths.
 - Add CI checks for parseability and checksum validation (optional networked tests separate).

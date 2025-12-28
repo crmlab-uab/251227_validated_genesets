@@ -3,11 +3,11 @@ name: Genesets validation
 on:
   push:
     paths:
-      - 'data/genesets/**'
+      - 'genesets/**'
       - '.github/workflows/genesets-validate.yaml'
   pull_request:
     paths:
-      - 'data/genesets/**'
+      - 'genesets/**'
 
 jobs:
   validate:
@@ -24,7 +24,7 @@ jobs:
         run: |
           python - <<'PY'
           import yaml,hashlib,sys,os
-          m = yaml.safe_load(open('data/genesets/manifest.yaml'))
+          m = yaml.safe_load(open('genesets/manifest.yaml'))
           ok = True
           for e in m.get('files', []):
               path = e['path']

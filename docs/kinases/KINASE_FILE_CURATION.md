@@ -158,16 +158,16 @@
 
 ```bash
 # Backup original
-cp data/genesets/custom/201006_composite_kinases.csv \
-   data/genesets/custom/201006_composite_kinases.csv.original
+cp genesets/custom/201006_composite_kinases.csv \
+   genesets/custom/201006_composite_kinases.csv.original
 
 # Remove non-kinases
 grep -vE "^(Blvra|Cert1|Brd2|Brd3|Brd4|Brdt|Baz1a|Baz1b|Gtf2f1|Trim24|Trim28|Trim33|Trim66|Rnasel|Fastk|Fastkd5|Pan3|Nrbp1|Nrbp2)," \
-  data/genesets/custom/201006_composite_kinases.csv.original \
-  > data/genesets/custom/201006_composite_kinases_curated.csv
+  genesets/custom/201006_composite_kinases.csv.original \
+  > genesets/custom/201006_composite_kinases_curated.csv
 
 # Verify count
-wc -l data/genesets/custom/201006_composite_kinases_curated.csv
+wc -l genesets/custom/201006_composite_kinases_curated.csv
 # Should show: 540 lines (1 header + 539 genes)
 ```
 

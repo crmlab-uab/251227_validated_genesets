@@ -49,8 +49,8 @@ This repository contains **independently validated gene sets** for use in RNA-se
 
 ```bash
 # From your analysis repo (e.g., 251207_mNSC)
-cp /data/251227_validated_genesets/kinases/*.csv data/genesets/
-cp /data/251227_validated_genesets/pathways/*.gmt data/genesets/custom/
+cp /data/251227_validated_genesets/kinases/*.csv genesets/
+cp /data/251227_validated_genesets/pathways/*.gmt genesets/custom/
 
 # Generate checksums for verification
 cd data/genesets
@@ -62,9 +62,9 @@ md5sum *.csv custom/*.gmt > ../docs/geneset_checksums.txt
 ```yaml
 # config.yaml
 custom_gmt_files:
-  - "data/genesets/custom/VERHAAK_GBM_Subtypes.gmt"
+  - "genesets/custom/VERHAAK_GBM_Subtypes.gmt"
 
-kinase_list: "data/genesets/201006_composite_kinases_curated.csv"
+kinase_list: "genesets/201006_composite_kinases_curated.csv"
 ```
 
 ### 3. Verify checksums before analysis

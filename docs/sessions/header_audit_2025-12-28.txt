@@ -36,8 +36,8 @@ Files scanned:
   - /data/bRNA3F/archives/deprecated_251225_root_docs/test_logging_cleanup.R
   - /data/bRNA3F/debug_networks.R
   - /data/bRNA3F/run_analysis.sh
-  - /data/bRNA3F/data/genesets/custom/validate_kinome.R
-  - /data/bRNA3F/data/genesets/custom/comprehensive_kinase_validation.R
+  - /data/bRNA3F/genesets/custom/validate_kinome.R
+  - /data/bRNA3F/genesets/custom/comprehensive_kinase_validation.R
   - /data/bRNA3F/docs/scripts_tools/refresh_diagrams.sh
   - /data/bRNA3F/docs/scripts_tools/analyze_function_calls.R
   - /data/bRNA3F/docs/scripts_tools/extract_pipeline_structure.R
