@@ -17,17 +17,11 @@ run_step <- function(script, args = character()) {
 # default species
 species <- ifelse(!is.null(cfg$species), cfg$species, "human")
 
-if (isTRUE(cfg$steps$build)) {
-  run_step("kinases/build_kinome_annotation.R", c("--species", species))
-}
-if (isTRUE(cfg$steps$annotate_manning)) {
-  run_step("kinases/add_manning_annotation.R")
-}
-if (isTRUE(cfg$steps$augment_aliases)) {
-  run_step("kinases/augment_matching_with_aliases.R")
-}
-if (isTRUE(cfg$steps$merge_kinhub)) {
-  run_step("kinases/fetch_kinhub_and_merge.R")
+if (isTRUE(cfg$steps$build) || isTRUE(cfg$steps$annotate_manning) || isTRUE(cfg$steps$augment_aliases) || isTRUE(cfg$steps$merge_kinhub)) {
+  # prefer consolidated function-driven orchestrator that implements desired ordering
+  run_step("kinases/run_pipeline_functions.R")
+} else {
+  cat("No steps enabled in genesets_config.yaml; nothing to run.\n")
 }
 
 cat("Pipeline completed.\n")
