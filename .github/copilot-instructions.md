@@ -1,12 +1,9 @@
-````instructions
-# bRNA3F AI Coding Agent Instructions - PRIMARY DEVELOPMENT REPOSITORY
+# Copilot instructions — analysis repo
 
-## Project Overview
+This repository uses the canonical copilot instructions maintained in the bRNA3F template repository.
 
-**Repository Purpose**: This is the **PRIMARY PIPELINE DEVELOPMENT REPOSITORY** for bRNA3F. All pipeline development, bug fixes, new features, and refactoring happen here first. Analysis repositories (like `/data/251207_mNSC`) pull updates from this repo and apply them to specific datasets.
+Canonical source: /data/bRNA3F/.github/copilot-instructions.md
 
-**Pipeline Description**: bRNA3F is an enterprise-grade RNA-seq analysis template combining DESeq2 differential expression with clusterProfiler GSEA. Processes Salmon quantifications through a modular R/RMarkdown architecture with automated MSigDB integration.
+Local overrides: none
 
-... (copied from template repo)
-
-````
+If you need to update the authoritative instructions, edit the template file above and propagate changes to analysis repos via the repository sync workflow described in the template.
