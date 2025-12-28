@@ -171,6 +171,14 @@ wc -l data/genesets/custom/201006_composite_kinases_curated.csv
 # Should show: 540 lines (1 header + 539 genes)
 ```
 
+### Artifacts
+
+- **Curated CSV:** `kinases/data/201006_composite_kinases_curated.csv` (539 genes)
+- **Removed symbols list:** `kinases/data/201006_composite_kinases_removed_rows.txt` (19 symbols)
+- **Unified diff (original → curated):** `kinases/data/201006_composite_kinases.diff`
+
+These files are included in the repository under `kinases/data/` for provenance and review.
+
 ### Update Documentation
 
 Update `KINASE_ANALYSIS.md`:
