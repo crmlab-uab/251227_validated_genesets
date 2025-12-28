@@ -9,11 +9,12 @@
 
 **CRITICAL FINDING**: The file contains **at least 14 genes that are NOT kinases** and should be removed.
 
-- **Total genes**: 558
+- **Original total genes**: 558
+- **Curated total genes**: 539
 - **Validated kinases**: ~495 (89%)
 - **Unvalidated**: 42 genes (7.5%) - but includes EGFR, AKT1-3, BRAF, etc. (validation flags broken)
 - **Confirmed non-kinases**: 14 genes identified
-- **Recommended removal**: 14 genes
+- **Recommended removal**: 19 genes
 
 ---
 
