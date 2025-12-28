@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # Generic import/merge for validation sources (CSV, GMT, webpage-derived mappings)
-# Scans `val_sources/` directory for files and merges any CSV mappings into the main kinases table.
+# Scans `val_sources/` directory for files and merges any CSV mappings into the main sources table (baseline: kinases_human.csv).
 
 suppressWarnings(suppressMessages({
   library(data.table)
@@ -33,7 +33,7 @@ kin_file <- "kinases_human.csv"
 if (!file.exists(kin_file)) {
   if (file.exists(file.path("kinases", "kinases_human.csv"))) kin_file <- file.path("kinases", "kinases_human.csv")
 }
-if (!file.exists(kin_file)) stop("kinases_human.csv not found (expected kinases/kinases_human.csv)")
+if (!file.exists(kin_file)) stop("Sources baseline kinases_human.csv not found (expected kinases/kinases_human.csv)\nPlease run the builder to regenerate kinases_human.csv and retry.")
 kin <- fread(kin_file, na.strings=c("","NA"))
 
 merged <- copy(kin)

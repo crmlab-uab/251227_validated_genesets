@@ -61,7 +61,7 @@ hgnc_query <- function(sym_or_id) {
 }
 
 main <- function() {
-  # work in the kinases folder (script expected to be placed in that folder)
+  # work in the kinases folder (script expected to be placed in that folder) — conceptual 'sources' pipeline
   kin_dir <- normalizePath(".", mustWork = TRUE)
   setwd(kin_dir)
 
@@ -86,8 +86,8 @@ main <- function() {
     cat("Skipping alias/Ensembl augmentation per genesets_config.yaml\n")
     quit(status=0)
   }
-  if (!file.exists(kin_f)) stop("kinases_human.csv not found in working dir")
-  if (!file.exists(manning_f)) stop("manning_2002_TableS1.csv not found in working dir")
+  if (!file.exists(kin_f)) stop("Sources baseline kinases_human.csv not found in working dir: ", kin_f)
+  if (!file.exists(manning_f)) stop("Manning file not found in working dir: ", manning_f)
 
   kin <- fread(kin_f, na.strings=c("","NA"))
   man <- fread(manning_f, na.strings=c("","NA"))

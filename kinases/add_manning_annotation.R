@@ -26,7 +26,7 @@ if (!cfg_get("steps.annotate_manning", TRUE)) {
   quit(status=0)
 }
 
-# Merge Manning classification into kinases_human.csv
+# Merge Manning classification into sources baseline (kinases_human.csv)
 suppressWarnings(suppressMessages({
   library(data.table)
   library(lubridate)
@@ -38,7 +38,7 @@ cat("Working dir:", getwd(), "\n")
 manning_file <- manning_f
 kin_file <- kin_f
 if (!file.exists(manning_file)) stop("Manning file not found: ", manning_file)
-if (!file.exists(kin_file)) stop("Kinases file not found: ", kin_file)
+if (!file.exists(kin_file)) stop("Sources file not found: ", kin_file)
 # Read
 manning <- fread(manning_file, na.strings=c("", "NA"), showProgress=FALSE)
 kin <- fread(kin_file, na.strings=c("", "NA"), showProgress=FALSE)

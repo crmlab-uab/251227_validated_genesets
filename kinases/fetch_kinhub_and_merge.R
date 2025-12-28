@@ -59,7 +59,7 @@ for(sym in unique_syms){
 # merge back
 km2 <- merge(km, sym_map, by="HGNC", all.x=TRUE)
 fwrite(km2, "kinhub_mapping.csv")
-# Now merge with kinases_human.csv by ensembl_gene_id
+# Now merge with sources baseline (kinases_human.csv) by ensembl_gene_id
 kin <- fread(kin_f, na.strings=c("","NA"))
 # standardize ensembl ids
 kin[, ensembl_gene_id := toupper(trimws(ensembl_gene_id))]
@@ -71,6 +71,7 @@ merged[, kh_group := ifelse(is.na(Group), NA_character_, Group)]
 # counts
 total <- nrow(merged)
 matched_khub <- sum(!is.na(merged$kh_group))
+# Report status (sources merged)
 cat(sprintf("Total rows: %d\nRows matched to kinhub by Ensembl: %d\n", total, matched_khub))
 # list conflicts where both present and differ
 conflicts <- merged[!is.na(kin_group) & !is.na(kh_group) & kin_group!=kh_group, .(external_gene_name, ensembl_gene_id, kin_group, kh_group)]
@@ -78,4 +79,4 @@ cat(sprintf("Conflicts (group) count: %d\n", nrow(conflicts)))
 if(nrow(conflicts)>0) print(head(conflicts,20))
 # write merged file with kinhub fields prefixed
 write.csv(merged, file="kinases_human.with_kinhub.csv", row.names=FALSE)
-cat("Wrote kinases_human.with_kinhub.csv and kinhub_mapping.csv\n")
+cat("Wrote kinases_human.with_kinhub.csv and kinhub_mapping.csv (KinHub fields merged into sources baseline)\n")
