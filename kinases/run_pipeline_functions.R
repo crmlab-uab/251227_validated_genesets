@@ -27,7 +27,8 @@ genes <- map_hgnc(genes, cache_file=cache_file)
 fwrite(genes, cfg_get("outputs.mapped_hgnc", "kinases/kinases_mapped_hgnc.csv"))
 
 cat("Step: augment_aliases (before Manning)\n")
-manning_file <- cfg_get("input_files.manning", "kinases/manning_2002_TableS1.csv")
+# Manning CSV now located in kinases/data/
+manning_file <- cfg_get("input_files.manning", "kinases/data/manning_2002_TableS1.csv")
 if (file.exists(manning_file)) {
   man <- fread(manning_file)
 } else man <- data.table()
