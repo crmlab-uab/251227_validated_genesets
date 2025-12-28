@@ -1,4 +1,0 @@
-path: data/genesets/curated/kinases/kinases_raw_fetch.csv
-date: 2025-12-28
-curator: automated_curation@repo
-notes: 'Canonical curated kinases file'

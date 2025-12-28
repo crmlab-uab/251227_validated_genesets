@@ -1,5 +1,0 @@
-source: composite_kinases_201006
-curator: automated_curation@repo
-date: 2025-12-28
-version: v20251228
-notes: "Removed 19 non-kinases as described in kinases/docs/KINASE_FILE_CURATION.md"

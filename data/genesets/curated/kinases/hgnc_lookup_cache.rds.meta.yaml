@@ -1,4 +1,0 @@
-path: data/genesets/curated/kinases/hgnc_lookup_cache.rds
-date: 2025-12-28
-curator: automated_curation@repo
-notes: 'Canonical curated kinases file'
