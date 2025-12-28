@@ -1,4 +1,4 @@
-path: data/genesets/curated/kinases/201006_composite_kinases_curated.csv
+path: data/genesets/curated/kinases/kinases_with_manning.csv
 date: 2025-12-28
 curator: automated_curation@repo
 notes: 'Canonical curated kinases file'
