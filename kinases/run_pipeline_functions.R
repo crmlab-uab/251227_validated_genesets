@@ -43,13 +43,16 @@ cat("Step: dedupe\n")
 genes <- dedupe_genes(genes)
 fwrite(genes, cfg_get("outputs.final", "kinases/kinases_human.csv"))
 
-if (isTRUE(cfg$steps$merge_kinhub)) {
-  cat("Step: merge_kinhub\n")
-  if (file.exists(cfg_get("resources.kinhub_page", "kinases/kinhub_page.html"))) {
-    kh <- fread("kinases/kinhub_mapping.csv")
-    merged <- merge_kinhub_dt(genes, kh)
-    fwrite(merged, "kinases/kinases_human.with_kinhub.csv")
-  } else cat("KinHub resources missing; skipping\n")
+if (isTRUE(cfg$steps$merge_val_sources)) {
+  cat("Step: merge_val_sources\n")
+  # default val_sources dir
+  val_dir <- cfg_get("resources.val_sources_dir", "kinases/val_sources")
+  if (dir.exists(val_dir)) {
+    # delegate to fetch_val_sources_and_merge.R which handles CSV/GMT/HTML inputs
+    source(file.path("kinases", "fetch_val_sources_and_merge.R"))
+  } else {
+    cat("Validation sources directory missing; skipping merge_val_sources\n")
+  }
 }
 
 cat("Exporting GMT\n")
