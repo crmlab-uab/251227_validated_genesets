@@ -23,6 +23,11 @@ This directory provides a fully reproducible workflow for generating authoritati
 - Annotates metabolic and lipid kinases using KEGG and org.*.eg.db
 - All code and outputs are version-controlled and archived
 
+- Supports additional validation sources via `kinases/val_sources/` (CSV, GMT, HTML).
+  - CSVs are merged by Ensembl ID or gene symbol when possible.
+  - GMTs are parsed; gene sets are attached as a `val_sources` annotation.
+  - HTML pages containing KinHub data will be delegated to the KinHub parser when the filename contains `kinhub`; otherwise the first HTML table is attempted.
+
 ## Directory Structure
 - `build_kinome_annotation.R` — Main script
 - `kinases_mouse.csv`, `kinases_human.csv` — Final outputs

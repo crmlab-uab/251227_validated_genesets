@@ -23,3 +23,9 @@ Rscript run_genesets_pipeline.R
 Notes:
 - Each script still has sensible defaults so they can be run individually without the config file.
 - HGNC REST calls are cached in `kinases/hgnc_lookup_cache.rds` when created.
+
+Validation sources:
+- Place validation files (CSV, GMT, or HTML) in `kinases/val_sources/`.
+- CSVs will be merged automatically by Ensembl ID or gene symbol when possible.
+- GMTs will be parsed and merged by gene symbol (adds `val_sources` column).
+- HTML pages with KinHub content will be delegated to the KinHub parser if detected (filename contains `kinhub`), otherwise the first HTML table is attempted.
