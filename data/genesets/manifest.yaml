@@ -1,0 +1,6 @@
+files:
+  - path: data/genesets/sources/kinases/201006_composite_kinases_curated.csv
+    version: v20251228
+    date: 2025-12-28
+    checksum_file: data/genesets/sources/kinases/201006_composite_kinases_curated.csv.md5
+    notes: "Curated kinases composite (539 genes)"
