@@ -29,8 +29,8 @@ files:
     source: 'Manning et al. 2002'
     source_url: 'https://science.sciencemag.org/content/298/5600/1912'
     notes: 'Consolidated kinases source file'
-  - path: data/genesets/custom/kinases/201006_composite_kinases_curated.csv
-    checksum_file: data/genesets/custom/kinases/201006_composite_kinases_curated.csv.md5
+  - path: data/genesets/curated/kinases/201006_composite_kinases_curated.csv
+    checksum_file: data/genesets/curated/kinases/201006_composite_kinases_curated.csv.md5
     date: 2025-12-28
     source: custom
     notes: 'Project-specific gene set'

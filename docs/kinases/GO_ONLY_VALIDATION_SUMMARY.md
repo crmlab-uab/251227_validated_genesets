@@ -5,10 +5,10 @@
 
 ## Final Status
 
-**Total kinases**: 538 (after removing hEGFR and Cdk11a)  
+**Total sources (kinases)**: 538 (after removing hEGFR and Cdk11a)  
 **Genome validated**: 538 (100% - all found in GENCODE vM37)  
 **GO kinase validated**: 528 (98.1%)  
-**Unvalidated**: 10 kinases  
+**Unvalidated**: 10 sources  
 
 ##Actions Taken
 

@@ -38,7 +38,7 @@
 - **GO Validation**: None (expected - not kinases)
 - **Disposition**: **PSEUDOKINASES** - retain for signaling scaffold research
 
-## Kinases Requiring Manual Review
+## Sources Requiring Manual Review (kinase activity uncertain)
 
 ### Abr (ABR)
 - **Name**: Active breakpoint cluster region-related protein
@@ -82,7 +82,7 @@
 
 ## Summary Statistics
 
-**Original list**: 540 kinases  
+**Original list**: 540 sources (kinases)  
 **hEGFR removed**: 539 remaining  
 **Confirmed pseudokinases**: 6 (Mlkl, Plk5, Ptk7, Trib1, Trib2, Trib3)  
 **Under review**: 5 (Abr, Cilk1, Stk19, Tbck, Trrap)  

@@ -28,6 +28,7 @@ hgnc_query_cached <- function(query, cache_file="kinases/hgnc_lookup_cache.rds")
     j <- fromJSON(rawToChar(resp$content), simplifyVector=TRUE)
     if (!is.null(j$response$docs) && length(j$response$docs)>=1) {
       doc <- j$response$docs[[1]]
+      if (!is.list(doc)) doc <- as.list(doc)
       out$symbol <- ifelse(!is.null(doc$symbol), doc$symbol, NA)
       out$hgnc_id <- ifelse(!is.null(doc$hgnc_id), doc$hgnc_id, NA)
       out$aliases <- ifelse(!is.null(doc$alias_symbol), doc$alias_symbol, character())
@@ -42,6 +43,7 @@ hgnc_query_cached <- function(query, cache_file="kinases/hgnc_lookup_cache.rds")
       j2 <- fromJSON(rawToChar(resp2$content), simplifyVector=TRUE)
       if (!is.null(j2$response$docs) && length(j2$response$docs)>=1) {
         doc <- j2$response$docs[[1]]
+        if (!is.list(doc)) doc <- as.list(doc)
         out$symbol <- ifelse(!is.null(doc$symbol), doc$symbol, out$symbol)
         out$hgnc_id <- ifelse(!is.null(doc$hgnc_id), doc$hgnc_id, out$hgnc_id)
         out$aliases <- unique(c(out$aliases, ifelse(!is.null(doc$alias_symbol), doc$alias_symbol, character())))

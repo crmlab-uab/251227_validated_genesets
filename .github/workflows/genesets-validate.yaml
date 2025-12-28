@@ -1,0 +1,69 @@
+name: Genesets validation
+
+on:
+  push:
+    paths:
+      - 'data/genesets/**'
+      - '.github/workflows/genesets-validate.yaml'
+  pull_request:
+    paths:
+      - 'data/genesets/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Validate manifest checksums and parse files
+        run: |
+          python - <<'PY'
+          import yaml,hashlib,sys,os
+          m = yaml.safe_load(open('data/genesets/manifest.yaml'))
+          ok = True
+          for e in m.get('files', []):
+              path = e['path']
+              if not os.path.exists(path):
+                  print('MISSING:', path)
+                  ok = False
+                  continue
+              # checksum
+              h = hashlib.md5(open(path,'rb').read()).hexdigest()
+              chkfile = e.get('checksum_file')
+              if chkfile and os.path.exists(chkfile):
+                  expected = open(chkfile).read().split()[0]
+                  if h != expected:
+                      print('CHECKSUM MISMATCH:', path)
+                      ok = False
+              else:
+                  print('MISSING CHECKSUM FILE:', chkfile)
+                  ok = False
+              # basic parse check
+              if path.lower().endswith('.csv') or path.lower().endswith('.tsv'):
+                  try:
+                      with open(path, encoding='utf-8') as fh:
+                          hdr = fh.readline().strip()
+                          if not hdr:
+                              print('EMPTY HEADER:', path)
+                              ok = False
+                  except Exception as ex:
+                      print('CSV PARSE ERROR', path, ex)
+                      ok = False
+              if path.lower().endswith('.gmt'):
+                  try:
+                      cnt = sum(1 for _ in open(path, encoding='utf-8'))
+                      if cnt == 0:
+                          print('EMPTY GMT:', path)
+                          ok = False
+                  except Exception as ex:
+                      print('GMT PARSE ERROR', path, ex)
+                      ok = False
+          if not ok:
+              sys.exit(1)
+          print('Manifest validated successfully')
+          PY

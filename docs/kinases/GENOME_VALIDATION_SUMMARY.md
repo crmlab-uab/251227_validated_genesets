@@ -6,7 +6,7 @@
 
 ## Results
 
-**Total kinases**: 539  
+**Total sources (kinases)**: 539  
 **Found in genome**: 538 (99.8%)  
 **Protein-coding**: 538 (100% of found)  
 **Not found**: 1
@@ -23,9 +23,9 @@
 - **Note**: Mouse has Cdk11b (MGI:88353) but NOT Cdk11a  
 - **Action**: Should be REMOVED from mouse source list
 
-## Unvalidated Kinases (GO Terms)
+## Unvalidated Sources (GO Terms)
 
-From previous validation, 11 kinases lack GO kinase evidence:
+From previous validation, 11 sources (kinases) lack GO kinase evidence:
 
 1. **Abr** - In genome ✓, needs literature validation
 2. **Cdk11a** - NOT in genome ✗, remove  

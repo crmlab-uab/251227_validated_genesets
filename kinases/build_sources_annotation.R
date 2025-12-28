@@ -74,6 +74,13 @@ suppressWarnings(suppressMessages({
   if (species == "mouse") library(org.Mm.eg.db)
 }))
 
+# Provide AnnotationDb object for downstream select() calls
+if (species == "human") {
+  orgdb <- org.Hs.eg.db
+} else {
+  orgdb <- org.Mm.eg.db
+}
+
 # 1. Fetch all protein-coding genes with kinase activity (GO:0004672, GO:0004674, GO:0016301, GO:0016773)
 mart <- useMart("ensembl", dataset=dataset)
 kinase_go_terms <- c("GO:0004672", "GO:0004674", "GO:0016301", "GO:0016773")
