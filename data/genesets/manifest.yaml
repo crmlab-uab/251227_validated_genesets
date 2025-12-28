@@ -1,6 +1,21 @@
 files:
   - path: data/genesets/sources/kinases/201006_composite_kinases_curated.csv
-    version: v20251228
-    date: 2025-12-28
     checksum_file: data/genesets/sources/kinases/201006_composite_kinases_curated.csv.md5
-    notes: "Curated kinases composite (539 genes)"
+    date: 2025-12-28
+    notes: 'Consolidated kinases source file'
+  - path: data/genesets/sources/kinases/201006_composite_kinases.diff
+    checksum_file: data/genesets/sources/kinases/201006_composite_kinases.diff.md5
+    date: 2025-12-28
+    notes: 'Consolidated kinases source file'
+  - path: data/genesets/sources/kinases/201006_composite_kinases_removed_rows.txt
+    checksum_file: data/genesets/sources/kinases/201006_composite_kinases_removed_rows.txt.md5
+    date: 2025-12-28
+    notes: 'Consolidated kinases source file'
+  - path: data/genesets/sources/kinases/manning_2002_TableS1.csv
+    checksum_file: data/genesets/sources/kinases/manning_2002_TableS1.csv.md5
+    date: 2025-12-28
+    notes: 'Consolidated kinases source file'
+  - path: data/genesets/sources/kinases/manning_2002_TableS1.xls
+    checksum_file: data/genesets/sources/kinases/manning_2002_TableS1.xls.md5
+    date: 2025-12-28
+    notes: 'Consolidated kinases source file'
