@@ -1,6 +1,6 @@
 # Kinase Validation and Curation
 
-This directory contains scripts, curated data, and documentation for the comprehensive validation and annotation of the mouse kinome.
+This directory contains scripts, curated data, and documentation for the comprehensive validation and annotation of the mouse source (kinase) list.
 
 - All R scripts are in `scripts/`
 - All documentation and reports are in `docs/`

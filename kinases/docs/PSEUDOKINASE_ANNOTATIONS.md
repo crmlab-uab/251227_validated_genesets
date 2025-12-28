@@ -3,10 +3,10 @@
 **Created**: 2025-12-27 03:05 CST  
 **Author**: C. Ryan Miller, MD, PhD (rmiller@uab.edu)
 
-## Known Pseudokinases (Removed from Active Kinome)
+## Known Pseudokinases (Removed from Active Source List)
 
 ### hEGFR
-- **Status**: REMOVED from mouse kinome list
+- **Status**: REMOVED from mouse source list
 - **Reason**: Human gene, not mouse ortholog
 - **Action**: Deleted from 201006_composite_kinases_curated.csv
 

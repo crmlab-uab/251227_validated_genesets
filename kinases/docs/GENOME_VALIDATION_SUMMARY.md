@@ -21,7 +21,7 @@
 ### Cdk11a - Not in Mouse Genome
 - **Status**: Human gene CDC2L1/CDK11A has no mouse ortholog  
 - **Note**: Mouse has Cdk11b (MGI:88353) but NOT Cdk11a  
-- **Action**: Should be REMOVED from mouse kinome list
+- **Action**: Should be REMOVED from mouse source list
 
 ## Unvalidated Kinases (GO Terms)
 

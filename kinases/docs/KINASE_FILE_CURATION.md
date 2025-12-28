@@ -61,11 +61,11 @@
 | **Pan3** | Other | Deadenylase (ribonuclease) | REMOVE - NOT a kinase |
 | **Nrbp1** | Other | Nuclear receptor coactivator | REMOVE - NOT a kinase |
 | **Nrbp2** | Other | Nuclear receptor coactivator | REMOVE - NOT a kinase |
-| **Scyl1** | Other | Pseudokinase (inactive) | KEEP - pseudokinases are kinome members |
-| **Scyl2** | Other | Pseudokinase (inactive) | KEEP - pseudokinases are kinome members |
-| **Scyl3** | Other | Pseudokinase (inactive) | KEEP - pseudokinases are kinome members |
+| **Scyl1** | Other | Pseudokinase (inactive) | KEEP - pseudokinases are source (kinase) members |
+| **Scyl2** | Other | Pseudokinase (inactive) | KEEP - pseudokinases are source (kinase) members |
+| **Scyl3** | Other | Pseudokinase (inactive) | KEEP - pseudokinases are source (kinase) members |
 
-**Note on Pseudokinases**: Genes like Scyl1-3, Ilk, Trib1-3, Erbb3, Ulk4 lack catalytic activity but are legitimate kinome members with regulatory functions. **KEEP THESE**.
+**Note on Pseudokinases**: Genes like Scyl1-3, Ilk, Trib1-3, Erbb3, Ulk4 lack catalytic activity but are legitimate source (kinase) members with regulatory functions. **KEEP THESE**.
 
 ---
 
@@ -75,7 +75,7 @@
 - **Ilk** - Integrin-linked kinase (pseudokinase, scaffold function)
 - **Trib1/2/3** - Tribbles homologs (pseudokinases, proteasome recruitment)
 - **Erbb3** - Receptor tyrosine kinase erbB-3 (pseudokinase, heterodimerization)
-- **Ulk4** - ULK4 (disputed activity, but kinome member)
+ - **Ulk4** - ULK4 (disputed activity, but source (kinase) member)
 
 ### Metabolic Kinases (All Legitimate)
 - **All 31 metabolic kinases KEEP** - these have true kinase activity:
@@ -120,7 +120,7 @@
 
 3. **KEEP all 31 metabolic kinases** - confirmed catalytic activity
 
-4. **KEEP pseudokinases** - legitimate kinome members (Ilk, Trib1-3, Erbb3, Scyl1-3, Ulk4)
+4. **KEEP pseudokinases** - legitimate source (kinase) members (Ilk, Trib1-3, Erbb3, Scyl1-3, Ulk4)
 
 ### After Curation
 

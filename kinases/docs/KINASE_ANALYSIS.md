@@ -8,7 +8,7 @@
 
 ## Summary
 
-Comprehensive analysis of the mouse kinome annotation file used for stratifying DEGs by kinase expression.
+Comprehensive analysis of the mouse source (kinase) annotation file used for stratifying DEGs by kinase expression.
 
 ### Key Statistics
 
@@ -211,13 +211,13 @@ Create multiple gene sets based on Manning classification:
 gene_sets:
   custom_gmt_files:
     - "custom/VERHAAK_GBM_Subtypes.gmt"
-    - "custom/MOUSE_KINOME.gmt"  # All kinases + by-group sets
+    - "custom/MOUSE_SOURCE.gmt"  # All kinases + by-group sets
 ```
 
 ### Step 3: Automatic Pipeline Integration
 
 Pipeline will automatically:
-1. Load kinome gene sets during chunk 14 (cache-cleanup)
+1. Load source gene sets during chunk 14 (cache-cleanup)
 2. Include in enrichment analysis (GSEA + ORA)
 3. Generate kinase-specific enrichment plots
 4. Export kinase stratification in DEG results
