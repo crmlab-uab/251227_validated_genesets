@@ -9,6 +9,7 @@ Files added:
 Primary scripts (in `kinases/`):
 - `build_kinome_annotation.R` — query BioMart/KEGG/HGNC to build base kinome table. Use `--species` to set `human` or `mouse`.
 - `add_manning_annotation.R` — merge Manning Table S1 into the kinome table; uses HGNC REST for canonical symbols.
+	- Manning supplement CSV is located at `kinases/data/manning_2002_TableS1.csv` (default); you can override via `genesets_config.yaml`.
 - `augment_matching_with_aliases.R` — expand matching using HGNC aliases and Ensembl crosswalks (cached lookups).
 - `fetch_kinhub_and_merge.R` — optional KinHub scrape and merge.
 

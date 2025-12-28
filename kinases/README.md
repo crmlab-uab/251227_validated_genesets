@@ -26,6 +26,7 @@ This directory provides a fully reproducible workflow for generating authoritati
 ## Directory Structure
 - `build_kinome_annotation.R` — Main script
 - `kinases_mouse.csv`, `kinases_human.csv` — Final outputs
+ - Manning supplement CSV: `kinases/data/manning_2002_TableS1.csv` (moved from repo root)
 - `archives/` — All legacy scripts and intermediate files
 - `docs/` — Documentation (if present)
 
