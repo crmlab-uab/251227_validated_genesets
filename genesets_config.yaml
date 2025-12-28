@@ -2,12 +2,12 @@
 # Put this in the repo root to override defaults used by kinases scripts.
 
 input_files:
-  manning: "kinases/manning_2002_TableS1.csv"
-  base_gene_list: "kinases/kinases_human.csv"   # source / working table
+  manning: "kinases/data/manning_2002_TableS1.csv"
+  base_gene_list: null # path to an existing baseline table (optional)
 
 hgnc:
   use_rest: true
-  cache: "kinases/hgnc_lookup_cache.rds"
+  cache: "cache/hgnc_cache.rds"
 
 outputs:
   human: "kinases/kinases_human.csv"
@@ -18,8 +18,20 @@ steps:
   build: true
   annotate_manning: true
   augment_aliases: true
-  merge_kinhub: false
+  merge_val_sources: true
 
-# Optional: URLs or local paths for external resources
+# External validation/data sources to merge. Each entry may be a local path or URL.
+# Keys are logical names used by the pipeline; the importer recognizes file types.
+sources:
+  manning:
+    type: excel
+    path: "kinases/data/manning_2002_TableS1.xls"
+    prefer: true
+  kinhub:
+    type: html
+    path: "kinases/val_sources/kinhub_kinases.html"
+    prefer: false
+
+# Optional: URLs or local paths for other resources
 resources:
-  kinhub_page: "kinases/kinhub_page.html"
+  kinhub_page: "kinases/val_sources/kinhub_kinases.html"

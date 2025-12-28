@@ -7,14 +7,16 @@ suppressWarnings(suppressMessages({
   library(stringr)
   library(xml2)
   library(rvest)
+  library(readxl)
 }))
 
 wd <- normalizePath(".", mustWork=TRUE)
 setwd(wd)
 cat("Working dir:", wd, "\n")
 
-val_dir <- "val_sources"
-if (!dir.exists(val_dir)) {
+possible_dirs <- c("val_sources", file.path("kinases","val_sources"))
+val_dir <- possible_dirs[file.exists(possible_dirs)][1]
+if (is.na(val_dir) || !dir.exists(val_dir)) {
   cat("No val_sources directory found; skipping val_sources merge\n")
   quit(status = 0)
 }
@@ -26,9 +28,12 @@ if (length(files) == 0) {
   quit(status = 0)
 }
 
-# read main kinases file (default)
+# read main kinases file (default location inside kinases/)
 kin_file <- "kinases_human.csv"
-if (!file.exists(kin_file)) stop("kinases_human.csv not found in working dir")
+if (!file.exists(kin_file)) {
+  if (file.exists(file.path("kinases", "kinases_human.csv"))) kin_file <- file.path("kinases", "kinases_human.csv")
+}
+if (!file.exists(kin_file)) stop("kinases_human.csv not found (expected kinases/kinases_human.csv)")
 kin <- fread(kin_file, na.strings=c("","NA"))
 
 merged <- copy(kin)
@@ -58,6 +63,28 @@ for (f in files) {
     } else {
       cat("No suitable key found in", f, "— skipping merge\n")
     }
+  } else if (ext == "xls" || ext == "xlsx") {
+    # read Excel spreadsheet
+    dt <- tryCatch(as.data.table(readxl::read_excel(f)), error=function(e) NULL)
+    if (is.null(dt)) { cat("Failed to read excel", f, "\n"); next }
+    colnames(dt) <- trimws(colnames(dt))
+    key_by_ensembl <- intersect(tolower(colnames(dt)), c("ensembl","ensembl_gene_id","ensemblid"))
+    key_by_name <- intersect(tolower(colnames(dt)), c("name","symbol","gene","gene_symbol","external_gene_name"))
+    if (length(key_by_ensembl) > 0 && "ensembl_gene_id" %in% names(merged)) {
+      kcol <- names(dt)[which(tolower(names(dt))==key_by_ensembl[1])]
+      dt[, (kcol) := toupper(trimws(get(kcol)))]
+      merged[, ensembl_gene_id := toupper(trimws(ensembl_gene_id))]
+      merged <- merge(merged, dt, by.x = "ensembl_gene_id", by.y = kcol, all.x = TRUE, sort=FALSE, suffixes=c("",".vs"))
+      cat("Merged Excel by Ensembl using", kcol, "from", f, "\n")
+    } else if (length(key_by_name) > 0 && "external_gene_name" %in% names(merged)) {
+      kcol <- names(dt)[which(tolower(names(dt))==key_by_name[1])]
+      dt[, (kcol) := toupper(trimws(get(kcol)))]
+      merged[, external_gene_name := toupper(trimws(external_gene_name))]
+      merged <- merge(merged, dt, by.x = "external_gene_name", by.y = kcol, all.x = TRUE, sort=FALSE, suffixes=c("",".vs"))
+      cat("Merged Excel by gene symbol using", kcol, "from", f, "\n")
+    } else {
+      cat("No suitable key found in", f, "— skipping merge\n")
+    }
   } else if (ext == "gmt") {
     # parse GMT: <set_name> <description> <gene1> <gene2> ...
     lines <- readLines(f, warn = FALSE)
@@ -79,47 +106,66 @@ for (f in files) {
       cat("GMT merged:", f, "(added val_sources column)\n")
     }
   } else if (ext %in% c("html","htm")) {
-    # If filename indicates KinHub, delegate to KinHub-specific script
+    # Parse KinHub HTML specifically if filename indicates kinhub
     base <- tolower(basename(f))
-    if (grepl("kinhub", base) && file.exists(file.path("kinases","fetch_kinhub_and_merge.R"))) {
-      cat("Detected KinHub HTML — delegating to fetch_kinhub_and_merge.R\n")
+    doc <- tryCatch(read_html(f), error=function(e) NULL)
+    if (is.null(doc)) { cat("Failed to read HTML file:", f, "\n"); next }
+    # If KinHub, build kinhub_mapping_raw.tsv expected by KinHub merger
+    if (grepl("kinhub", base)) {
+      cat("Parsing KinHub HTML and creating kinases/kinhub_mapping_raw.tsv\n")
+      tables <- html_table(doc, fill=TRUE)
+      # try to find a table with headers including 'Kinase' or 'HGNC'
+      sel <- NULL
+      for (i in seq_along(tables)) {
+        h <- tolower(colnames(tables[[i]]))
+        if (any(grepl("kinase|hgnc|symbol", h))) { sel <- i; break }
+      }
+      if (is.null(sel)) sel <- 1
+      kt <- as.data.table(tables[[sel]])
+      # Heuristics: find symbol column
+      cn <- tolower(colnames(kt))
+      sym_col <- names(kt)[which(grepl("symbol|kinase|name|gene", cn))[1]]
+      group_col <- names(kt)[which(grepl("group|family|family name|group name", cn))[1]]
+      # Build mapping: HGNC (symbol), Group, Family, SubFamily (best-effort)
+      kt_up <- copy(kt)
+      if (!is.null(sym_col)) kt_up[, (sym_col) := toupper(trimws(get(sym_col)))]
+      out_km <- data.table(HGNC = if (!is.null(sym_col)) kt_up[[sym_col]] else NA_character_,
+                           Group = if (!is.null(group_col)) as.character(kt_up[[group_col]]) else NA_character_,
+                           Family = NA_character_,
+                           SubFamily = NA_character_)
+      fwrite(out_km, file = file.path("kinases","kinhub_mapping_raw.tsv"), sep = "\t", na = "")
+      cat("Wrote kinases/kinhub_mapping_raw.tsv (rows:", nrow(out_km), ")\n")
+      # Now call the existing KinHub merge script inside kinases/
       owd <- getwd()
       setwd("kinases")
-      if (!file.exists(basename(f))) file.copy(f, basename(f))
       tryCatch({ source("fetch_kinhub_and_merge.R") }, error=function(e) cat("KinHub script error:", e$message, "\n"))
       setwd(owd)
     } else {
-      # attempt to extract first HTML table as mapping
+      # Generic HTML table parsing
       cat("Attempting to parse HTML table from", f, "\n")
-      doc <- tryCatch(read_html(f), error=function(e) NULL)
-      if (!is.null(doc)) {
-        tabs <- html_table(doc, fill=TRUE)
-        if (length(tabs) >= 1) {
-          dt <- as.data.table(tabs[[1]])
-          # try same merging heuristics as CSVs
-          colnames(dt) <- trimws(colnames(dt))
-          key_by_ensembl <- intersect(tolower(colnames(dt)), c("ensembl","ensembl_gene_id","ensemblid"))
-          key_by_name <- intersect(tolower(colnames(dt)), c("name","symbol","gene","gene_symbol","external_gene_name"))
-          if (length(key_by_ensembl) > 0 && "ensembl_gene_id" %in% names(merged)) {
-            kcol <- names(dt)[which(tolower(names(dt))==key_by_ensembl[1])]
-            dt[, (kcol) := toupper(trimws(get(kcol)))]
-            merged[, ensembl_gene_id := toupper(trimws(ensembl_gene_id))]
-            merged <- merge(merged, dt, by.x = "ensembl_gene_id", by.y = kcol, all.x = TRUE, sort=FALSE, suffixes=c("",".vs"))
-            cat("Merged HTML table by Ensembl using", kcol, "from", f, "\n")
-          } else if (length(key_by_name) > 0 && "external_gene_name" %in% names(merged)) {
-            kcol <- names(dt)[which(tolower(names(dt))==key_by_name[1])]
-            dt[, (kcol) := toupper(trimws(get(kcol)))]
-            merged[, external_gene_name := toupper(trimws(external_gene_name))]
-            merged <- merge(merged, dt, by.x = "external_gene_name", by.y = kcol, all.x = TRUE, sort=FALSE, suffixes=c("",".vs"))
-            cat("Merged HTML table by gene symbol using", kcol, "from", f, "\n")
-          } else {
-            cat("No suitable key found in HTML table; skipping\n")
-          }
+      tabs <- html_table(doc, fill=TRUE)
+      if (length(tabs) >= 1) {
+        dt <- as.data.table(tabs[[1]])
+        colnames(dt) <- trimws(colnames(dt))
+        key_by_ensembl <- intersect(tolower(colnames(dt)), c("ensembl","ensembl_gene_id","ensemblid"))
+        key_by_name <- intersect(tolower(colnames(dt)), c("name","symbol","gene","gene_symbol","external_gene_name"))
+        if (length(key_by_ensembl) > 0 && "ensembl_gene_id" %in% names(merged)) {
+          kcol <- names(dt)[which(tolower(names(dt))==key_by_ensembl[1])]
+          dt[, (kcol) := toupper(trimws(get(kcol)))]
+          merged[, ensembl_gene_id := toupper(trimws(ensembl_gene_id))]
+          merged <- merge(merged, dt, by.x = "ensembl_gene_id", by.y = kcol, all.x = TRUE, sort=FALSE, suffixes=c("",".vs"))
+          cat("Merged HTML table by Ensembl using", kcol, "from", f, "\n")
+        } else if (length(key_by_name) > 0 && "external_gene_name" %in% names(merged)) {
+          kcol <- names(dt)[which(tolower(names(dt))==key_by_name[1])]
+          dt[, (kcol) := toupper(trimws(get(kcol)))]
+          merged[, external_gene_name := toupper(trimws(external_gene_name))]
+          merged <- merge(merged, dt, by.x = "external_gene_name", by.y = kcol, all.x = TRUE, sort=FALSE, suffixes=c("",".vs"))
+          cat("Merged HTML table by gene symbol using", kcol, "from", f, "\n")
         } else {
-          cat("No HTML tables found in", f, "\n")
+          cat("No suitable key found in HTML table; skipping\n")
         }
       } else {
-        cat("Failed to read HTML file:", f, "\n")
+        cat("No HTML tables found in", f, "\n")
       }
     }
   } else {
