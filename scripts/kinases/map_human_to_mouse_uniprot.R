@@ -6,7 +6,7 @@ library(UniProt.ws)
 library(parallel)
 
 # Load kinase list
-kinases <- fread('201006_composite_kinases_curated.csv', header=TRUE)
+kinases <- fread('genesets/curated/kinases/201006_composite_kinases_curated.csv', header=TRUE)
 
 
 

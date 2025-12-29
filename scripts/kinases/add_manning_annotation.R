@@ -18,7 +18,7 @@ cfg_get <- function(path, default) {
 # override input filenames from config
 kin_f <- cfg_get("input_files.base_gene_list", "kinases_human.csv")
 # Manning CSV moved into kinases/data/; default is relative to this script's working dir (kinases)
-manning_f <- cfg_get("input_files.manning", "data/manning_2002_TableS1.csv")
+manning_f <- cfg_get("input_files.manning", "genesets/curated/kinases/manning_2002_TableS1.csv")
 
 # Step guard: skip if annotate_manning is disabled
 if (!cfg_get("steps.annotate_manning", TRUE)) {

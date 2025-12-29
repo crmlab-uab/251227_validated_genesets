@@ -14,8 +14,9 @@ wd <- normalizePath(".", mustWork=TRUE)
 setwd(wd)
 cat("Working dir:", wd, "\n")
 
-possible_dirs <- c("val_sources", file.path("kinases","val_sources"))
-val_dir <- possible_dirs[file.exists(possible_dirs)][1]
+possible_dirs <- c("genesets/curated", "val_sources", file.path("kinases","val_sources"))
+found <- possible_dirs[file.exists(possible_dirs)]
+val_dir <- if (length(found) > 0) found[1] else NA
 if (is.na(val_dir) || !dir.exists(val_dir)) {
   cat("No val_sources directory found; skipping val_sources merge\n")
   quit(status = 0)

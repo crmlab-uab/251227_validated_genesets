@@ -4,7 +4,7 @@
 library(data.table)
 
 # Input files
-kinase_file <- '201006_composite_kinases_curated.csv'
+kinase_file <- 'genesets/curated/kinases/201006_composite_kinases_curated.csv'
 biomart_file <- '251227_curated_kinases_biomart.csv'
 uniprot_file <- 'uniprot_mouse_kinase_idmapping.tab'
 output_file <- '251227_curated_kinases_uniprot_validated.csv'

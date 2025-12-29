@@ -5,7 +5,7 @@ library(httr)
 library(data.table)
 
 # Load kinase gene symbols
-kinase_file <- '../201006_composite_kinases_curated.csv'
+kinase_file <- 'genesets/curated/kinases/201006_composite_kinases_curated.csv'
 kinases <- fread(kinase_file, header=TRUE)
 gene_symbols <- unique(na.omit(kinases$Mouse_Symbol))
 

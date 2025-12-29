@@ -17,7 +17,7 @@ cat("=== COMPREHENSIVE KINASE VALIDATION ===\n\n")
 cat("Loading kinase list...\n")
 
 # Read curated kinase list
-kinases <- fread("201006_composite_kinases_curated.csv", header = TRUE)
+kinases <- fread("genesets/curated/kinases/201006_composite_kinases_curated.csv", header = TRUE)
 colnames(kinases) <- c(
   "Mouse_Symbol", "xName", "Manning_Name", "HGNC_Symbol", "Coral_Name",
   "Gene_Description", "Manning_Group", "Manning_Family", "Manning_Subfamily",

@@ -13,7 +13,7 @@ library(httr)
 kinhub_url <- "http://www.kinhub.org/kinases.html"
 # For automation, use the KinHub CSV (if available) or curated list from literature
 # Here, use the 201006_composite_kinases_curated.csv as KinHub gold standard
-curated <- fread("201006_composite_kinases_curated.csv")
+  curated <- fread("genesets/curated/kinases/201006_composite_kinases_curated.csv")
 mouse_symbols <- unique(curated$Mouse_Symbol)
 
 # 2. Query Ensembl BioMart for all annotation IDs for these symbols

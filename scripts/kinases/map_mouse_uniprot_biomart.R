@@ -5,7 +5,7 @@ library(data.table)
 library(biomaRt)
 
 # Load kinase list
-kinases <- fread('../201006_composite_kinases_curated.csv', header=TRUE)
+kinases <- fread('genesets/curated/kinases/201006_composite_kinases_curated.csv', header=TRUE)
 
 # Query biomaRt for mouse gene symbol to UniProt mapping
 cat('Querying biomaRt for mouse gene symbol to UniProt mapping...\n')

@@ -4,14 +4,17 @@
 This directory provides a fully reproducible workflow for generating authoritative, annotated source (kinase) tables for mouse and human. All intermediate scripts and files have been archived for clarity. Only the final, unified script and outputs remain.
 
 ## Usage
-- Main script: `build_sources_annotation.R` (preferred) — a generalized builder that produces `kinases_human.csv` and `kinases_mouse.csv`.
-- Run for mouse:
+- Recommended entry points (grouped index scripts):
+  - `Rscript scripts/kinases/fetchers_index.R` — source all fetcher scripts (downloads and fetch wrappers)
+  - `Rscript scripts/kinases/mappings_index.R` — source mapping/merge helpers (uniprot/biomart mappings)
+  - `Rscript scripts/kinases/annotations_index.R` — source annotation helpers (KEGG/Manning etc.)
+  - `Rscript scripts/kinases/validations_index.R` — source validation and export helpers (validation, export GMT)
+
+- Legacy main builder: `build_sources_annotation.R` remains and can be used to run the full pipeline; the index scripts provide a simpler way to load grouped helpers for interactive use.
+
+- Example: run the full builder for mouse (legacy main script):
   ```
-  Rscript kinases/build_sources_annotation.R --species mouse
-  ```
-- Run for human:
-  ```
-  Rscript kinases/build_sources_annotation.R --species human
+  Rscript scripts/kinases/build_sources_annotation.R --species mouse
   ```
 - Outputs:
   - `kinases_mouse.csv` — Mouse source list with group, metabolic, and lipid annotations
@@ -23,7 +26,7 @@ This directory provides a fully reproducible workflow for generating authoritati
 - Annotates metabolic and lipid kinases using KEGG and org.*.eg.db
 - All code and outputs are version-controlled and archived
 
-- Supports additional validation sources via `kinases/val_sources/` (CSV, GMT, HTML).
+- Supports additional validation sources via `genesets/curated/` (preferred). Legacy paths `val_sources/` and `kinases/val_sources/` are still recognized.
   - CSVs are merged by Ensembl ID or gene symbol when possible.
   - GMTs are parsed; gene sets are attached as a `val_sources` annotation.
   - HTML pages containing KinHub data will be delegated to the KinHub parser when the filename contains `kinhub`; otherwise the first HTML table is attempted.

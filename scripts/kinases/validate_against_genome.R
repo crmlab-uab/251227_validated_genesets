@@ -8,7 +8,7 @@ library(data.table)
 cat("=== Kinase Genome Validation ===\n\n")
 
 # Paths
-kinase_file <- "/data/251227_validated_genesets/kinases/201006_composite_kinases_curated.csv"
+kinase_file <- "genesets/curated/kinases/201006_composite_kinases_curated.csv"
 gtf_file <- "/data/bRNA3F/data/genome/mouse/gencode.vM37.primary_assembly.annotation.gtf.gz"
 
 # Load kinase list
