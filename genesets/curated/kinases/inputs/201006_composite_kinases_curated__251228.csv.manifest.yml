@@ -1,0 +1,5 @@
+name: 201006_composite_kinases_curated
+source: moved_from_genesets_curated_kinases_outputs
+moved_date: 2025-12-28 23:04 CST
+md5: 3de5100b17ef44a8a37cd004ab59e58c
+note: "Moved to inputs to be treated as source snapshot."
