@@ -230,7 +230,7 @@ Files scanned:
   - /data/251227_validated_genesets/kinases/run_pipeline_functions.R
   - /data/251227_validated_genesets/kinases/add_manning_annotation.R
   - /data/251227_validated_genesets/run_genesets_pipeline.sh
-  - /data/251227_validated_genesets/scripts/utilities/scripts/utilities/functions_genesets.R
+  - /data/251227_validated_genesets/scripts/utilities/scripts/utilities/scripts/utilities/functions_genesets.R
   - /data/251227_validated_genesets/run_genesets_pipeline.R
 
 Missing headers:
