@@ -5,24 +5,6 @@ files:
     source: 'Composite kinases (curated)'
     curator: 'automated_curation@repo'
     notes: 'Consolidated kinases source file'
-  - path: genesets/curated/kinases/201006_composite_kinases.diff
-    checksum_file: genesets/checksums/curated/kinases/201006_composite_kinases.diff.md5
-    date: 2025-12-28
-    source: 'Composite kinases (curated)'
-    curator: 'automated_curation@repo'
-    notes: 'Consolidated kinases source file'
-  - path: genesets/curated/kinases/201006_composite_kinases_removed_rows.txt
-    checksum_file: genesets/checksums/curated/kinases/201006_composite_kinases_removed_rows.txt.md5
-    date: 2025-12-28
-    source: 'Composite kinases (curated)'
-    curator: 'automated_curation@repo'
-    notes: 'Consolidated kinases source file'
-  - path: genesets/curated/kinases/manning_2002_TableS1.csv
-    checksum_file: genesets/checksums/curated/kinases/manning_2002_TableS1.csv.md5
-    date: 2025-12-28
-    source: 'Manning et al. 2002'
-    source_url: 'https://science.sciencemag.org/content/298/5600/1912'
-    notes: 'Consolidated kinases source file'
   - path: genesets/curated/kinases/manning_2002_TableS1.xls
     checksum_file: genesets/checksums/curated/kinases/manning_2002_TableS1.xls.md5
     date: 2025-12-28
