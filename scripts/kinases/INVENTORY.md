@@ -44,6 +44,11 @@ Inventory file written by the AI agent on: 2025-12-28
 
 Note: On 2025-12-28 the original top-level scripts were moved into `scripts/kinases/archive/` to make `bin/` and `lib/` the canonical locations. See `scripts/kinases/archive/` for preserved originals.
 
+Checksums & temp policy (updated):
+
+- MD5 files are colocated with their parent CSVs (no separate `checksums/` folder). Example: `genesets/curated/kinases/kinases_human_union.csv.md5`.
+- Intermediate/temp CSVs are now stored in `output/temp/` by default; their `.md5` checksum files are kept in the same folder (example: `output/temp/kinases_human_domain.csv.md5`).
+
 Archived files (moved):
 - annotate_lipid_kinases_from_kegg.R
 - annotate_metabolic_kinases_from_kegg.R

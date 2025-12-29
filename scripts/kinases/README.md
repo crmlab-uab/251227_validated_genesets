@@ -31,16 +31,24 @@ Use `bin/` scripts as run entrypoints; they should source `lib/` functions rathe
   Rscript scripts/kinases/bin/validations_index.R
   ```
 
-## Checksums and manifest
 
-- Recompute checksums for canonical outputs (example):
-  ```bash
-  cd genesets/curated/kinases
-  mkdir -p checksums
-  md5sum kinases_human_union.csv > checksums/kinases_human_union.csv.md5
-  md5sum temp/kinases_human_domain.csv > temp/checksums/kinases_human_domain.csv.md5
-  md5sum temp/kinases_human_go.csv > temp/checksums/kinases_human_go.csv.md5
-  ```
+## Checksums and temp outputs
+
+- MD5 checksum files are stored alongside their parent CSVs (e.g. `genesets/curated/kinases/kinases_human_union.csv.md5`).
+- Intermediate/temp CSVs are placed under `output/temp/` by default. Their accompanying `.md5` files are kept in the same folder (e.g. `output/temp/kinases_human_domain.csv.md5`).
+
+Example filesystem layout:
+
+```
+genesets/curated/kinases/kinases_human_union.csv
+genesets/curated/kinases/kinases_human_union.csv.md5
+output/temp/kinases_human_domain.csv
+output/temp/kinases_human_domain.csv.md5
+output/temp/kinases_human_go.csv
+output/temp/kinases_human_go.csv.md5
+```
+
+When regenerating outputs, write the checksum immediately next to the CSV to simplify discovery and manifest generation.
 
 ## Discovery / Indexing
 
