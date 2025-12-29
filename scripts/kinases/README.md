@@ -1,46 +1,55 @@
-# Source Annotation Workflow (2025-12-27)
 
-## Overview
-This directory provides a fully reproducible workflow for generating authoritative, annotated source (kinase) tables for mouse and human. All intermediate scripts and files have been archived for clarity. Only the final, unified script and outputs remain.
+# Kinases scripts
 
-## Usage
-- Recommended entry points (grouped index scripts):
-  - `Rscript scripts/kinases/fetchers_index.R` — source all fetcher scripts (downloads and fetch wrappers)
-  - `Rscript scripts/kinases/mappings_index.R` — source mapping/merge helpers (uniprot/biomart mappings)
-  - `Rscript scripts/kinases/annotations_index.R` — source annotation helpers (KEGG/Manning etc.)
-  - `Rscript scripts/kinases/validations_index.R` — source validation and export helpers (validation, export GMT)
+Canonical layout (current):
 
-- Legacy main builder: `build_sources_annotation.R` remains and can be used to run the full pipeline; the index scripts provide a simpler way to load grouped helpers for interactive use.
+- `bin/` – executable entrypoints and thin runners (index/fetch/generate/validate)
+- `lib/` – reusable library functions (mapping, cleaning, merging, helpers)
+- `utils/` – small utilities and helpers
+- `archive/` – deprecated or original scripts (moved here on 2025-12-28)
+- `temp/` – runtime intermediate outputs (do not commit; keep checksums instead)
 
-- Example: run the full builder for mouse (legacy main script):
+Use `bin/` scripts as run entrypoints; they should source `lib/` functions rather than duplicating logic.
+
+## Status (2025-12-28)
+
+- Original, top-level kinase scripts were moved into `scripts/kinases/archive/` to preserve history while making `bin/` and `lib/` the canonical layout. See `scripts/kinases/archive/` for originals.
+
+## Recommended quick-start
+
+- Fetch sources (example):
+  ```bash
+  Rscript scripts/kinases/bin/fetch_kinome.R --species human
   ```
-  Rscript scripts/kinases/build_sources_annotation.R --species mouse
+- Generate canonical kinases list from BioMart (GO + InterPro union):
+  ```bash
+  Rscript scripts/kinases/bin/generate_kinases_from_biomart.R --species human --out genesets/curated/kinases/kinases_human_union.csv
   ```
-- Outputs:
-  - `kinases_mouse.csv` — Mouse source list with group, metabolic, and lipid annotations
-  - `kinases_human.csv` — Human source list with group, metabolic, and lipid annotations
+- Validate/export (GMT):
+  ```bash
+  Rscript scripts/kinases/bin/fetch_kinhub_and_merge.R
+  Rscript scripts/kinases/bin/validations_index.R
+  ```
 
-## Features
-- Fetches source gene lists from Ensembl/BioMart
-- Annotates kinase group/family (HGNC, human only)
-- Annotates metabolic and lipid kinases using KEGG and org.*.eg.db
-- All code and outputs are version-controlled and archived
+## Checksums and manifest
 
-- Supports additional validation sources via `genesets/curated/` (preferred). Legacy paths `val_sources/` and `kinases/val_sources/` are still recognized.
-  - CSVs are merged by Ensembl ID or gene symbol when possible.
-  - GMTs are parsed; gene sets are attached as a `val_sources` annotation.
-  - HTML pages containing KinHub data will be delegated to the KinHub parser when the filename contains `kinhub`; otherwise the first HTML table is attempted.
+- Recompute checksums for canonical outputs (example):
+  ```bash
+  cd genesets/curated/kinases
+  mkdir -p checksums
+  md5sum kinases_human_union.csv > checksums/kinases_human_union.csv.md5
+  md5sum temp/kinases_human_domain.csv > temp/checksums/kinases_human_domain.csv.md5
+  md5sum temp/kinases_human_go.csv > temp/checksums/kinases_human_go.csv.md5
+  ```
 
-## Directory Structure
-- `build_sources_annotation.R` — Main script (preferred)
-- `kinases_mouse.csv`, `kinases_human.csv` — Final outputs
- - Manning supplement CSV: `kinases/data/manning_2002_TableS1.csv` (moved from repo root)
-- `archives/` — All legacy scripts and intermediate files
-- `docs/` — Documentation (if present)
+## Discovery / Indexing
 
-## Notes
-- For GSEA or bRNA3F, use the output CSVs to generate GMT files as needed, ensuring gene symbols match your dataset species.
-- For any updates, edit only the main script and re-run for both species.
+- Use `scripts/kinases/bin/fetchers_index.R`, `scripts/kinases/bin/generate_kinases_from_biomart.R`, and `scripts/kinases/bin/validations_index.R` as short, discoverable entrypoints. They source helpers in `lib/`.
 
----
+## Rationale and guidelines
+
+- Keep `bin/` scripts thin (orchestration only). Move any shared logic into `lib/`.
+- Archive originals rather than delete them immediately — they are available under `scripts/kinases/archive/`.
+- After you confirm the canonical layout, we can remove archive contents or move them to an external snapshot.
+
 Maintained by: bRNA3F AI Agent
