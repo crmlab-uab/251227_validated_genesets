@@ -5,7 +5,11 @@ library(data.table)
 library(biomaRt)
 
 # Load kinase list
-kinases <- fread('genesets/curated/kinases/201006_composite_kinases_curated.csv', header=TRUE)
+inputs_dir <- 'genesets/curated/kinases/inputs'
+candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+kinases_file <- sort(candidates, decreasing=TRUE)[1]
+kinases <- fread(kinases_file, header=TRUE)
 
 # Query biomaRt for mouse gene symbol to UniProt mapping
 cat('Querying biomaRt for mouse gene symbol to UniProt mapping...\n')

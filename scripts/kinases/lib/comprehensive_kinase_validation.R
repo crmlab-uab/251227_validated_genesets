@@ -17,7 +17,11 @@ cat("=== COMPREHENSIVE KINASE VALIDATION ===\n\n")
 cat("Loading kinase list...\n")
 
 # Read curated kinase list
-kinases <- fread("genesets/curated/kinases/201006_composite_kinases_curated.csv", header = TRUE)
+inputs_dir <- 'genesets/curated/kinases/inputs'
+candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+kinases_file <- sort(candidates, decreasing=TRUE)[1]
+kinases <- fread(kinases_file, header = TRUE)
 colnames(kinases) <- c(
   "Mouse_Symbol", "xName", "Manning_Name", "HGNC_Symbol", "Coral_Name",
   "Gene_Description", "Manning_Group", "Manning_Family", "Manning_Subfamily",

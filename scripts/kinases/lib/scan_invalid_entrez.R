@@ -4,7 +4,11 @@
 
 library(data.table)
 library(org.Mm.eg.db)
-kinases <- fread('genesets/curated/kinases/201006_composite_kinases_curated.csv', header=TRUE)
+inputs_dir <- 'genesets/curated/kinases/inputs'
+candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+kinases_file <- sort(candidates, decreasing=TRUE)[1]
+kinases <- fread(kinases_file, header=TRUE)
 all_entrez <- keys(org.Mm.eg.db, keytype='ENTREZID')
 bad <- kinases[!is.na(Entrez_Mouse) & Entrez_Mouse != '' & !(as.character(Entrez_Mouse) %in% all_entrez)]
 if (nrow(bad) > 0) {

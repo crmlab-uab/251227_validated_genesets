@@ -11,7 +11,7 @@
 
  ## Findings
 
- - Repository contains both canonical source artifacts under `genesets/sources/kinases` and a minimal `genesets/curated/kinases` symlink for compatibility.
+- Repository contains canonical source artifacts under `genesets/sources/kinases` and curated snapshots under `genesets/curated/kinases/inputs`.
  - No other gene set files detected under `data/` in this repo.
 
  ## Recommendations
@@ -26,4 +26,4 @@
  - Consolidated curated kinases files into `genesets/sources/kinases/`.
  - Added `genesets/manifest.yaml` with the kinases entry.
  - Added `genesets/sources/kinases/201006_composite_kinases_curated.meta.yaml` and checksum file.
- - Created a symlink at `genesets/curated/kinases/201006_composite_kinases_curated.csv` pointing to the canonical file for backward compatibility.
+- Copied curated snapshot into `genesets/curated/kinases/201006_composite_kinases_curated.csv` for backward compatibility; canonical snapshot lives under `genesets/curated/kinases/inputs/`.

@@ -12,8 +12,12 @@ library(httr)
 # 1. Get kinase list from KinHub (curated, gold standard)
 kinhub_url <- "http://www.kinhub.org/kinases.html"
 # For automation, use the KinHub CSV (if available) or curated list from literature
-# Here, use the 201006_composite_kinases_curated.csv as KinHub gold standard
-  curated <- fread("genesets/curated/kinases/201006_composite_kinases_curated.csv")
+# Here, use the 201006_composite_kinases_curated CSV snapshot from inputs as KinHub gold standard
+inputs_dir <- 'genesets/curated/kinases/inputs'
+candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+curated_file <- sort(candidates, decreasing=TRUE)[1]
+curated <- fread(curated_file)
 mouse_symbols <- unique(curated$Mouse_Symbol)
 
 # 2. Query Ensembl BioMart for all annotation IDs for these symbols

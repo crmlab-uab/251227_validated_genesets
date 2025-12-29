@@ -4,7 +4,10 @@
 library(data.table)
 
 # Input files
-kinase_file <- 'genesets/curated/kinases/201006_composite_kinases_curated.csv'
+inputs_dir <- 'genesets/curated/kinases/inputs'
+candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+kinase_file <- sort(candidates, decreasing=TRUE)[1]
 biomart_file <- '251227_curated_kinases_biomart.csv'
 uniprot_file <- 'uniprot_mouse_kinase_idmapping.tab'
 output_file <- '251227_curated_kinases_uniprot_validated.csv'
