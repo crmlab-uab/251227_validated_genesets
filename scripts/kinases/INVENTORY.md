@@ -46,7 +46,7 @@ Note: On 2025-12-28 the original top-level scripts were moved into `scripts/kina
 
 Checksums & temp policy (updated):
 
-- MD5 files are colocated with their parent CSVs (no separate `checksums/` folder). Example: `genesets/curated/kinases/kinases_human_union.csv.md5`.
+- MD5 files are colocated with their parent CSVs (no separate `checksums/` folder). Example: `genesets/curated/kinases/outputs/human_union.csv.md5`.
 - Intermediate/temp CSVs are now stored in `output/temp/` by default; their `.md5` checksum files are kept in the same folder (example: `output/temp/human_domain_interpro.csv.md5`).
 
 Archived files (moved):
