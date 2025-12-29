@@ -22,7 +22,7 @@ Format: Script — Purpose — Inputs — Outputs — Recommended destination
 - `fetch_uniprot_mouse_mapping_api.R` — General UniProt mouse mapping fetcher (paginated) — inputs: UniProt API — outputs: `uniprot_mouse_idmapping_selected.tab` — `lib`
 - `fetch_val_sources_and_merge.R` — Generic merge of validation sources (CSV/XLS/GMT/HTML) into baseline kinases table — inputs: files under `val_sources/` — outputs: `kinases/kinases_human.with_val_sources.csv` — `lib`
 - `fetchers_index.R` — Index to source fetcher entrypoints — inputs: none — outputs: none — `bin`
-- `generate_kinases_from_biomart.R` — Kinases wrapper that runs the generic BioMart generator (InterPro + GO), writes temp outputs and union — inputs: Manning file, BioMart — outputs: `genesets/curated/kinases/outputs/human_union.csv` and temp files (placed in `output/temp/` as `human_domain_interpro.csv` and `human_go_filtered.csv`) — `bin`
+- `generate_kinases_from_biomart.R` — Kinases wrapper that runs the generic BioMart generator (InterPro + GO), writes temp outputs and union — inputs: Manning file, BioMart — outputs: `genesets/curated/kinases/outputs/kinases_human_union.csv` and temp files (placed in `output/temp/` as `kinases_human_domain_interpro.csv` and `kinases_human_go_filtered.csv`) — `bin`
 - `kinase_validation.R` — Alternate/duplicate validation script (similar to comprehensive_kinase_validation.R) — inputs: curated kinases CSV — outputs: `mouse_kinome_validation_results.csv` — `bin` or `archive` (duplicate)
 - `map_human_to_mouse_uniprot.R` — Map human kinases to mouse via UniProt/BioMart — inputs: human kinases lists — outputs: mapping CSVs — `lib`
 - `map_mouse_uniprot_biomart.R` — Map mouse UniProt to BioMart IDs — inputs: UniProt mapping — outputs: mapped CSVs — `lib`
@@ -46,8 +46,8 @@ Note: On 2025-12-28 the original top-level scripts were moved into `scripts/kina
 
 Checksums & temp policy (updated):
 
-- MD5 files are colocated with their parent CSVs (no separate `checksums/` folder). Example: `genesets/curated/kinases/outputs/human_union.csv.md5`.
-- Intermediate/temp CSVs are now stored in `output/temp/` by default; their `.md5` checksum files are kept in the same folder (example: `output/temp/human_domain_interpro.csv.md5`).
+- MD5 files are colocated with their parent CSVs (no separate `checksums/` folder). Example: `genesets/curated/kinases/outputs/kinases_human_union.csv.md5`.
+- Intermediate/temp CSVs are now stored in `output/temp/` by default; their `.md5` checksum files are kept in the same folder (example: `output/temp/kinases_human_domain_interpro.csv.md5`).
 
 Archived files (moved):
 - annotate_lipid_kinases_from_kegg.R

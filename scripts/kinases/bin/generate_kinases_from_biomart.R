@@ -26,24 +26,24 @@ dir.create(tmpdir, recursive=TRUE, showWarnings=FALSE)
 
 # 1) Domain-based (InterPro) -> write to temp
 cat('Generating domain-based kinases (InterPro) into output/temp\n')
-cmd1 <- c(
+  cmd1 <- c(
   'filter_type=interpro',
   paste0('filter_value=', paste(interpro_ids, collapse=',')),
   'apply_manning=TRUE',
   paste0('manning_path=', shQuote(manning_path)),
-  'outfile=human_domain_interpro.csv',
+    'outfile=kinases_human_domain_interpro.csv',
   paste0('outdir=', tmpdir)
 )
 system2('Rscript', args=c('scripts/utilities/generate_geneset_from_biomart.R', cmd1), stdout=TRUE, stderr=TRUE)
 
 # 2) GO-based (functional) -> write to temp
 cat('Generating GO-based kinases into output/temp\n')
-cmd2 <- c(
+  cmd2 <- c(
   'filter_type=go',
   paste0('filter_value=', paste(go_terms, collapse=',')),
   'apply_manning=TRUE',
   paste0('manning_path=', shQuote(manning_path)),
-  'outfile=human_go_filtered.csv',
+    'outfile=kinases_human_go_filtered.csv',
   paste0('outdir=', tmpdir)
 )
 system2('Rscript', args=c('scripts/utilities/generate_geneset_from_biomart.R', cmd2), stdout=TRUE, stderr=TRUE)
@@ -51,12 +51,12 @@ system2('Rscript', args=c('scripts/utilities/generate_geneset_from_biomart.R', c
 # 3) Union of both (de-duplicated by Ensembl gene id) -> final
 cat('Combining domain + GO temp results into union file\n')
 library(data.table)
-f1 <- file.path(tmpdir, 'human_domain_interpro.csv')
-f2 <- file.path(tmpdir, 'human_go_filtered.csv')
+f1 <- file.path(tmpdir, 'kinases_human_domain_interpro.csv')
+f2 <- file.path(tmpdir, 'kinases_human_go_filtered.csv')
 dt1 <- if (file.exists(f1)) fread(f1) else data.table()
 dt2 <- if (file.exists(f2)) fread(f2) else data.table()
 union_dt <- unique(rbindlist(list(dt1, dt2), use.names=TRUE, fill=TRUE), by='ensembl_gene_id')
-union_out <- file.path(outdir, 'human_union.csv')
+union_out <- file.path(outdir, 'kinases_human_union.csv')
 fwrite(union_dt, union_out)
 
 # md5s: temp checksums for intermediates, final checksum for union

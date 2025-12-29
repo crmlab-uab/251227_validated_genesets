@@ -23,7 +23,7 @@ Use `bin/` scripts as run entrypoints; they should source `lib/` functions rathe
   ```
 - Generate canonical kinases list from BioMart (GO + InterPro union):
   ```bash
-  Rscript scripts/kinases/bin/generate_kinases_from_biomart.R --species human --out genesets/curated/kinases/outputs/human_union.csv
+  Rscript scripts/kinases/bin/generate_kinases_from_biomart.R --species human --out genesets/curated/kinases/outputs/kinases_human_union.csv
   ```
 - Validate/export (GMT):
   ```bash
@@ -34,18 +34,18 @@ Use `bin/` scripts as run entrypoints; they should source `lib/` functions rathe
 
 ## Checksums and temp outputs
 
-- MD5 checksum files are stored alongside their parent CSVs (e.g. `genesets/curated/kinases/outputs/human_union.csv.md5`).
-- Intermediate/temp CSVs are placed under `output/temp/` by default. Their accompanying `.md5` files are kept in the same folder (e.g. `output/temp/human_domain_interpro.csv.md5`).
+- MD5 checksum files are stored alongside their parent CSVs (e.g. `genesets/curated/kinases/outputs/kinases_human_union.csv.md5`).
+- Intermediate/temp CSVs are placed under `output/temp/` by default. Their accompanying `.md5` files are kept in the same folder (e.g. `output/temp/kinases_human_domain_interpro.csv.md5`).
 
 Example filesystem layout:
 
 ```
-genesets/curated/kinases/outputs/human_union.csv
-genesets/curated/kinases/outputs/human_union.csv.md5
-output/temp/human_domain_interpro.csv
-output/temp/human_domain_interpro.csv.md5
-output/temp/human_go_filtered.csv
-output/temp/human_go_filtered.csv.md5
+genesets/curated/kinases/outputs/kinases_human_union.csv
+genesets/curated/kinases/outputs/kinases_human_union.csv.md5
+output/temp/kinases_human_domain_interpro.csv
+output/temp/kinases_human_domain_interpro.csv.md5
+output/temp/kinases_human_go_filtered.csv
+output/temp/kinases_human_go_filtered.csv.md5
 ```
 
 When regenerating outputs, write the checksum immediately next to the CSV to simplify discovery and manifest generation.

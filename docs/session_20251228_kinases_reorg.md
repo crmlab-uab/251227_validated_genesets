@@ -17,8 +17,8 @@ Files changed (high-level)
 - Checksums written: `genesets/curated/kinases/checksums/*` and `genesets/curated/kinases/temp/checksums/*`
 
 Key outputs
-- `genesets/curated/kinases/outputs/human_union.csv` (canonical union)
-- Temp intermediates: `output/temp/human_domain_interpro.csv`, `output/temp/human_go_filtered.csv`
+- `genesets/curated/kinases/outputs/kinases_human_union.csv` (canonical union)
+- Temp intermediates: `output/temp/kinases_human_domain_interpro.csv`, `output/temp/kinases_human_go_filtered.csv`
 - Diff summaries: `output/diffs/kinases/kinases_diff_summary.csv` etc.
 
 Next steps / recommendations
