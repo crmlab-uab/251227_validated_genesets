@@ -7,6 +7,19 @@
 library(yaml)
 library(glue)
 
+# Ensure `genesettools` package available (install local copy if present)
+if (!requireNamespace("genesettools", quietly = TRUE)) {
+  if (dir.exists("genesettools")) {
+    message("Installing local genesettools package...")
+    if (!requireNamespace("remotes", quietly = TRUE)) {
+      install.packages("remotes", repos = "https://cloud.r-project.org")
+    }
+    try(remotes::install_local("genesettools", upgrade = "never", dependencies = FALSE), silent = TRUE)
+  } else {
+    warning("Package 'genesettools' not installed and local 'genesettools/' directory not found; some steps may fail.")
+  }
+}
+
 cfgf <- if (file.exists("genesets_config.yaml")) "genesets_config.yaml" else if (file.exists("config/genesets_config.yaml")) "config/genesets_config.yaml" else NULL
 if (is.null(cfgf)) stop("genesets_config.yaml not found; create one or use defaults")
 cfg <- yaml::read_yaml(cfgf)
