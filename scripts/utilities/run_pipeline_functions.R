@@ -13,7 +13,7 @@ cfg_get <- function(path, default) {
   cur
 }
 
-source("scripts/utilities/scripts/utilities/functions_genesets.R")
+source("scripts/utilities/functions_genesets.R")
 
 species <- ifelse(!is.null(cfg$species), cfg$species, "human")
 cache_file <- cfg_get("hgnc.cache", "kinases/hgnc_lookup_cache.rds")
