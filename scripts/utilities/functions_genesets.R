@@ -120,17 +120,115 @@ apply_manning <- function(genes_dt, manning_dt) {
   setnames(manning_dt, man_name_col, "manning_symbol")
   man_small <- unique(manning_dt[, .(manning_symbol, Group, Family, Subfamily)])
   man_small[, man_up := toupper(trimws(manning_symbol))]
+
+  # prefer HGNC_gene_name when available, otherwise external symbol
   kin[, join_sym := toupper(trimws(ifelse(!is.na(HGNC_gene_name) & HGNC_gene_name!="", HGNC_gene_name, external_gene_name)))]
-  man_small[, man_up := toupper(trimws(manning_symbol))]
-  setnames(man_small, "man_up", "Name_up")
-  setnames(man_small, "manning_symbol", "Name")
-  man_small[, Name_up := toupper(trimws(Name))]
-  merged <- merge(kin, man_small, by.x="join_sym", by.y="Name_up", all.x=TRUE, sort=FALSE)
+
+  # prepare manning table for join
+  man_small[, Name := toupper(trimws(manning_symbol))]
+  man_small_unique <- unique(man_small[, .(Name, Group, Family, Subfamily)])
+
+  merged <- merge(kin, man_small_unique, by.x="join_sym", by.y="Name", all.x=TRUE, sort=FALSE)
   # copy Manning columns to standard names
   if ("Group" %in% names(merged)) merged[, Manning_Group := Group]
   if ("Family" %in% names(merged)) merged[, Manning_Family := Family]
   if ("Subfamily" %in% names(merged)) merged[, Manning_Subfamily := Subfamily]
-  merged[, join_sym := NULL]
+
+  # --- Fuzzy matching heuristics (borrowed from add_manning_annotation.R)
+  merged[, join_sym_orig := external_gene_name]
+  unmatched_idx <- which(is.na(merged$Manning_Group) & is.na(merged$Manning_Family) & is.na(merged$Manning_Subfamily))
+  if (length(unmatched_idx) > 0) {
+    manning_names_list <- toupper(trimws(manning_dt[[man_name_col]]))
+    extra_matches <- 0
+    for (i in unmatched_idx) {
+      sym <- toupper(trimws(merged$join_sym[i]))
+      if (is.na(sym) || sym == "") next
+      # 1) strip trailing digits (e.g., ABL1 -> ABL)
+      sym_nod <- sub("\\d+$", "", sym)
+      found <- NA_character_
+      if (sym_nod != sym && sym_nod %in% manning_names_list) found <- sym_nod
+      # 2) exact match
+      if (is.na(found) && sym %in% manning_names_list) found <- sym
+      # 3) prefix matches
+      if (is.na(found)) {
+        hits <- manning_names_list[startsWith(sym, manning_names_list) | startsWith(manning_names_list, sym)]
+        if (length(hits) == 1) found <- hits
+        else if (length(hits) > 1) found <- hits[which.max(nchar(hits))]
+      }
+      if (!is.na(found)) {
+        mrow <- manning_dt[toupper(trimws(get(man_name_col))) == found]
+        if (nrow(mrow) >= 1) {
+          merged$Manning_Group[i] <- as.character(mrow$Group[1])
+          merged$Manning_Family[i] <- as.character(mrow$Family[1])
+          merged$Manning_Subfamily[i] <- as.character(mrow$Subfamily[1])
+          extra_matches <- extra_matches + 1
+        }
+      }
+    }
+    # message about fuzzy matches
+    if (extra_matches > 0) message(sprintf("apply_manning: fuzzy matching added %d extra matches", extra_matches))
+  }
+
+  # --- Authoritative HGNC lookup by Ensembl (best-effort)
+  fetch_hgnc_by_ensembl <- function(ensembl_id) {
+    if (is.na(ensembl_id) || ensembl_id == "") return(list(hgnc_id=NA_character_, symbol=NA_character_))
+    base <- "https://rest.genenames.org"
+    url <- paste0(base, "/fetch/ensembl_gene_id/", URLencode(ensembl_id, reserved=TRUE))
+    resp <- try(GET(url, accept_json()), silent=TRUE)
+    if (inherits(resp, "try-error") || status_code(resp) != 200) return(list(hgnc_id=NA_character_, symbol=NA_character_))
+    # parse JSON safely
+    j <- tryCatch(fromJSON(rawToChar(resp$content), simplifyVector=TRUE), error=function(e) NULL)
+    if (is.null(j) || is.null(j$response) || is.null(j$response$docs)) return(list(hgnc_id=NA_character_, symbol=NA_character_))
+    docs <- j$response$docs
+    if (is.data.frame(docs) && nrow(docs) >= 1) {
+      doc <- as.list(docs[1, , drop=FALSE])
+    } else if (is.list(docs) && length(docs) >= 1) {
+      doc <- docs[[1]]
+    } else {
+      return(list(hgnc_id=NA_character_, symbol=NA_character_))
+    }
+    hid <- if (!is.null(doc$hgnc_id)) doc$hgnc_id else NA_character_
+    sym <- if (!is.null(doc$symbol)) doc$symbol else NA_character_
+    return(list(hgnc_id=hid, symbol=sym))
+  }
+
+  ensembl_ids <- unique(na.omit(merged$ensembl_gene_id))
+  ensembl_map_hgnc <- list()
+  if (length(ensembl_ids) > 0) {
+    for (eid in ensembl_ids) {
+      Sys.sleep(0.02)
+      info <- fetch_hgnc_by_ensembl(eid)
+      ensembl_map_hgnc[[eid]] <- info
+    }
+  }
+
+  # Apply authoritative mappings when available
+  if (length(ensembl_map_hgnc) > 0) {
+    merged[, HGNC_ID := ifelse(!is.na(ensembl_gene_id) & ensembl_gene_id %in% names(ensembl_map_hgnc),
+                                sapply(ensembl_map_hgnc[ensembl_gene_id], function(x) ifelse(is.null(x$hgnc_id), NA_character_, x$hgnc_id)),
+                                ifelse(!is.na(HGNC_ID) & HGNC_ID != "", HGNC_ID, NA_character_))]
+    merged[, HGNC_gene_name := ifelse(!is.na(ensembl_gene_id) & ensembl_gene_id %in% names(ensembl_map_hgnc),
+                                      sapply(ensembl_map_hgnc[ensembl_gene_id], function(x) ifelse(is.null(x$symbol), NA_character_, x$symbol)),
+                                      ifelse(!is.na(HGNC_gene_name) & HGNC_gene_name != "", HGNC_gene_name, NA_character_))]
+  }
+
+  # Coalesce duplicate .x/.y columns if present
+  dup_suffs <- grep("\\.(x|y)$", names(merged), value=TRUE)
+  if (length(dup_suffs) > 0) {
+    bases <- unique(sub("\\.(x|y)$", "", dup_suffs))
+    for (b in bases) {
+      xcol <- paste0(b, ".x")
+      ycol <- paste0(b, ".y")
+      if (!b %in% names(merged)) merged[, (b) := NA_character_]
+      if (xcol %in% names(merged)) merged[is.na(get(b)) & !is.na(get(xcol)), (b) := get(xcol)]
+      if (ycol %in% names(merged)) merged[is.na(get(b)) & !is.na(get(ycol)), (b) := get(ycol)]
+      to_drop <- intersect(c(xcol, ycol), names(merged))
+      if (length(to_drop) > 0) merged[, (to_drop) := NULL]
+    }
+  }
+
+  # cleanup helpers
+  merged[, c("join_sym","join_sym_orig") := NULL]
   return(merged)
 }
 

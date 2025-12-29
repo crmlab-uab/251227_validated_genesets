@@ -5,7 +5,7 @@ suppressPackageStartupMessages({
   library(readxl)
 })
 
-source('scripts/utilities/generate_geneset_from_biomart.R', local=FALSE)
+## Note: do NOT source the generic generator here; it's invoked as a separate Rscript process
 
 ## Curated lists to capture kinases: multiple GO terms + InterPro kinase domain IDs
 go_terms <- c('GO:0004672', 'GO:0004713', 'GO:0004674')
@@ -53,9 +53,11 @@ union_dt <- unique(rbindlist(list(dt1, dt2), use.names=TRUE, fill=TRUE), by='ens
 union_out <- file.path(outdir, 'kinases_human_union.csv')
 fwrite(union_dt, union_out)
 # md5s
-write(sprintf('%s  %s', tools::md5sum(f1), basename(f1)), file.path(outdir,'checksums','kinases_human_domain.csv.md5'))
-write(sprintf('%s  %s', tools::md5sum(f2), basename(f2)), file.path(outdir,'checksums','kinases_human_go.csv.md5'))
-write(sprintf('%s  %s', tools::md5sum(union_out), basename(union_out)), file.path(outdir,'checksums','kinases_human_union.csv.md5'))
+csdir <- file.path(outdir,'checksums')
+dir.create(csdir, recursive=TRUE, showWarnings=FALSE)
+if (file.exists(f1)) write(sprintf('%s  %s', tools::md5sum(f1), basename(f1)), file.path(csdir,'kinases_human_domain.csv.md5'))
+if (file.exists(f2)) write(sprintf('%s  %s', tools::md5sum(f2), basename(f2)), file.path(csdir,'kinases_human_go.csv.md5'))
+if (file.exists(union_out)) write(sprintf('%s  %s', tools::md5sum(union_out), basename(union_out)), file.path(csdir,'kinases_human_union.csv.md5'))
 
 # Commit outputs
 system(sprintf('git add -f %s %s %s %s', shQuote(f1), shQuote(f2), shQuote(union_out), shQuote(file.path(outdir,'checksums'))), ignore.stdout=TRUE)
