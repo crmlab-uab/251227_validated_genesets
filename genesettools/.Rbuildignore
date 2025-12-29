@@ -1,0 +1,4 @@
+^inst/
+^\.Rproj.user
+^\.vscode
+^\.DS_Store

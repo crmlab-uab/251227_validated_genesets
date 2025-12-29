@@ -1,0 +1,15 @@
+Package: genesettools
+Type: Package
+Title: Utilities for loading and caching gene sets (MSigDB)
+Version: 0.1.0
+Authors@R: person("Automated", "Agent", email = "noreply@example.com", role = c("aut", "cre"))
+Description: Small utilities to download, cache and load gene set GMT files (MSigDB and
+    custom GMTs) for downstream GSEA and enrichment analyses.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    httr,
+    readr,
+    utils
+RoxygenNote: 7.2.0
