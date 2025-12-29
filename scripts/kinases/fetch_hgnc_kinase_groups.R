@@ -9,27 +9,34 @@ library(httr)
 library(jsonlite)
 library(data.table)
 
-# HGNC REST API endpoint for kinases
-url <- "https://rest.genenames.org/fetch/group/kinase"
+# Unified HGNC kinase groups fetcher
+# Uses the HGNC REST API. Two query styles are supported:
+#  - mode = "fetch" (default): uses /fetch/group/kinase
+#  - mode = "search": uses /search/status:Approved+AND+group:kinase
+# This script writes `hgnc_kinase_groups.csv` in the working directory.
 
-# Set headers for HGNC API
+mode <- Sys.getenv("HGNC_FETCH_MODE", "fetch")
+if (!(mode %in% c("fetch", "search"))) mode <- "fetch"
+
+if (mode == "fetch") {
+	url <- "https://rest.genenames.org/fetch/group/kinase"
+} else {
+	url <- "https://rest.genenames.org/search/status:Approved+AND+group:kinase"
+}
+
 headers <- add_headers(Accept = "application/json")
 
-# Fetch data
-cat("Querying HGNC REST API for kinase group annotation...\n", file=stderr())
+cat(sprintf("Querying HGNC REST API (mode=%s) for kinase group annotation...\n", mode), file=stderr())
 res <- GET(url, headers)
 stop_for_status(res)
 json <- content(res, as = "text", encoding = "UTF-8")
 data <- fromJSON(json)
 
-# Parse results
 kinases <- data$response$docs
 kinases <- as.data.table(kinases)
 
-# Select relevant columns (HGNC symbol, name, family, subfamily, group, etc.)
 cols <- intersect(c("symbol", "name", "group", "subgroup", "family", "subfamily", "hgnc_id", "ensembl_gene_id"), names(kinases))
 kinases <- kinases[, ..cols]
 
-# Save to CSV
 fwrite(kinases, "hgnc_kinase_groups.csv")
 cat(sprintf("Done. Output: %s (%d kinases)\n", "hgnc_kinase_groups.csv", nrow(kinases)), file=stderr())

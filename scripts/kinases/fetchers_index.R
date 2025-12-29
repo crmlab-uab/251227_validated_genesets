@@ -12,6 +12,6 @@ source("scripts/kinases/fetch_uniprot_kinase_mapping_api.R")
 source("scripts/kinases/fetch_uniprot_mouse_mapping_api.R")
 source("scripts/kinases/fetch_val_sources_and_merge.R")
 source("scripts/kinases/fetch_hgnc_kinase_groups.R")
-source("scripts/kinases/fetch_hgnc_kinase_groups_v2.R")
+## consolidated fetch_hgnc_kinase_groups.R replaces the v2 variant
 
 message("Fetcher scripts sourced. Use the functions defined in those files.")
