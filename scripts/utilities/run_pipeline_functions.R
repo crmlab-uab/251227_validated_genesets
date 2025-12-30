@@ -48,8 +48,16 @@ if (isTRUE(cfg$steps$merge_val_sources)) {
   # default val_sources dir (prefer centralized genesets/curated)
   val_dir <- cfg_get("resources.val_sources_dir", "genesets/curated")
   if (dir.exists(val_dir)) {
-    # delegate to fetch_val_sources_and_merge.R which handles CSV/GMT/HTML inputs
-    source(file.path("kinases", "fetch_val_sources_and_merge.R"))
+    # delegate to the canonical merge/validate entrypoint (prefer bin/05), fallback to lib script
+    if (file.exists(file.path("scripts","kinases","bin","05_merge_and_validate.R"))) {
+      source(file.path("scripts","kinases","bin","05_merge_and_validate.R"))
+    } else if (file.exists(file.path("scripts","kinases","lib","fetch_val_sources_and_merge.R"))) {
+      source(file.path("scripts","kinases","lib","fetch_val_sources_and_merge.R"))
+    } else if (file.exists(file.path("kinases","fetch_val_sources_and_merge.R"))) {
+      source(file.path("kinases","fetch_val_sources_and_merge.R"))
+    } else {
+      cat("No merge/validate script found; skipping merge_val_sources step\n")
+    }
   } else {
     cat("Validation sources directory missing; skipping merge_val_sources\n")
   }

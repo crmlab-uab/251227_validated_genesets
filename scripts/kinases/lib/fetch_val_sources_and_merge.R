@@ -14,28 +14,52 @@ wd <- normalizePath(".", mustWork=TRUE)
 setwd(wd)
 cat("Working dir:", wd, "\n")
 
-possible_dirs <- c("genesets/curated", "val_sources", file.path("kinases","val_sources"))
+# Prefer kinases-specific validation and inputs directories; fall back to generic locations
+possible_dirs <- c(
+  file.path("genesets","curated","kinases","val_sources"),
+  file.path("genesets","curated","kinases","inputs"),
+  file.path("genesets","curated","kinases"),
+  file.path("genesets","curated"),
+  "val_sources",
+  file.path("kinases","val_sources")
+)
 found <- possible_dirs[file.exists(possible_dirs)]
 val_dir <- if (length(found) > 0) found[1] else NA
 if (is.na(val_dir) || !dir.exists(val_dir)) {
-  cat("No val_sources directory found; skipping val_sources merge\n")
+  cat("No val_sources or kinases inputs directory found; skipping val_sources merge\n")
   quit(status = 0)
 }
 
-# find files
-files <- list.files(val_dir, full.names = TRUE)
+# find files (ignore subdirectories)
+files_all <- list.files(val_dir, full.names = TRUE)
+files <- files_all[!file.info(files_all)$isdir]
 if (length(files) == 0) {
   cat("No validation source files found in", val_dir, "\n")
   quit(status = 0)
 }
 
-# read main kinases file (default location inside kinases/)
-kin_file <- "kinases_human.csv"
-if (!file.exists(kin_file)) {
-  if (file.exists(file.path("kinases", "kinases_human.csv"))) kin_file <- file.path("kinases", "kinases_human.csv")
+# locate main kinases baseline (try multiple canonical locations)
+kin <- NULL
+# Prefer the canonical inputs location created by the builder, then repo-root fallbacks, then any outputs snapshots
+canonical_input <- file.path("genesets","curated","kinases","inputs","kinases_human.csv")
+candidate_baselines <- c(canonical_input, "kinases_human.csv", file.path("kinases","kinases_human.csv"))
+out_dir <- file.path("genesets","curated","kinases","outputs")
+out_candidates <- character(0)
+if (dir.exists(out_dir)) {
+  out_candidates <- list.files(out_dir, pattern = "^kinases_human.*\\.csv$", full.names = TRUE)
+  if (length(out_candidates) > 0) {
+    fi <- file.info(out_candidates)
+    out_candidates <- out_candidates[order(fi$mtime, decreasing = TRUE)]
+  }
 }
-if (!file.exists(kin_file)) stop("Sources baseline kinases_human.csv not found (expected kinases/kinases_human.csv)\nPlease run the builder to regenerate kinases_human.csv and retry.")
-kin <- fread(kin_file, na.strings=c("","NA"))
+candidate_baselines <- c(candidate_baselines, out_candidates)
+for (kb in candidate_baselines) {
+  if (!is.null(kb) && nzchar(kb) && file.exists(kb)) {
+    kin_try <- tryCatch(fread(kb, na.strings = c("", "NA")), error = function(e) NULL)
+    if (!is.null(kin_try)) { kin <- kin_try; cat("Using baseline:", kb, "\n"); break }
+  }
+}
+if (is.null(kin)) stop("Sources baseline kinases_human.csv not found in expected locations. Please run the builder to regenerate kinases_human.csv and retry.")
 
 merged <- copy(kin)
 
@@ -134,13 +158,19 @@ for (f in files) {
                            Group = if (!is.null(group_col)) as.character(kt_up[[group_col]]) else NA_character_,
                            Family = NA_character_,
                            SubFamily = NA_character_)
-      fwrite(out_km, file = file.path("kinases","kinhub_mapping_raw.tsv"), sep = "\t", na = "")
-      cat("Wrote kinases/kinhub_mapping_raw.tsv (rows:", nrow(out_km), ")\n")
-      # Now call the existing KinHub merge script inside kinases/
-      owd <- getwd()
-      setwd("kinases")
-      tryCatch({ source("fetch_kinhub_and_merge.R") }, error=function(e) cat("KinHub script error:", e$message, "\n"))
-      setwd(owd)
+      # write kinHub raw mapping into canonical val_sources dir
+      val_dir <- file.path("genesets","curated","kinases","val_sources")
+      dir.create(val_dir, recursive=TRUE, showWarnings=FALSE)
+      km_path <- file.path(val_dir, "kinhub_mapping_raw.tsv")
+      fwrite(out_km, file = km_path, sep = "\t", na = "")
+      cat("Wrote", km_path, "(rows:", nrow(out_km), ")\n")
+      # Now invoke the canonical KinHub merge runner (02) from repo root; it will read from val_sources and write to outputs
+      merge_runner <- file.path("scripts","kinases","bin","02_fetch_validation_sources.R")
+      if (file.exists(merge_runner)) {
+        tryCatch({ source(merge_runner) }, error=function(e) cat("KinHub merge runner error:", e$message, "\n"))
+      } else {
+        cat("No KinHub merge runner found at", merge_runner, "— skipping KinHub merge step\n")
+      }
     } else {
       # Generic HTML table parsing
       cat("Attempting to parse HTML table from", f, "\n")
@@ -174,6 +204,12 @@ for (f in files) {
   }
 }
 
-outf <- "kinases/kinases_human.with_val_sources.csv"
+out_dir <- file.path("genesets","curated","kinases","outputs")
+dir.create(out_dir, recursive=TRUE, showWarnings=FALSE)
+stamp <- format(Sys.time(), "%y%m%d")
+outf <- file.path(out_dir, paste0("05_kinases_human.with_val_sources__", stamp, ".csv"))
 fwrite(merged, outf)
-cat("Wrote merged output:", outf, "\n")
+# write md5
+md5f <- paste0(outf, ".md5")
+write(sprintf("%s  %s", tools::md5sum(outf), basename(outf)), md5f)
+cat("Wrote merged output:", outf, "and checksum", md5f, "\n")

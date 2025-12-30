@@ -1,0 +1,10 @@
+Using canonical input baseline: /data/251227_validated_genesets/genesets/curated/kinases/inputs/kinases_human.csv 
+Error in eval(jsub, SDenv, parent.frame()) : 
+  object 'Manning_Group' not found
+Calls: [ -> [.data.table -> eval -> eval -> ifelse
+Execution halted
+Using canonical input baseline: /data/251227_validated_genesets/genesets/curated/kinases/inputs/kinases_human.csv 
+Total rows: 785
+Rows matched to kinhub by Ensembl: 290
+Conflicts (group) count: 0
+Wrote genesets/curated/kinases/outputs/02_kinases_human.with_kinhub__251230.csv and genesets/curated/kinases/outputs/02_kinhub_mapping__251230.csv (KinHub fields merged into baseline)

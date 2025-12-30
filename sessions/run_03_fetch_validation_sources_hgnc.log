@@ -1,0 +1,22 @@
+Using baseline kinome input: /data/251227_validated_genesets/genesets/curated/kinases/inputs/human_kinome__251229.csv 
+Detected symbol column: external_gene_name (n=785)
+Querying HGNC for 734 unique symbols...
+Error in doc$symbol : $ operator is invalid for atomic vectors
+Calls: data.table
+Execution halted
+Using baseline kinome input: /data/251227_validated_genesets/genesets/curated/kinases/inputs/human_kinome__251229.csv 
+Detected symbol column: external_gene_name (n=785)
+Querying HGNC for 734 unique symbols...
+Done. Output: genesets/curated/kinases/val_sources/hgnc_kinase_groups.csv (1057 rows)
+Error: object 'kinases' not found
+Execution halted
+Using baseline kinome input: /data/251227_validated_genesets/genesets/curated/kinases/inputs/kinases_human.csv 
+Detected symbol column: external_gene_name (n=785)
+Querying HGNC for 734 unique symbols...
+Done. Output: /data/251227_validated_genesets/genesets/curated/kinases/val_sources/hgnc_kinase_groups.csv (1057 rows)
+Using baseline kinome input: /data/251227_validated_genesets/genesets/curated/kinases/inputs/human_kinome__251229.csv 
+Detected symbol column: external_gene_name (n=785)
+Querying HGNC for 734 unique symbols...
+Done. Output: genesets/curated/kinases/val_sources/hgnc_kinase_groups.csv (1057 rows)
+Error: object 'kinases' not found
+Execution halted

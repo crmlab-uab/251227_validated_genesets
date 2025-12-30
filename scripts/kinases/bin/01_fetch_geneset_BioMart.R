@@ -8,6 +8,13 @@ library(optparse)
 library(data.table)
 library(biomaRt)
 
+# determine repository root based on script location so outputs are written to repo root
+cmdArgs <- commandArgs(trailingOnly = FALSE)
+fileArgIdx <- grep("--file=", cmdArgs)
+fileArg <- if (length(fileArgIdx) > 0) sub("--file=", "", cmdArgs[fileArgIdx[1]]) else NA_character_
+script_dir <- if (!is.na(fileArg) && nzchar(fileArg)) dirname(normalizePath(fileArg)) else normalizePath(".")
+repo_root <- normalizePath(file.path(script_dir, "..", "..", ".."))
+
 option_list <- list(
   make_option(c("-s", "--species"), type="character", default=NULL, help="Species: mouse or human", metavar="character")
 )
@@ -17,10 +24,15 @@ if (is.null(species) || !(species %in% c("mouse", "human"))) stop("--species mus
 
 cat(sprintf("Fetching kinome for: %s\n", species), file=stderr())
 
-# Set BioMart dataset and output file
+# Set BioMart dataset and output file (write snapshots to canonical inputs folder)
 if (species == "mouse") {
   dataset <- "mmusculus_gene_ensembl"
-  outfile <- "mouse_kinome.csv"
+  date_tag <- format(Sys.time(), "%y%m%d")
+  outdir <- file.path(repo_root, "genesets","curated","kinases","inputs")
+  dir.create(outdir, recursive=TRUE, showWarnings=FALSE)
+  # canonical stable filename (used by downstream steps) and a timestamped snapshot
+  outfile_canonical <- file.path(outdir, "kinases_mouse.csv")
+  outfile_ts <- file.path(outdir, paste0("mouse_kinome__", date_tag, ".csv"))
   id_cols <- c(
     "ensembl_gene_id",        # Ensembl Gene ID
     "external_gene_name",     # Gene Symbol
@@ -29,7 +41,11 @@ if (species == "mouse") {
   )
 } else {
   dataset <- "hsapiens_gene_ensembl"
-  outfile <- "human_kinome.csv"
+  date_tag <- format(Sys.time(), "%y%m%d")
+  outdir <- file.path(repo_root, "genesets","curated","kinases","inputs")
+  dir.create(outdir, recursive=TRUE, showWarnings=FALSE)
+  outfile_canonical <- file.path(outdir, "kinases_human.csv")
+  outfile_ts <- file.path(outdir, paste0("kinases_human__", date_tag, ".csv"))
   id_cols <- c(
     "ensembl_gene_id",        # Ensembl Gene ID
     "external_gene_name",     # Gene Symbol
@@ -76,8 +92,25 @@ if (species == "mouse") {
   setorder(collapsed, external_gene_name)
   # Reorder columns
   setcolorder(collapsed, c("ensembl_gene_id", "external_gene_name", "description", "mgi_id", "go_id"))
-  fwrite(collapsed, outfile)
-  cat(sprintf("Done. Output: %s (%d unique kinases)\n", outfile, nrow(collapsed)), file=stderr())
+  # write canonical file for downstream use and also keep a dated snapshot
+  fwrite(collapsed, outfile_canonical)
+  fwrite(collapsed, outfile_ts)
+  # write md5 checksum for canonical file
+  if (requireNamespace("tools", quietly=TRUE)) {
+    md5 <- tools::md5sum(outfile_canonical)
+    md5file <- paste0(outfile_canonical, ".md5")
+    cat(sprintf("%s  %s\n", unname(md5), basename(outfile_canonical)), file=md5file)
+  }
+  cat(sprintf("Done. Outputs: %s and %s (%d unique kinases)\n", outfile_canonical, outfile_ts, nrow(collapsed)), file=stderr())
+  # Also write a numbered output copy for downstream steps (01_ prefix)
+  outdir_out <- file.path(repo_root, "genesets","curated","kinases","outputs")
+  dir.create(outdir_out, recursive=TRUE, showWarnings=FALSE)
+  numbered <- file.path(outdir_out, paste0("01_", basename(outfile_canonical)))
+  file.copy(outfile_canonical, numbered, overwrite=TRUE)
+  if (requireNamespace("tools", quietly=TRUE)) {
+    md5 <- tools::md5sum(numbered)
+    cat(sprintf("%s  %s\n", unname(md5), basename(numbered)), file=paste0(numbered, ".md5"))
+  }
 } else {
   # For human: collapse GO IDs per gene
   all_kinases[, go_id := as.character(go_id)]
@@ -98,6 +131,14 @@ if (species == "mouse") {
   # Sort by external_gene_name
   setorder(collapsed, external_gene_name)
   setcolorder(collapsed, c("ensembl_gene_id", "external_gene_name", "description", "hgnc_symbol", "hgnc_id", "go_id"))
-  fwrite(collapsed, outfile)
-  cat(sprintf("Done. Output: %s (%d unique kinases)\n", outfile, nrow(collapsed)), file=stderr())
+  # for human, write canonical file and a dated snapshot (both with kinases_human* root)
+  fwrite(collapsed, outfile_canonical)
+  fwrite(collapsed, outfile_ts)
+  # write md5 checksum for canonical file
+  if (requireNamespace("tools", quietly=TRUE)) {
+    md5 <- tools::md5sum(outfile_canonical)
+    md5file <- paste0(outfile_canonical, ".md5")
+    cat(sprintf("%s  %s\n", unname(md5), basename(outfile_canonical)), file=md5file)
+  }
+  cat(sprintf("Done. Outputs: %s and %s (%d unique kinases)\n", outfile_canonical, outfile_ts, nrow(collapsed)), file=stderr())
 }

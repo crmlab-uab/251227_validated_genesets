@@ -1,0 +1,11 @@
+Starting merge_and_validate runner...
+Working dir: /data/251227_validated_genesets 
+Using baseline: genesets/curated/kinases/outputs/kinases_human.with_val_sources__251229.csv 
+Processing validation source: genesets/curated/kinases/val_sources/kinhub_mapping_raw.tsv (ext= tsv )
+No suitable key found in genesets/curated/kinases/val_sources/kinhub_mapping_raw.tsv — skipping merge
+Wrote merged output: genesets/curated/kinases/outputs/05_kinases_human.with_val_sources__251229.csv and checksum genesets/curated/kinases/outputs/05_kinases_human.with_val_sources__251229.csv.md5 
+merge_and_validate runner finished.
+Log: sessions/251229_214307/05_merge_and_validate.log
+Error in sink(logf, type = "message", append = TRUE) : 
+  'file' must be NULL or an already open connection
+Execution halted

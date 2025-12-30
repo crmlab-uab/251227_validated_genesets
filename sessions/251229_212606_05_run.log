@@ -1,0 +1,7 @@
+Starting merge_and_validate runner...
+Working dir: /data/251227_validated_genesets 
+Error in eval(ei, envir) : 
+  Sources baseline kinases_human.csv not found (expected kinases/kinases_human.csv)
+Please run the builder to regenerate kinases_human.csv and retry.
+Calls: source -> withVisible -> eval -> eval
+Execution halted

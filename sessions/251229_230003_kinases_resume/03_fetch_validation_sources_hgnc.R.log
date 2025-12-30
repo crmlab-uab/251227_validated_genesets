@@ -1,0 +1,3 @@
+Querying HGNC REST API (mode=fetch) for kinase group annotation...
+Error: Bad Request (HTTP 400).
+Execution halted

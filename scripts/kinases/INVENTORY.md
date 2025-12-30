@@ -13,16 +13,17 @@ Format: Script — Purpose — Inputs — Outputs — Recommended destination
 - `comprehensive_kinase_validation.R` — Validate mouse kinases across UniProt/GO/org.* DBs; produce validation CSV and report — inputs: curated kinases CSV — outputs: `mouse_kinome_validation_results.csv`, `VALIDATION_REPORT.md` — `bin`
 - `export_kinase_gmt.R` — Export kinome sets as GMT files for GSEA — inputs: curated combined CSV — outputs: multiple `.gmt` files — `lib`
 - `fetch_comprehensive_mouse_kinome_biomart.R` — BioMart query for mouse kinases by GO — inputs: BioMart — outputs: `comprehensive_mouse_kinome_biomart.csv` — `bin`
-- `fetch_definitive_mouse_kinome.R` — Map curated human kinases to mouse via BioMart (definitive list) — inputs: `201006_composite_kinases_curated.csv` — outputs: `mouse_kinome_definitive.csv` — `bin`
-- `fetch_hgnc_kinase_groups.R` — Fetch HGNC kinase group annotations via REST — inputs: network/HGNC REST — outputs: `hgnc_kinase_groups.csv` — `bin`
-- `fetch_kinhub_and_merge.R` — Parse KinHub mapping and merge into baseline kinases CSV — inputs: `kinhub_mapping_raw.tsv`, baseline kinases — outputs: `kinases_human.with_kinhub.csv` — `lib`
-- `fetch_kinome.R` — Generic BioMart fetcher for human/mouse kinome (GO-based) — inputs: BioMart — outputs: `human_kinome.csv` / `mouse_kinome.csv` — `bin`
 - `fetch_mouse_kinome_from_kinhub.R` — Scrape KinHub and map to mouse orthologs via BioMart — inputs: KinHub HTML/table — outputs: `mouse_kinome_from_kinhub.csv` — `bin`
 - `fetch_uniprot_kinase_mapping_api.R` — Query UniProt API for mouse kinase mapping — inputs: curated kinases CSV — outputs: `uniprot_mouse_kinase_idmapping.tab` — `lib`
 - `fetch_uniprot_mouse_mapping_api.R` — General UniProt mouse mapping fetcher (paginated) — inputs: UniProt API — outputs: `uniprot_mouse_idmapping_selected.tab` — `lib`
-- `fetch_val_sources_and_merge.R` — Generic merge of validation sources (CSV/XLS/GMT/HTML) into baseline kinases table — inputs: files under `val_sources/` — outputs: `kinases/kinases_human.with_val_sources.csv` — `lib`
+ - `06_map_human_to_mouse.R` (canonical: formerly `fetch_definitive_mouse_kinome.R`) — Map curated human kinases to mouse via BioMart (definitive list) — inputs: `201006_composite_kinases_curated__YYYYMMDD.csv` — outputs: `mouse_kinome_definitive.csv` — `bin`
+ - `02_fetch_validation_sources_hgnc.R` (canonical: formerly `fetch_hgnc_kinase_groups.R`) — Fetch HGNC kinase group annotations via REST — inputs: network/HGNC REST — outputs: `hgnc_kinase_groups.csv` — `bin`
+ - `02_fetch_validation_sources.R` (canonical: formerly `fetch_kinhub_and_merge.R`) — Parse KinHub mapping and merge into baseline kinases CSV — inputs: `kinhub_mapping_raw.tsv`, baseline kinases — outputs: `kinases_human.with_kinhub.csv` — `lib`
+ - `01_fetch_geneset_BioMart.R` (canonical: formerly `fetch_kinome.R`) — Generic BioMart fetcher for human/mouse kinome (GO-based) — inputs: BioMart — outputs: `human_kinome.csv` / `mouse_kinome.csv` — `bin`
+
+ - `05_merge_and_validate.R` (canonical: formerly `fetch_val_sources_and_merge.R`) — Generic merge of validation sources (CSV/XLS/GMT/HTML) into baseline kinases table — inputs: files under `val_sources/` — outputs: `kinases/kinases_human.with_val_sources.csv` — `lib`
 - `fetchers_index.R` — Index to source fetcher entrypoints — inputs: none — outputs: none — `bin`
-- `generate_kinases_from_biomart.R` — Kinases wrapper that runs the generic BioMart generator (InterPro + GO), writes temp outputs and union — inputs: Manning file, BioMart — outputs: `genesets/curated/kinases/outputs/kinases_human_union.csv` and temp files (placed in `output/temp/` as `kinases_human_domain_interpro.csv` and `kinases_human_go_filtered.csv`) — `bin`
+ - `04_generate_from_biomart.R` (canonical: formerly `generate_kinases_from_biomart.R`) — Kinases wrapper that runs the generic BioMart generator (InterPro + GO), writes temp outputs and union — inputs: Manning file, BioMart — outputs: `genesets/curated/kinases/outputs/kinases_human_union.csv` and temp files (placed in `output/temp/` as `kinases_human_domain_interpro.csv` and `kinases_human_go_filtered.csv`) — `bin`
 - `kinase_validation.R` — Alternate/duplicate validation script (similar to comprehensive_kinase_validation.R) — inputs: curated kinases CSV — outputs: `mouse_kinome_validation_results.csv` — `bin` or `archive` (duplicate)
 - `map_human_to_mouse_uniprot.R` — Map human kinases to mouse via UniProt/BioMart — inputs: human kinases lists — outputs: mapping CSVs — `lib`
 - `map_mouse_uniprot_biomart.R` — Map mouse UniProt to BioMart IDs — inputs: UniProt mapping — outputs: mapped CSVs — `lib`
@@ -32,7 +33,7 @@ Format: Script — Purpose — Inputs — Outputs — Recommended destination
 - `source_shiny_app.R` — Entry to run Shiny app (if present) — inputs: none — outputs: runs app — `bin`
 - `summarize_kinase_groups.R` — Summarize Manning/HGNC groups and produce tables — inputs: kinases CSV — outputs: summary tables/CSV — `lib`
 - `validate_against_genome.R` — Validate gene presence against genome reference files — inputs: genome files, kinases CSV — outputs: validation report — `lib`
-- `validations_index.R` — Index to run validation scripts — inputs: none — outputs: none — `bin`
+- `05_merge_and_validate.R` (canonical: formerly `validations_index.R` / `fetch_val_sources_and_merge.R`) — Index/entrypoint to merge validation sources and run validations — inputs: none — outputs: merged validation CSVs/reports — `bin`
 
 Recommendations
 
@@ -79,3 +80,12 @@ Archived files (moved):
 - summarize_kinase_groups.R
 - validate_against_genome.R
 - validations_index.R
+
+Name mappings (legacy → canonical numbered entrypoints)
+
+- `fetch_kinome.R` → `scripts/kinases/bin/01_fetch_geneset_BioMart.R`
+- `fetch_kinhub_and_merge.R` → `scripts/kinases/bin/02_fetch_validation_sources.R`
+- `fetch_hgnc_kinase_groups.R` → `scripts/kinases/bin/02_fetch_validation_sources_hgnc.R`
+- `generate_kinases_from_biomart.R` → `scripts/kinases/bin/04_generate_from_biomart.R`
+- `fetch_val_sources_and_merge.R` / `validations_index.R` → `scripts/kinases/bin/05_merge_and_validate.R`
+- `fetch_definitive_mouse_kinome.R` → `scripts/kinases/bin/06_map_human_to_mouse.R`

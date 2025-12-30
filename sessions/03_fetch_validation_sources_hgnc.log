@@ -1,0 +1,6 @@
+Querying HGNC REST API (mode=fetch) for kinase group annotation...
+Fetch endpoint returned error; retrying with search endpoint...
+Warning message:
+In fwrite(kinases, "hgnc_kinase_groups.csv") :
+  Input has no columns; creating an empty file at 'hgnc_kinase_groups.csv' and exiting.
+Done. Output: hgnc_kinase_groups.csv (0 kinases)

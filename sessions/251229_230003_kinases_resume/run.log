@@ -1,0 +1,2 @@
+--- Running scripts/kinases/bin/03_fetch_validation_sources_hgnc.R ---
+ERROR: scripts/kinases/bin/03_fetch_validation_sources_hgnc.R failed. See /data/251227_validated_genesets/sessions/251229_230003_kinases_resume/03_fetch_validation_sources_hgnc.R.log

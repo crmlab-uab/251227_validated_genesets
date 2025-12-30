@@ -19,16 +19,16 @@ Use `bin/` scripts as run entrypoints; they should source `lib/` functions rathe
 
 - Fetch sources (example):
   ```bash
-  Rscript scripts/kinases/bin/fetch_kinome.R --species human
+  Rscript scripts/kinases/bin/01_fetch_geneset_BioMart.R --species human
   ```
 - Generate canonical kinases list from BioMart (GO + InterPro union):
   ```bash
-  Rscript scripts/kinases/bin/generate_kinases_from_biomart.R --species human --out genesets/curated/kinases/outputs/kinases_human_union.csv
+  Rscript scripts/kinases/bin/04_generate_from_biomart.R --species human --out genesets/curated/kinases/outputs/kinases_human_union.csv
   ```
 - Validate/export (GMT):
   ```bash
-  Rscript scripts/kinases/bin/fetch_kinhub_and_merge.R
-  Rscript scripts/kinases/bin/validations_index.R
+  Rscript scripts/kinases/bin/02_fetch_validation_sources.R
+  Rscript scripts/kinases/bin/05_merge_and_validate.R
   ```
 
 
@@ -52,7 +52,7 @@ When regenerating outputs, write the checksum immediately next to the CSV to sim
 
 ## Discovery / Indexing
 
-- Use `scripts/kinases/bin/fetchers_index.R`, `scripts/kinases/bin/generate_kinases_from_biomart.R`, and `scripts/kinases/bin/validations_index.R` as short, discoverable entrypoints. They source helpers in `lib/`.
+- Use `scripts/kinases/bin/fetchers_index.R`, `scripts/kinases/bin/04_generate_from_biomart.R`, and `scripts/kinases/bin/05_merge_and_validate.R` as short, discoverable entrypoints. They source helpers in `lib/`.
 
 ## Rationale and guidelines
 

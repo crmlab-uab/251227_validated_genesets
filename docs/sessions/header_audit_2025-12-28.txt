@@ -236,6 +236,15 @@ Files scanned:
 Missing headers:
 Total missing: 0
 
+Name mappings (legacy → canonical numbered entrypoints) for this repo
+
+- fetch_kinome.R → scripts/kinases/bin/01_fetch_geneset_BioMart.R
+- fetch_kinhub_and_merge.R → scripts/kinases/bin/02_fetch_validation_sources.R
+- fetch_hgnc_kinase_groups.R → scripts/kinases/bin/02_fetch_validation_sources_hgnc.R
+- generate_kinases_from_biomart.R → scripts/kinases/bin/04_generate_from_biomart.R
+- fetch_val_sources_and_merge.R / validations_index.R → scripts/kinases/bin/05_merge_and_validate.R
+- fetch_definitive_mouse_kinome.R → scripts/kinases/bin/06_map_human_to_mouse.R
+
 Repo: /data/251207_mNSC
 Files scanned:
   - /data/251207_mNSC/archives/development_tools_251226/analyze_function_calls.R

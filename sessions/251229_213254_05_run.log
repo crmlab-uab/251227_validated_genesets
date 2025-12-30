@@ -1,0 +1,19 @@
+Starting merge_and_validate runner...
+Working dir: /data/251227_validated_genesets 
+Using baseline: genesets/curated/kinases/outputs/kinases_human.with_val_sources__251229.csv 
+Processing validation source: genesets/curated/kinases/inputs/201006_composite_kinases_curated__251228.csv (ext= csv )
+No suitable key found in genesets/curated/kinases/inputs/201006_composite_kinases_curated__251228.csv — skipping merge
+Processing validation source: genesets/curated/kinases/inputs/201006_composite_kinases_curated__251228.csv.manifest.yml (ext= yml )
+Unsupported file type: genesets/curated/kinases/inputs/201006_composite_kinases_curated__251228.csv.manifest.yml — skipping
+Processing validation source: genesets/curated/kinases/inputs/201006_composite_kinases_curated__251228.csv.md5 (ext= md5 )
+Unsupported file type: genesets/curated/kinases/inputs/201006_composite_kinases_curated__251228.csv.md5 — skipping
+Processing validation source: genesets/curated/kinases/inputs/human_kinome__251229.csv (ext= csv )
+Merged by Ensembl using ensembl_gene_id from genesets/curated/kinases/inputs/human_kinome__251229.csv 
+Processing validation source: genesets/curated/kinases/inputs/human_kinome__251229.csv.md5 (ext= md5 )
+Unsupported file type: genesets/curated/kinases/inputs/human_kinome__251229.csv.md5 — skipping
+Processing validation source: genesets/curated/kinases/inputs/KinHub.html (ext= html )
+Parsing KinHub HTML and creating kinases/kinhub_mapping_raw.tsv
+Error in fwrite(out_km, file = file.path("kinases", "kinhub_mapping_raw.tsv"),  : 
+  No such file or directory: 'kinases/kinhub_mapping_raw.tsv'. Unable to create new file for writing (it does not exist already). Do you have permission to write here, is there space on the disk and does the path exist?
+Calls: source -> withVisible -> eval -> eval -> fwrite
+Execution halted

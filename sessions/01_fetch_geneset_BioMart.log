@@ -1,0 +1,3 @@
+Fetching kinome for: human
+Querying BioMart for kinase genes...
+Done. Output: genesets/curated/kinases/inputs/human_kinome__251229.csv (785 unique kinases)

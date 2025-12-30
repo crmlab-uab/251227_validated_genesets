@@ -17,7 +17,7 @@ Summary of work performed during the kinase annotation session (finalized output
   - Merge Manning Group/Family/Subfamily into the kinases table.
   - Remove stale `.x/.y` merge artifacts and normalize column names (`HGNC ID` → `HGNC_ID`, `Group name` → `HUGO_Group`).
   - Apply deduplication logic: keep Manning-annotated row when available; otherwise prefer smallest numeric Ensembl ID as canonical.
-- Implemented `fetch_kinhub_and_merge.R` to scrape KinHub, map KinHub symbols via HGNC→Ensembl where possible, and merge KinHub fields into the kinases table.
+- Implemented `02_fetch_validation_sources.R` (formerly `fetch_kinhub_and_merge.R`) to scrape KinHub, map KinHub symbols via HGNC→Ensembl where possible, and merge KinHub fields into the kinases table.
 
 **3) Data sources used**
 - `manning_2002_TableS1.csv` (Manning Table S1)
