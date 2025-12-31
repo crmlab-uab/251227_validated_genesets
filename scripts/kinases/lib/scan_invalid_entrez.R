@@ -4,9 +4,17 @@
 
 library(data.table)
 library(org.Mm.eg.db)
-inputs_dir <- 'genesets/curated/kinases/inputs'
-candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
-if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+library(yaml)
+# Load config and set input_dir from YAML if available
+config_file <- Sys.getenv('KINASES_CONFIG', unset = 'genesets_config.yaml')
+if (file.exists(config_file)) {
+  cfg <- yaml::read_yaml(config_file)
+  input_dir <- if (!is.null(cfg$input_dir)) cfg$input_dir else 'curated/kinases/inputs'
+} else {
+  input_dir <- 'curated/kinases/inputs'
+}
+candidates <- list.files(input_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', input_dir)
 kinases_file <- sort(candidates, decreasing=TRUE)[1]
 kinases <- fread(kinases_file, header=TRUE)
 all_entrez <- keys(org.Mm.eg.db, keytype='ENTREZID')

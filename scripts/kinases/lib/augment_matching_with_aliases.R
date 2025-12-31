@@ -76,7 +76,7 @@ main <- function() {
 
   kin_f <- cfg_get("input_files.base_gene_list", "kinases_human.csv")
   # Manning CSV moved into kinases/data/; default relative to kinases working dir
-  manning_f <- cfg_get("input_files.manning", "genesets/curated/kinases/manning_2002_TableS1.csv")
+  manning_f <- cfg_get("input_files.manning", "curated/kinases/manning_TableS1__251228.csv")
   # Step guard: skip if augment_aliases is disabled
   if (!cfg_get("steps.augment_aliases", TRUE)) {
     cat("Skipping alias/Ensembl augmentation per genesets_config.yaml\n")

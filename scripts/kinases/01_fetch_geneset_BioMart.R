@@ -8,19 +8,62 @@ library(optparse)
 library(data.table)
 library(biomaRt)
 
-# determine repository root based on script location so outputs are written to repo root
+# Helper for error reporting
+check_file_exists <- function(f, msg=NULL) {
+  if (!file.exists(f)) stop(ifelse(is.null(msg), paste0('Missing required file: ', f), msg), call.=FALSE)
+}
+check_file_nonempty <- function(f, msg=NULL) {
+  if (!file.exists(f) || file.info(f)$size == 0) stop(ifelse(is.null(msg), paste0('File missing or empty: ', f), msg), call.=FALSE)
+}
+
+
+
+# Robust repo root detection
 cmdArgs <- commandArgs(trailingOnly = FALSE)
 fileArgIdx <- grep("--file=", cmdArgs)
 fileArg <- if (length(fileArgIdx) > 0) sub("--file=", "", cmdArgs[fileArgIdx[1]]) else NA_character_
-script_dir <- if (!is.na(fileArg) && nzchar(fileArg)) dirname(normalizePath(fileArg)) else normalizePath(".")
-repo_root <- normalizePath(file.path(script_dir, "..", "..", ".."))
+script_dir <- if (!is.na(fileArg) && nzchar(fileArg)) dirname(normalizePath(fileArg)) else normalizePath(getwd())
+find_repo_root <- function(start_dir) {
+  cur <- normalizePath(start_dir)
+  for (i in 1:10) {
+    if (file.exists(file.path(cur, "genesets_config.yaml"))) return(cur)
+    next_cur <- dirname(cur)
+    if (next_cur == cur) break
+    cur <- next_cur
+  }
+  stop("Could not find repository root from ", start_dir)
+}
+repo_root <- find_repo_root(script_dir)
 
+# Always read species from YAML first
+suppressMessages(library(yaml))
+config_file <- Sys.getenv('KINASES_CONFIG', unset = file.path(repo_root, 'genesets_config.yaml'))
+cat(sprintf("[DEBUG] Checking config file: %s\n", config_file))
+species <- NULL
+if (file.exists(config_file)) {
+  cfg <- yaml::read_yaml(config_file)
+  cat(sprintf("[DEBUG] cfg$species: %s\n", as.character(cfg$species)))
+  if (!is.null(cfg$species)) species <- tolower(cfg$species)
+} else {
+  cat(sprintf("[DEBUG] Config file not found: %s\n", config_file))
+}
+flush.console()
+
+# Then override with command-line argument if provided
+library(optparse)
 option_list <- list(
   make_option(c("-s", "--species"), type="character", default=NULL, help="Species: mouse or human", metavar="character")
 )
 opt <- parse_args(OptionParser(option_list=option_list))
-species <- tolower(opt$species)
-if (is.null(species) || !(species %in% c("mouse", "human"))) stop("--species must be 'mouse' or 'human'")
+if (!is.null(opt$species)) {
+  cat(sprintf("[DEBUG] Overriding species from argument: %s\n", opt$species))
+  species <- tolower(opt$species)
+}
+cat(sprintf("[DEBUG] Final species value: %s\n", as.character(species)))
+flush.console()
+if (is.null(species) || !(species %in% c("mouse", "human"))) {
+  stop("--species must be 'mouse' or 'human' (argument or YAML config)")
+}
 
 cat(sprintf("Fetching kinome for: %s\n", species), file=stderr())
 
@@ -28,8 +71,9 @@ cat(sprintf("Fetching kinome for: %s\n", species), file=stderr())
 if (species == "mouse") {
   dataset <- "mmusculus_gene_ensembl"
   date_tag <- format(Sys.time(), "%y%m%d")
-  outdir <- file.path(repo_root, "genesets","curated","kinases","inputs")
+  outdir <- file.path(repo_root, "curated","kinases","inputs")
   dir.create(outdir, recursive=TRUE, showWarnings=FALSE)
+  if (!dir.exists(outdir)) stop(paste0('Failed to create output directory: ', outdir))
   # canonical stable filename (used by downstream steps) and a timestamped snapshot
   outfile_canonical <- file.path(outdir, "kinases_mouse.csv")
   outfile_ts <- file.path(outdir, paste0("mouse_kinome__", date_tag, ".csv"))
@@ -42,8 +86,10 @@ if (species == "mouse") {
 } else {
   dataset <- "hsapiens_gene_ensembl"
   date_tag <- format(Sys.time(), "%y%m%d")
-  outdir <- file.path(repo_root, "genesets","curated","kinases","inputs")
+  outdir <- file.path(repo_root, "curated","kinases","inputs")
   dir.create(outdir, recursive=TRUE, showWarnings=FALSE)
+  if (!dir.exists(outdir)) stop(paste0('Failed to create output directory: ', outdir))
+  # Always write canonical output for downstream scripts
   outfile_canonical <- file.path(outdir, "kinases_human.csv")
   outfile_ts <- file.path(outdir, paste0("kinases_human__", date_tag, ".csv"))
   id_cols <- c(
@@ -55,6 +101,7 @@ if (species == "mouse") {
     "hgnc_id"                 # HGNC ID
   )
 }
+
 
 # 1. Fetch all protein-coding genes with kinase activity (GO:0004672, GO:0004674, GO:0016301, GO:0016773)
 mart <- useMart("ensembl", dataset=dataset)
@@ -93,8 +140,12 @@ if (species == "mouse") {
   # Reorder columns
   setcolorder(collapsed, c("ensembl_gene_id", "external_gene_name", "description", "mgi_id", "go_id"))
   # write canonical file for downstream use and also keep a dated snapshot
+  # Always write canonical output for downstream scripts
   fwrite(collapsed, outfile_canonical)
   fwrite(collapsed, outfile_ts)
+  for (f in c(outfile_canonical, outfile_ts)) {
+    check_file_nonempty(f, paste0('Output file missing or empty: ', f, '\nCheck BioMart connection and output path.'))
+  }
   # write md5 checksum for canonical file
   if (requireNamespace("tools", quietly=TRUE)) {
     md5 <- tools::md5sum(outfile_canonical)
@@ -134,6 +185,9 @@ if (species == "mouse") {
   # for human, write canonical file and a dated snapshot (both with kinases_human* root)
   fwrite(collapsed, outfile_canonical)
   fwrite(collapsed, outfile_ts)
+  for (f in c(outfile_canonical, outfile_ts)) {
+    check_file_nonempty(f, paste0('Output file missing or empty: ', f, '\nCheck BioMart connection and output path.'))
+  }
   # write md5 checksum for canonical file
   if (requireNamespace("tools", quietly=TRUE)) {
     md5 <- tools::md5sum(outfile_canonical)

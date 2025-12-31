@@ -10,7 +10,7 @@ Order (run sequentially):
 - `02_fetch_validation_sources.R`: fetch external validation sources (KinHub, HGNC, etc) and produce raw validation files under `val_sources/`.
 - `03_build_annotations.R`: assemble annotations (Manning, HGNC merges, alias augmentation, metabolic/lipid/provenance) into an annotated kinases table. This is the canonical annotation step.
 - `04_map_human_to_mouse.R`: map canonical human kinases to mouse via BioMart/UniProt (produces `mouse_kinome_definitive.csv`).
-- `05_export_gmt.R`: export final GMT files from validated canonical outputs into `genesets/curated/kinases/outputs/`.
+- `05_export_gmt.R`: export final GMT files from validated canonical outputs into `curated/kinases/outputs/`.
 
 **Notes:**
 - All mapping and validation logic is now consolidated in canonical scripts under `scripts/kinases/lib/` (see `map_human_to_mouse_uniprot.R`, `merge_kinase_uniprot_validation.R`, `comprehensive_kinase_validation.R`).

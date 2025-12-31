@@ -4,16 +4,26 @@
 library(httr)
 library(data.table)
 
-# Load kinase gene symbols
-inputs_dir <- 'genesets/curated/kinases/inputs'
-candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
-if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+
+# Load config and set input/output dirs from YAML if available
+library(yaml)
+config_file <- Sys.getenv('KINASES_CONFIG', unset = 'genesets_config.yaml')
+if (file.exists(config_file)) {
+  cfg <- yaml::read_yaml(config_file)
+  input_dir <- if (!is.null(cfg$input_dir)) cfg$input_dir else 'curated/kinases/inputs'
+  output_dir <- if (!is.null(cfg$output_dir)) cfg$output_dir else 'curated/kinases/outputs'
+} else {
+  input_dir <- 'curated/kinases/inputs'
+  output_dir <- 'curated/kinases/outputs'
+}
+candidates <- list.files(input_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', input_dir)
 kinase_file <- sort(candidates, decreasing=TRUE)[1]
 kinases <- fread(kinase_file, header=TRUE)
 gene_symbols <- unique(na.omit(kinases$Mouse_Symbol))
 
 # Prepare output file
-output_file <- '../uniprot_mouse_kinase_idmapping.tab'
+output_file <- file.path(output_dir, 'uniprot_mouse_kinase_idmapping.tab')
 
 cat('Fetching UniProt mouse gene name to UniProtKB mapping for kinases only...\n')
 

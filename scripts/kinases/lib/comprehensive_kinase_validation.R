@@ -16,10 +16,19 @@ suppressPackageStartupMessages({
 cat("=== COMPREHENSIVE KINASE VALIDATION ===\n\n")
 cat("Loading kinase list...\n")
 
-# Read curated kinase list
-inputs_dir <- 'genesets/curated/kinases/inputs'
-candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
-if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+library(yaml)
+# Load config and set input/output dirs from YAML if available
+config_file <- Sys.getenv('KINASES_CONFIG', unset = 'genesets_config.yaml')
+if (file.exists(config_file)) {
+  cfg <- yaml::read_yaml(config_file)
+  input_dir <- if (!is.null(cfg$input_dir)) cfg$input_dir else 'curated/kinases/inputs'
+  output_dir <- if (!is.null(cfg$output_dir)) cfg$output_dir else 'curated/kinases/outputs'
+} else {
+  input_dir <- 'curated/kinases/inputs'
+  output_dir <- 'curated/kinases/outputs'
+}
+candidates <- list.files(input_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', input_dir)
 kinases_file <- sort(candidates, decreasing=TRUE)[1]
 kinases <- fread(kinases_file, header = TRUE)
 colnames(kinases) <- c(
@@ -215,7 +224,9 @@ if (nrow(false_negatives) > 0) {
   cat("✓ No false negatives found\n")
 }
 
-output_file <- "mouse_kinome_validation_results.csv"
+
+# Save validation results to output_dir
+output_file <- file.path(output_dir, "mouse_kinome_validation_results.csv")
 fwrite(kinases_validated, output_file, quote = TRUE)
 cat("\n✓ Validation results saved to:", output_file, "\n")
 
@@ -238,5 +249,8 @@ summary_report <- paste0(
   "- False negatives: ", nrow(false_negatives), "\n"
 )
 
-writeLines(summary_report, "VALIDATION_REPORT.md")
-cat("✓ Summary report saved to: VALIDATION_REPORT.md\n")
+
+# Save summary report to output_dir
+report_file <- file.path(output_dir, "VALIDATION_REPORT.md")
+writeLines(summary_report, report_file)
+cat("✓ Summary report saved to:", report_file, "\n")

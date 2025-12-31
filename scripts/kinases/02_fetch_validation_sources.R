@@ -1,4 +1,11 @@
+
 #!/usr/bin/env Rscript
+check_file_exists <- function(f, msg=NULL) {
+  if (!file.exists(f)) stop(ifelse(is.null(msg), paste0('Missing required file: ', f), msg), call.=FALSE)
+}
+check_file_nonempty <- function(f, msg=NULL) {
+  if (!file.exists(f) || file.info(f)$size == 0) stop(ifelse(is.null(msg), paste0('File missing or empty: ', f), msg), call.=FALSE)
+}
 # Unified kinase validation source fetch/merge script
 # Usage: Rscript fetch_validation_sources.R --source=kinhub|hgnc [--config=genesets_config.yaml]
 
@@ -53,8 +60,8 @@ cfg_get <- function(path, default) {
 }
 
 # --- Input file selection ---
-input_dir <- file.path(repo_root, "genesets","curated","kinases","inputs")
-outdir <- file.path(repo_root, "genesets","curated","kinases","val_sources")
+input_dir <- file.path(repo_root, "curated","kinases","inputs")
+outdir <- file.path(repo_root, "curated","kinases","val_sources")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 
 canonical <- file.path(input_dir, "kinases_human.csv")
@@ -66,6 +73,7 @@ if (file.exists(canonical)) {
   candidate_info <- file.info(candidates)
   kin_file <- rownames(candidate_info)[which.max(candidate_info$mtime)]
 }
+check_file_nonempty(kin_file, paste0('Baseline kinome input missing or empty: ', kin_file))
 cat("Using baseline kinome input:", kin_file, "\n", file=stderr())
 kin <- tryCatch(fread(kin_file), error = function(e) stop("Failed to read baseline kinome CSV: ", e$message))
 
@@ -92,6 +100,7 @@ if (tolower(source_type) == "kinhub") {
     status <- system(cmd)
     if (status != 0 || !file.exists(km_file)) stop("Failed to fetch/parse KinHub HTML to TSV")
   }
+  check_file_nonempty(km_file, paste0('KinHub mapping file missing or empty: ', km_file))
   km <- fread(km_file, header=FALSE, sep="\t", na.strings=c("","NA"))
   setnames(km, c("V1","V2","V3","V4"), c("HGNC","Group","Family","SubFamily"))
   km[, HGNC := toupper(trimws(HGNC))]
@@ -117,8 +126,10 @@ if (tolower(source_type) == "kinhub") {
     sym_map <- rbind(sym_map, data.table(HGNC=sym, ensembl=en))
   }
   km2 <- merge(km, sym_map, by="HGNC", all.x=TRUE)
-  fwrite(km2, file.path(outdir, "kinhub_mapping.csv"))
-  cat(sprintf("KinHub mapping written: %s\n", file.path(outdir, "kinhub_mapping.csv")), file=stderr())
+  kinmap_out <- file.path(outdir, "kinhub_mapping.csv")
+  fwrite(km2, kinmap_out)
+  check_file_nonempty(kinmap_out, paste0('KinHub mapping output missing or empty: ', kinmap_out))
+  cat(sprintf("KinHub mapping written: %s\n", kinmap_out), file=stderr())
 } else if (tolower(source_type) == "hgnc") {
   # --- HGNC logic ---
   headers <- add_headers(Accept = "application/json", `User-Agent` = "bRNA3F/1.0 (+https://github.com/bRNA3F)")
@@ -150,8 +161,10 @@ if (tolower(source_type) == "kinhub") {
     if (i %% 25 == 0) cat(sprintf("%d/%d symbols processed...\n", i, length(symbols)), file=stderr())
   }
   out_dt <- rbindlist(results, use.names=TRUE, fill=TRUE)
-  fwrite(out_dt, file.path(outdir, "hgnc_kinase_groups.csv"))
-  cat(sprintf("HGNC metadata written: %s\n", file.path(outdir, "hgnc_kinase_groups.csv")), file=stderr())
+  hgnc_out <- file.path(outdir, "hgnc_kinase_groups.csv")
+  fwrite(out_dt, hgnc_out)
+  check_file_nonempty(hgnc_out, paste0('HGNC metadata output missing or empty: ', hgnc_out))
+  cat(sprintf("HGNC metadata written: %s\n", hgnc_out), file=stderr())
 } else {
   stop("Unknown --source argument: must be 'kinhub' or 'hgnc'")
 }

@@ -6,14 +6,24 @@
 
 library(data.table)
 
-# Input files
-inputs_dir <- 'genesets/curated/kinases/inputs'
-candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
-if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
+
+# Load config and set input/output dirs from YAML if available
+library(yaml)
+config_file <- Sys.getenv('KINASES_CONFIG', unset = 'genesets_config.yaml')
+if (file.exists(config_file)) {
+	cfg <- yaml::read_yaml(config_file)
+	input_dir <- if (!is.null(cfg$input_dir)) cfg$input_dir else 'curated/kinases/inputs'
+	output_dir <- if (!is.null(cfg$output_dir)) cfg$output_dir else 'curated/kinases/outputs'
+} else {
+	input_dir <- 'curated/kinases/inputs'
+	output_dir <- 'curated/kinases/outputs'
+}
+candidates <- list.files(input_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', input_dir)
 kinase_file <- sort(candidates, decreasing=TRUE)[1]
-biomart_file <- '251227_curated_kinases_biomart.csv'
-uniprot_file <- 'uniprot_mouse_kinase_idmapping.tab'
-output_file <- '251227_curated_kinases_uniprot_validated.csv'
+biomart_file <- file.path(output_dir, '251227_curated_kinases_biomart.csv')
+uniprot_file <- file.path(output_dir, 'uniprot_mouse_kinase_idmapping.tab')
+output_file <- file.path(output_dir, '251227_curated_kinases_uniprot_validated.csv')
 
 # Load data
 kinases <- fread(kinase_file, header=TRUE)

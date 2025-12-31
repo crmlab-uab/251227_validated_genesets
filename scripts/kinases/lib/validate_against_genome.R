@@ -8,7 +8,7 @@ library(data.table)
 cat("=== Kinase Genome Validation ===\n\n")
 
 # Paths
-inputs_dir <- 'genesets/curated/kinases/inputs'
+inputs_dir <- 'curated/kinases/inputs'
 candidates <- list.files(inputs_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
 if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', inputs_dir)
 kinase_file <- sort(candidates, decreasing=TRUE)[1]

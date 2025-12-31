@@ -11,7 +11,19 @@ library(AnnotationDbi)
 
 # Load kinome table
 
-kinome_file <- "human_kinome_with_group_family_GOlast_custom2.csv"
+
+# Load config and set input/output dirs from YAML if available
+library(yaml)
+config_file <- Sys.getenv('KINASES_CONFIG', unset = 'genesets_config.yaml')
+if (file.exists(config_file)) {
+  cfg <- yaml::read_yaml(config_file)
+  input_dir <- if (!is.null(cfg$input_dir)) cfg$input_dir else 'curated/kinases/inputs'
+  output_dir <- if (!is.null(cfg$output_dir)) cfg$output_dir else 'curated/kinases/outputs'
+} else {
+  input_dir <- 'curated/kinases/inputs'
+  output_dir <- 'curated/kinases/outputs'
+}
+kinome_file <- file.path(input_dir, 'human_kinome_with_group_family_GOlast_custom2.csv')
 dt <- fread(kinome_file)
 
 # Rename 'Custom' column to 'Protein' if present
@@ -58,6 +70,6 @@ if ("go_id" %in% names(dt)) {
   dt$go_id <- NULL
   dt$go_id <- go_col
 }
-fwrite(dt, "human_kinome_with_group_family_GOlast_metabolic_lipid_flags.csv")
-
-cat("Annotated metabolic kinases using KEGG. Output file: human_kinome_with_group_family_GOlast_metabolic_lipid_flags.csv\n")
+output_file <- file.path(output_dir, 'human_kinome_with_group_family_GOlast_metabolic_lipid_flags.csv')
+fwrite(dt, output_file)
+cat("Annotated metabolic kinases using KEGG. Output file:", output_file, "\n")

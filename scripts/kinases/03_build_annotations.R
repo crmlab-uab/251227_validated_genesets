@@ -1,4 +1,11 @@
-Renamed from 04_build_annotations.R to 03_build_annotations.R
+# Helper for error reporting
+check_file_exists <- function(f, msg=NULL) {
+  if (!file.exists(f)) stop(ifelse(is.null(msg), paste0('Missing required file: ', f), msg), call.=FALSE)
+}
+# Helper for error reporting
+check_file_nonempty <- function(f, msg=NULL) {
+  if (!file.exists(f) || file.info(f)$size == 0) stop(ifelse(is.null(msg), paste0('File missing or empty: ', f), msg), call.=FALSE)
+}
 # Author: C. Ryan Miller
 # Created: 2025-12-28 02:17 CST
 # Commit: 26ec675324c74c530b55664519f79329a3d427d8
@@ -28,10 +35,14 @@ cfg_get <- function(path, default) {
 }
 
 # default inputs/outputs
-man_f <- cfg_get("input_files.manning", "data/manning_2002_TableS1.csv")
-base_gene_f <- cfg_get("input_files.base_gene_list", "kinases_human.csv")
-out_human <- cfg_get("outputs.human", "kinases_human.csv")
-out_mouse <- cfg_get("outputs.mouse", "kinases_mouse.csv")
+man_f <- cfg_get("input_files.manning", "../../../curated/kinases/inputs/Manning_tableS1__251228.csv")
+base_gene_f <- cfg_get("input_files.base_gene_list", "../../../curated/kinases/inputs/kinases_human.csv")
+out_human <- cfg_get("outputs.human", "../../../curated/kinases/inputs/kinases_human.csv")
+out_mouse <- cfg_get("outputs.mouse", "../../../curated/kinases/inputs/kinases_mouse.csv")
+
+# Check required input files
+check_file_nonempty(man_f, paste0('Manning supplement missing or empty: ', man_f))
+check_file_nonempty(base_gene_f, paste0('Base gene list missing or empty: ', base_gene_f))
 
 # compute repo root from script location (scripts/kinases/bin -> ../../../)
 cmdArgs <- commandArgs(trailingOnly = FALSE)
@@ -214,7 +225,9 @@ outdir2 <- file.path(repo_root, "genesets","curated","kinases","outputs")
 dir.create(outdir2, recursive=TRUE, showWarnings=FALSE)
 base <- tools::file_path_sans_ext(basename(outfile))
 outfile <- file.path(outdir2, paste0("03_", base, "__", date_tag, ".csv"))
+# Write output and check
 fwrite(all_kinases, outfile)
+check_file_nonempty(outfile, paste0('Output file missing or empty: ', outfile))
 # write md5 checksum alongside CSV
 if (requireNamespace("tools", quietly=TRUE)) {
   md5 <- tools::md5sum(outfile)
