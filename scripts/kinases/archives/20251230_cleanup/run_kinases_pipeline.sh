@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Canonical wrapper: run all 01_ to 05_ kinases pipeline scripts in order
-# Usage: ./run_kinases_pipeline.sh [--from N] [--to N] [--dry-run] [--force] [--log-dir DIR]
-
 usage(){
   cat <<EOF
 Usage: $(basename "$0") [--from N] [--to N] [--dry-run] [--force] [--log-dir DIR]
@@ -45,6 +42,7 @@ if [[ -z "$LOG_DIR" ]]; then
   LOG_DIR="$REPO_ROOT/sessions/${TS}_kinases_run"
 fi
 mkdir -p "$LOG_DIR"
+
 
 # discover numbered R scripts in this bin dir and sort by numeric prefix
 mapfile -t SCRIPTS < <(

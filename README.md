@@ -8,6 +8,7 @@
 
 This repository contains **independently validated gene sets** for use in RNA-seq differential expression and pathway analysis. All gene sets have been curated from published literature and validated against authoritative databases (UniProt, Gene Ontology, Bioconductor annotations).
 
+
 ## Repository Organization
 
 ```
@@ -23,8 +24,19 @@ This repository contains **independently validated gene sets** for use in RNA-se
 │   ├── VALIDATION_METHODS.md
 │   └── CHANGELOG.md
 └── scripts/                    # Sync and verification tools
-    └── sync_to_analysis_repo.sh
+  └── sync_to_analysis_repo.sh
 ```
+
+**Pipeline scripts:**
+- See `scripts/kinases/PIPELINE.md` for the canonical, up-to-date pipeline sequence and entrypoints.
+- Canonical pipeline scripts are now consecutively numbered:
+  - `01_fetch_geneset_BioMart.R`
+  - `02_fetch_validation_sources.R`
+  - `03_build_annotations.R`
+  - `04_map_human_to_mouse.R`
+  - `05_export_gmt.R`
+- All mapping and validation logic is consolidated in canonical scripts under `scripts/kinases/lib/` (see `map_human_to_mouse_uniprot.R`, `merge_kinase_uniprot_validation.R`, `comprehensive_kinase_validation.R`).
+- Deprecated scripts have been removed; use only the entrypoints listed in `PIPELINE.md`.
 
 ## Validated Gene Sets
 

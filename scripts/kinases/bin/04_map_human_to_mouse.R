@@ -1,8 +1,12 @@
+Renamed from 07_map_human_to_mouse.R to 04_map_human_to_mouse.R
 # Author: C. Ryan Miller
 # Created: 2025-12-28 02:17 CST
 # Commit: 26ec675324c74c530b55664519f79329a3d427d8
 
 # Fetch definitive mouse kinome from authoritative sources
+#
+# NOTE: This is a thin runner. All mapping logic is consolidated in scripts/kinases/lib/ (see map_human_to_mouse_uniprot.R, merge_kinase_uniprot_validation.R).
+# Do not duplicate mapping logic here; update lib/ scripts for mapping changes.
 # Output: mouse_kinome_definitive.csv with Mouse_Symbol, Ensembl_Gene_ID, Entrez_ID, UniProt_ID, MGI_ID, Description
 
 library(data.table)

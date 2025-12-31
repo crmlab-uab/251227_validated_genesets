@@ -1,4 +1,7 @@
 # Merge UniProt mapping with kinase list and biomart mapping
+#
+# NOTE: This is the canonical script for merging UniProt and BioMart mappings in the kinases pipeline.
+# All merging logic should be consolidated here. Do not duplicate merging logic elsewhere.
 # Author: C. Ryan Miller, MD, PhD (rmiller@uab.edu)
 
 library(data.table)

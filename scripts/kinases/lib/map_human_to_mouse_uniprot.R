@@ -1,4 +1,7 @@
 # Map human UniProt IDs to mouse UniProt IDs for kinase validation
+#
+# NOTE: This is the canonical mapping script for human-to-mouse UniProt mapping in the kinases pipeline.
+# All mapping logic should be consolidated here. Do not duplicate mapping logic elsewhere.
 # Author: C. Ryan Miller, MD, PhD (rmiller@uab.edu)
 
 library(data.table)
