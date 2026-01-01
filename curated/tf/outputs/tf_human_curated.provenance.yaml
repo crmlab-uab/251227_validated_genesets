@@ -1,0 +1,107 @@
+file: tf_human_curated.csv
+generated: 2025-12-31 23:14:45
+primary_source: HGNC Gene Groups (TF-related)
+validation_sources:
+- Lambert et al. 2018 TF Census
+- JASPAR 2020
+- BioMart GO:0003700
+total_tfs: 1852
+sources:
+  hgnc:
+    name: HGNC Gene Names
+    url: https://www.genenames.org/
+    role: Primary source
+  lambert:
+    name: Lambert et al. 2018 - The Human Transcription Factors
+    file: 221003_TranscriptionFactors_v_1.01.csv
+    url: https://humantfs.ccbr.utoronto.ca/
+    pubmed: PMID:29425488
+    doi: 10.1016/j.cell.2018.01.029
+    journal: Cell 172(4):650-665 (2018)
+    role: Validation source - curated TF census with DBD classification
+  jaspar:
+    name: JASPAR 2020
+    url: https://jaspar.elixir.no/
+    api: https://jaspar.elixir.no/api/v1/
+    pubmed: PMID:31701148
+    role: Validation source - TFs with experimentally-determined binding motifs
+  biomart:
+    name: Ensembl BioMart
+    url: https://www.ensembl.org/biomart
+    go_terms:
+    - GO:0003700
+    - GO:0000981
+    role: Validation source and mouse orthologs
+columns:
+  HGNC_symbol:
+    source: hgnc
+    description: Authoritative human gene symbol from HGNC gene groups
+    added: '2025-12-31'
+  HGNC_ID:
+    source: hgnc
+    description: HGNC database identifier
+    added: '2025-12-31'
+  Name_hgnc:
+    source: hgnc
+    description: Full gene name from HGNC
+    added: '2025-12-31'
+  Group_hgnc:
+    source: hgnc
+    description: HGNC gene group name (TF-related)
+    added: '2025-12-31'
+  Group_ID_hgnc:
+    source: hgnc
+    description: HGNC gene group numeric ID
+    added: '2025-12-31'
+  Status_hgnc:
+    source: hgnc
+    description: HGNC gene approval status
+    added: '2025-12-31'
+  Locus_type_hgnc:
+    source: hgnc
+    description: HGNC locus type classification
+    added: '2025-12-31'
+  Ensembl_ID_lambert:
+    source: lambert
+    description: Ensembl gene ID from Lambert et al. 2018 TF Census
+    added: '2025-12-31'
+  DBD_lambert:
+    source: lambert
+    description: DNA-binding domain classification from Lambert TF Census
+    added: '2025-12-31'
+  TF_assessment_lambert:
+    source: lambert
+    description: TF assessment/confidence from Lambert TF Census
+    added: '2025-12-31'
+  InLambert:
+    source: validation
+    description: Present in Lambert et al. 2018 TF Census (Y/N)
+    added: '2025-12-31'
+  Ensembl_ID_biomart:
+    source: biomart
+    description: Ensembl gene ID from BioMart
+    added: '2025-12-31'
+  GO_TF_biomart:
+    source: biomart
+    description: GO terms for TF activity from BioMart
+    added: '2025-12-31'
+  InGO_TF:
+    source: validation
+    description: Has GO:0003700 or GO:0000981 annotation (Y/N)
+    added: '2025-12-31'
+  JASPAR_matrix_ids:
+    source: jaspar
+    description: JASPAR matrix ID(s) for known binding motifs
+    added: '2025-12-31'
+  InJASPAR:
+    source: validation
+    description: Has binding motif in JASPAR 2020 database (Y/N)
+    added: '2025-12-31'
+  Ensembl_ID:
+    source: derived
+    description: Consensus Ensembl ID (Lambert > BioMart > HGNC priority)
+    added: '2025-12-31'
+  Ensembl_ID_status:
+    source: derived
+    description: 'Source status: confirmed, lambert, biomart, hgnc'
+    added: '2025-12-31'

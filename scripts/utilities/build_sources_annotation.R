@@ -28,7 +28,7 @@ cfg_get <- function(path, default) {
 }
 
 # default inputs/outputs
-man_f <- cfg_get("input_files.manning", "data/manning_2002_TableS1.csv")
+man_f <- cfg_get("input_files.manning", "curated/kinases/inputs/Manning_tableS1__251228.csv")
 base_gene_f <- cfg_get("input_files.base_gene_list", "kinases_human.csv")
 out_human <- cfg_get("outputs.human", "kinases_human.csv")
 out_mouse <- cfg_get("outputs.mouse", "kinases_mouse.csv")

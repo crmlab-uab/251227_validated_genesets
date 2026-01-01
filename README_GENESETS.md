@@ -1,32 +1,77 @@
-# Genesets pipeline (config-driven)
+# Genesets Pipeline (config-driven)
 
-This README describes the small, config-driven genesets pipeline used to build and annotate kinases gene sets.
+This README describes the config-driven genesets pipeline used to build and annotate kinases gene sets.
 
-Files added:
-- `genesets_config.yaml` — repository-level config (defaults and step flags).
-- `run_genesets_pipeline.R` — runner that executes steps in order using `Rscript`.
+## Configuration
 
-Primary scripts (in `kinases/`):
-- `build_kinome_annotation.R` — query BioMart/KEGG/HGNC to build base kinome table. Use `--species` to set `human` or `mouse`.
-- `add_manning_annotation.R` — merge Manning Table S1 into the kinome table; uses HGNC REST for canonical symbols.
-	- Manning supplement CSV is located at `kinases/data/manning_2002_TableS1.csv` (default); you can override via `genesets_config.yaml`.
-- `augment_matching_with_aliases.R` — expand matching using HGNC aliases and Ensembl crosswalks (cached lookups).
-- `02_fetch_validation_sources.R` (canonical: formerly `fetch_kinhub_and_merge.R`) — optional KinHub scrape and merge.
+- **`genesets_config.yaml`** - Repository-level config (paths, species, step flags)
+- **`scripts/kinases/lib/config_loader.R`** - Centralized config loader used by all scripts
 
-Usage:
-1. Edit `genesets_config.yaml` to set inputs/outputs and enable/disable steps.
-2. Run the pipeline:
+## Pipeline Scripts
+
+Located in `scripts/kinases/`:
+
+| Script | Purpose |
+|--------|---------|
+| `01_fetch_geneset_BioMart.R` | Query BioMart for kinase genes by GO terms |
+| `02_fetch_validation_sources.R` | Fetch external validation (KinHub, HGNC) |
+| `03_build_annotations.R` | Build comprehensive annotations (HGNC groups, KEGG metabolic/lipid) |
+| `04_map_human_to_mouse.R` | Map human kinases to mouse orthologs |
+| `05_export_gmt.R` | Export GMT files for GSEA |
+
+## Usage
+
+### Option 1: Run individual scripts
+
+```bash
+cd /data/251227_validated_genesets
+
+# Human kinases with mouse orthologs
+Rscript scripts/kinases/01_fetch_geneset_BioMart.R --species=human
+Rscript scripts/kinases/03_build_annotations.R --species=human
+Rscript scripts/kinases/04_map_human_to_mouse.R
+Rscript scripts/kinases/05_export_gmt.R
 ```
-Rscript run_genesets_pipeline.R
+
+### Option 2: Configure via YAML
+
+Edit `genesets_config.yaml`:
+
+```yaml
+species: "human"  # or "mouse"
+input_dir: "curated/kinases/inputs"
+output_dir: "curated/kinases/outputs"
+
+steps:
+  build: true
+  annotate_manning: true
+  augment_aliases: true
+  merge_val_sources: true
 ```
 
-Notes:
-- Each script still has sensible defaults so they can be run individually without the config file.
-- HGNC REST calls are cached in `kinases/hgnc_lookup_cache.rds` when created.
+## Output Locations
 
-Validation sources:
-- Place validation files (CSV, GMT, or HTML) in `genesets/curated/` (preferred).
-- The pipeline will also accept `val_sources/` or `kinases/val_sources/` if present.
-- CSVs will be merged automatically by Ensembl ID or gene symbol when possible.
-- GMTs will be parsed and merged by gene symbol (adds `val_sources` column).
-- HTML pages with KinHub content will be delegated to the KinHub parser if detected (filename contains `kinhub`), otherwise the first HTML table is attempted.
+All outputs go to canonical config-driven paths:
+- **Inputs**: `curated/kinases/inputs/`
+  - `kinases_human_biomart.csv` / `kinases_mouse_biomart.csv`
+- **Outputs**: `curated/kinases/outputs/`
+  - `kinases_human_annotated.csv` / `kinases_mouse_annotated.csv`
+  - `kinases_mouse_orthologs.csv`
+  - `kinases_human_allsources.gmt` / `kinases_mouse_allsources.gmt`
+  - `kinases_human_kinhub.csv`, `kinases_human_hgnc.csv` (validation sources)
+
+## Notes
+
+- All scripts use `lib/config_loader.R` for consistent path resolution
+- No hardcoded relative paths - all paths derived from config
+- Each script can be run individually or as part of the full pipeline
+- MD5 checksums generated for all output files
+
+## Validation Sources
+
+Place validation files in `curated/kinases/val_sources/`:
+- CSVs merged by Ensembl ID or gene symbol
+- GMTs parsed and merged by gene symbol
+- HTML pages with KinHub content parsed automatically
+
+See `scripts/kinases/PIPELINE.md` for detailed pipeline documentation.

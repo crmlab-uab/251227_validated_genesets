@@ -1,58 +1,93 @@
 # Validated Gene Sets for RNA-seq Analysis
 
-**Version:** 1.0.0  
-**Date:** December 27, 2025, 02:40 CST  
+**Version:** 1.1.0
+**Date:** December 31, 2025
 **Author:** C. Ryan Miller, MD, PhD (rmiller@uab.edu)
 
 ## Purpose
 
 This repository contains **independently validated gene sets** for use in RNA-seq differential expression and pathway analysis. All gene sets have been curated from published literature and validated against authoritative databases (UniProt, Gene Ontology, Bioconductor annotations).
 
-
 ## Repository Organization
 
 ```
 251227_validated_genesets/
-├── kinases/                    # Mouse kinome (540 genes, 97.8% validated)
-│   ├── 201006_composite_kinases_curated.csv
-│   ├── mouse_kinome_comprehensive_validation.csv
-│   ├── VALIDATION_REPORT.md
-│   └── comprehensive_kinase_validation.R
-├── pathways/                   # Curated pathway gene sets
+├── curated/
+│   └── kinases/
+│       ├── inputs/           # Source gene lists and validation inputs
+│       ├── outputs/          # Final validated gene sets (CSV, GMT)
+│       └── val_sources/      # Intermediate validation files
+├── scripts/
+│   └── kinases/
+│       ├── 01_fetch_geneset_BioMart.R
+│       ├── 02_fetch_validation_sources.R
+│       ├── 03_build_annotations.R
+│       ├── 04_map_human_to_mouse.R
+│       ├── 05_export_gmt.R
+│       ├── lib/              # Reusable helpers & config_loader.R
+│       └── PIPELINE.md       # Canonical pipeline documentation
+├── pathways/                 # Curated pathway gene sets
 │   └── VERHAAK_GBM_Subtypes.gmt
-├── docs/                       # Documentation
+├── docs/                     # Documentation
 │   ├── VALIDATION_METHODS.md
 │   └── CHANGELOG.md
-└── scripts/                    # Sync and verification tools
-  └── sync_to_analysis_repo.sh
+└── genesets_config.yaml      # Pipeline configuration
 ```
 
-**Pipeline scripts:**
-- See `scripts/kinases/PIPELINE.md` for the canonical, up-to-date pipeline sequence and entrypoints.
-- Canonical pipeline scripts are now consecutively numbered:
-  - `01_fetch_geneset_BioMart.R`
-  - `02_fetch_validation_sources.R`
-  - `03_build_annotations.R`
-  - `04_map_human_to_mouse.R`
-  - `05_export_gmt.R`
-- All mapping and validation logic is consolidated in canonical scripts under `scripts/kinases/lib/` (see `map_human_to_mouse_uniprot.R`, `merge_kinase_uniprot_validation.R`, `comprehensive_kinase_validation.R`).
-- Deprecated scripts have been removed; use only the entrypoints listed in `PIPELINE.md`.
+## Quick Start
+
+```bash
+cd /data/251227_validated_genesets
+
+# Run full human kinase pipeline with mouse orthologs
+Rscript scripts/kinases/01_fetch_geneset_BioMart.R --species=human
+Rscript scripts/kinases/03_build_annotations.R --species=human
+Rscript scripts/kinases/04_map_human_to_mouse.R
+Rscript scripts/kinases/05_export_gmt.R
+
+# Check outputs
+ls -la curated/kinases/outputs/
+```
+
+## Pipeline Scripts
+
+All scripts use centralized configuration from `lib/config_loader.R`:
+- Automatic repo root detection
+- Config-driven paths (no hardcoded relative paths)
+- Consistent output locations
+
+| Script | Purpose |
+|--------|---------|
+| `01_fetch_geneset_BioMart.R` | Fetch kinase genes from Ensembl BioMart |
+| `02_fetch_validation_sources.R` | Fetch KinHub/HGNC validation data |
+| `03_build_annotations.R` | Build comprehensive annotations (HGNC, KEGG) |
+| `04_map_human_to_mouse.R` | Map human kinases to mouse orthologs |
+| `05_export_gmt.R` | Export GMT files for GSEA |
+
+See `scripts/kinases/PIPELINE.md` for detailed documentation.
 
 ## Validated Gene Sets
 
-### Mouse Kinome (v1.0)
-- **Source:** Composite from KinHub, Coral, UniProt databases
-- **Total genes:** 540 kinases
-- **Validation:** 528/540 (97.8%) confirmed via GO kinase activity terms
-- **Date curated:** October 6, 2020
-- **Date validated:** December 27, 2025
-- **Species:** Mouse (Mus musculus)
-- **File:** `kinases/201006_composite_kinases_curated.csv`
+### Human Kinome (v1.1)
+- **Source:** BioMart (GO kinase activity terms), HGNC groups, KEGG pathways
+- **Total genes:** 810 annotated kinases
+- **Annotations:** HGNC kinase groups, metabolic kinases, lipid kinases
+- **Date validated:** December 31, 2025
+- **File:** `curated/kinases/outputs/03_kinases_human__YYMMDD.csv`
+
+### Mouse Kinome (v1.1)
+- **Source:** Human-to-mouse ortholog mapping via BioMart
+- **Total genes:** 538 kinases
+- **Validation:** Cross-referenced with curated kinase lists
+- **Date validated:** December 31, 2025
+- **Files:**
+  - `curated/kinases/outputs/04_mouse_kinome_definitive__YYMMDD.csv`
+  - `curated/kinases/outputs/05_mouse_kinome_all_sources__YYMMDD.gmt`
 
 ### GBM Subtype Signatures (Verhaak)
 - **Source:** Verhaak et al. Cancer Cell 2010
 - **Subtypes:** Classical, Mesenchymal, Proneural
-- **Species:** Human → Mouse orthologs
+- **Species:** Human to Mouse orthologs
 - **File:** `pathways/VERHAAK_GBM_Subtypes.gmt`
 
 ## Usage in Analysis Projects
@@ -61,12 +96,9 @@ This repository contains **independently validated gene sets** for use in RNA-se
 
 ```bash
 # From your analysis repo (e.g., 251207_mNSC)
-cp /data/251227_validated_genesets/kinases/*.csv genesets/
+cp /data/251227_validated_genesets/curated/kinases/outputs/*.csv genesets/
+cp /data/251227_validated_genesets/curated/kinases/outputs/*.gmt genesets/custom/
 cp /data/251227_validated_genesets/pathways/*.gmt genesets/custom/
-
-# Generate checksums for verification
-cd data/genesets
-md5sum *.csv custom/*.gmt > ../docs/geneset_checksums.txt
 ```
 
 ### 2. Reference in your config
@@ -75,58 +107,43 @@ md5sum *.csv custom/*.gmt > ../docs/geneset_checksums.txt
 # config.yaml
 custom_gmt_files:
   - "genesets/custom/VERHAAK_GBM_Subtypes.gmt"
+  - "genesets/custom/05_mouse_kinome_all_sources__251231.gmt"
 
-kinase_list: "genesets/201006_composite_kinases_curated.csv"
+kinase_list: "genesets/03_kinases_human__251231.csv"
 ```
 
 ### 3. Verify checksums before analysis
 
 ```bash
-# Compare checksums to ensure files are unmodified
-md5sum -c docs/geneset_checksums.txt
+# All outputs have .md5 checksum files
+md5sum -c curated/kinases/outputs/*.md5
 ```
 
 ## Validation Methodology
 
 All gene sets undergo multi-database validation:
 
-1. **Gene Ontology (GO)** - Functional annotation from Bioconductor
-2. **UniProt** - Protein function and keywords
-3. **Bioconductor AnnotationDbi** - Cross-species ortholog mapping
-4. **Literature curation** - Manual verification against source publications
+1. **Ensembl BioMart** - GO kinase activity terms (GO:0004672, GO:0004674, GO:0016301, GO:0016773)
+2. **HGNC** - Kinase gene groups and families
+3. **KEGG** - Metabolic and lipid pathway annotations
+4. **UniProt** - Protein function validation
+5. **Cross-species mapping** - BioMart ortholog queries
 
 See `docs/VALIDATION_METHODS.md` for detailed protocols.
 
-## Citation Policy
-
-If you use these gene sets in publications, please cite:
-
-### Kinome Validation
-- **This repository:** `251227_validated_genesets v1.0` (DOI: pending)
-- **Original sources:** KinHub, Coral, Manning kinase classification
-
-### Pathway Gene Sets
-- **Verhaak GBM subtypes:** Verhaak et al. Cancer Cell 2010 (PMID: 20129251)
-
 ## Version History
 
+- **v1.1.0** (2025-12-31): Config-driven IO refactoring, updated kinase annotations
 - **v1.0.0** (2025-12-27): Initial release with mouse kinome (540 genes, 528 validated)
-
-## Contributing
-
-To add new validated gene sets:
-1. Follow validation protocol in `docs/VALIDATION_METHODS.md`
-2. Generate comprehensive validation report
-3. Update this README with new gene set metadata
-4. Update `CHANGELOG.md`
 
 ## Quality Standards
 
 All gene sets must meet:
-- ✅ **≥95% validation rate** against authoritative databases
-- ✅ **Traceable provenance** to published literature
-- ✅ **Species annotation** clearly documented
-- ✅ **Validation script** included for reproducibility
+- **>=95% validation rate** against authoritative databases
+- **Traceable provenance** to published literature
+- **Species annotation** clearly documented
+- **Validation script** included for reproducibility
+- **MD5 checksums** for all output files
 
 ## Contact
 

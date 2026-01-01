@@ -1,24 +1,65 @@
+#!/usr/bin/env Rscript
+# summarize_kinase_groups.R
 # Author: C. Ryan Miller
-# Created: 2025-12-28 02:17 CST
-# Commit: 26ec675324c74c530b55664519f79329a3d427d8
+# Updated: 2025-12-31 (refactored to use config_loader.R)
+# Purpose: Summarize kinases by Manning group classification
+# Usage: Rscript lib/summarize_kinase_groups.R
 
-# Summarize kinases by group
 library(data.table)
-library(yaml)
-# Load config and set input/output dirs from YAML if available
-config_file <- Sys.getenv('KINASES_CONFIG', unset = 'genesets_config.yaml')
-if (file.exists(config_file)) {
-	cfg <- yaml::read_yaml(config_file)
-	input_dir <- if (!is.null(cfg$input_dir)) cfg$input_dir else 'curated/kinases/inputs'
-	output_dir <- if (!is.null(cfg$output_dir)) cfg$output_dir else 'curated/kinases/outputs'
-} else {
-	input_dir <- 'curated/kinases/inputs'
-	output_dir <- 'curated/kinases/outputs'
+
+# Load centralized config
+.script_dir <- (function() {
+ cmd_args <- commandArgs(trailingOnly = FALSE)
+ file_arg <- grep("--file=", cmd_args, value = TRUE)
+ if (length(file_arg) > 0) {
+   return(dirname(normalizePath(sub("--file=", "", file_arg[1]))))
+ }
+ return(normalizePath("."))
+})()
+if (file.exists(file.path(.script_dir, "config_loader.R"))) {
+  source(file.path(.script_dir, "config_loader.R"))
+} else if (file.exists(file.path(.script_dir, "lib", "config_loader.R"))) {
+  source(file.path(.script_dir, "lib", "config_loader.R"))
 }
-input_file <- file.path(input_dir, '251227_curated_kinases_uniprot_validated.csv')
-output_file <- file.path(output_dir, 'kinase_group_summary.csv')
-kinases <- fread(input_file)
-group_summary <- kinases[, .N, by=Group][order(-N)]
+
+# Load annotated kinases (prefer human, fall back to mouse)
+human_file <- output_path("kinases_human_annotated.csv")
+mouse_file <- output_path("kinases_mouse_orthologs.csv")
+
+if (file.exists(human_file)) {
+  kinases <- fread(human_file)
+  species <- "human"
+} else if (file.exists(mouse_file)) {
+  kinases <- fread(mouse_file)
+  species <- "mouse"
+} else {
+  stop("No annotated kinase file found. Run the pipeline first.")
+}
+
+cat(sprintf("=== Kinase Group Summary (%s) ===\n\n", species))
+
+# Summarize by group (if Group column exists)
+if ("Group name" %in% names(kinases)) {
+  group_col <- "Group name"
+} else if ("Manning_Group" %in% names(kinases)) {
+  group_col <- "Manning_Group"
+} else if ("Group" %in% names(kinases)) {
+  group_col <- "Group"
+} else {
+  cat("No group column found. Available columns:\n")
+  print(names(kinases))
+  quit(status = 1)
+}
+
+group_summary <- kinases[, .N, by = group_col][order(-N)]
+setnames(group_summary, group_col, "Group")
+
+cat("Kinases by group:\n")
 print(group_summary)
-write.csv(group_summary, output_file, row.names=FALSE)
-cat('✓ Group summary written to', output_file, '\n')
+
+cat(sprintf("\nTotal: %d kinases in %d groups\n", nrow(kinases), nrow(group_summary)))
+
+# Write summary
+output_file <- output_path("kinases_group_summary.csv")
+fwrite(group_summary, output_file)
+cat(sprintf("\n✓ Group summary written to: %s\n", output_file))

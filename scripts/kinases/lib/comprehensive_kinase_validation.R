@@ -1,34 +1,41 @@
 #!/usr/bin/env Rscript
-# Mouse Kinase Validation using UniProt, GO, and Bioconductor
+# comprehensive_kinase_validation.R
 # Author: C. Ryan Miller, MD, PhD (rmiller@uab.edu)
-# Date: 2025-12-27
+# Updated: 2025-12-31 (refactored to use config_loader.R)
 # Purpose: Independently validate all mouse kinases against multiple databases
+# Usage: Rscript lib/comprehensive_kinase_validation.R
+#   OR: source("lib/comprehensive_kinase_validation.R") from scripts/kinases/
 
 suppressPackageStartupMessages({
   library(data.table)
-  library(UniProt.ws)
   library(GO.db)
   library(org.Mm.eg.db)
   library(org.Hs.eg.db)
   library(AnnotationDbi)
 })
 
+# Load centralized config (provides repo_root, paths, cfg, helper functions)
+.script_dir <- (function() {
+ cmd_args <- commandArgs(trailingOnly = FALSE)
+ file_arg <- grep("--file=", cmd_args, value = TRUE)
+ if (length(file_arg) > 0) {
+   return(dirname(normalizePath(sub("--file=", "", file_arg[1]))))
+ }
+ return(normalizePath("."))
+})()
+# Handle being in lib/ subdirectory
+if (file.exists(file.path(.script_dir, "config_loader.R"))) {
+  source(file.path(.script_dir, "config_loader.R"))
+} else if (file.exists(file.path(.script_dir, "lib", "config_loader.R"))) {
+  source(file.path(.script_dir, "lib", "config_loader.R"))
+}
+
 cat("=== COMPREHENSIVE KINASE VALIDATION ===\n\n")
 cat("Loading kinase list...\n")
 
-library(yaml)
-# Load config and set input/output dirs from YAML if available
-config_file <- Sys.getenv('KINASES_CONFIG', unset = 'genesets_config.yaml')
-if (file.exists(config_file)) {
-  cfg <- yaml::read_yaml(config_file)
-  input_dir <- if (!is.null(cfg$input_dir)) cfg$input_dir else 'curated/kinases/inputs'
-  output_dir <- if (!is.null(cfg$output_dir)) cfg$output_dir else 'curated/kinases/outputs'
-} else {
-  input_dir <- 'curated/kinases/inputs'
-  output_dir <- 'curated/kinases/outputs'
-}
-candidates <- list.files(input_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
-if (length(candidates) == 0) stop('Missing input snapshot: please place 201006_composite_kinases_curated__YYMMDD.csv in ', input_dir)
+# Find curated kinases input file
+candidates <- list.files(paths$input_dir, pattern='201006_composite_kinases_curated.*\\.csv$', full.names=TRUE, ignore.case=TRUE)
+if (length(candidates) == 0) stop('Missing input snapshot: place 201006_composite_kinases_curated__YYMMDD.csv in ', paths$input_dir)
 kinases_file <- sort(candidates, decreasing=TRUE)[1]
 kinases <- fread(kinases_file, header = TRUE)
 colnames(kinases) <- c(
@@ -38,6 +45,19 @@ colnames(kinases) <- c(
   "KinHub_Validated", "Coral_Validated", "UniProt_Validated",
   "Source", "Date_Added"
 )
+cat("  Found", nrow(kinases), "kinases\n")
+
+# Filter out excluded genes from config
+exclude_genes <- get_exclude_genes()
+if (length(exclude_genes) > 0) {
+  n_before <- nrow(kinases)
+  excluded_found <- kinases$Mouse_Symbol[kinases$Mouse_Symbol %in% exclude_genes]
+  kinases <- kinases[!Mouse_Symbol %in% exclude_genes]
+  n_excluded <- n_before - nrow(kinases)
+  if (n_excluded > 0) {
+    cat("  Excluded", n_excluded, "genes per config:", paste(excluded_found, collapse=", "), "\n")
+  }
+}
 
 cat("Total kinases to validate:", nrow(kinases), "\n\n")
 
@@ -226,7 +246,7 @@ if (nrow(false_negatives) > 0) {
 
 
 # Save validation results to output_dir
-output_file <- file.path(output_dir, "mouse_kinome_validation_results.csv")
+output_file <- output_path("kinases_mouse_validation_results.csv")
 fwrite(kinases_validated, output_file, quote = TRUE)
 cat("\n✓ Validation results saved to:", output_file, "\n")
 
@@ -251,6 +271,6 @@ summary_report <- paste0(
 
 
 # Save summary report to output_dir
-report_file <- file.path(output_dir, "VALIDATION_REPORT.md")
+report_file <- output_path("kinases_validation_report.md")
 writeLines(summary_report, report_file)
 cat("✓ Summary report saved to:", report_file, "\n")

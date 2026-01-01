@@ -27,8 +27,8 @@ genes <- map_hgnc(genes, cache_file=cache_file)
 fwrite(genes, cfg_get("outputs.mapped_hgnc", "kinases/kinases_mapped_hgnc.csv"))
 
 cat("Step: augment_aliases (before Manning)\n")
-  # Manning CSV default now located in genesets/curated/kinases/
-  manning_file <- cfg_get("input_files.manning", "genesets/curated/kinases/manning_2002_TableS1.csv")
+  # Manning CSV default now located in curated/kinases/
+  manning_file <- cfg_get("input_files.manning", "curated/kinases/manning_TableS1__251228.csv")
 if (file.exists(manning_file)) {
   man <- fread(manning_file)
 } else man <- data.table()
@@ -45,8 +45,8 @@ fwrite(genes, cfg_get("outputs.final", "kinases/kinases_human.csv"))
 
 if (isTRUE(cfg$steps$merge_val_sources)) {
   cat("Step: merge_val_sources\n")
-  # default val_sources dir (prefer centralized genesets/curated)
-  val_dir <- cfg_get("resources.val_sources_dir", "genesets/curated")
+  # default val_sources dir (prefer centralized curated)
+  val_dir <- cfg_get("resources.val_sources_dir", "curated")
   if (dir.exists(val_dir)) {
     # delegate to the canonical merge/validate entrypoint (prefer bin/05), fallback to lib script
     if (file.exists(file.path("scripts","kinases","bin","05_merge_and_validate.R"))) {

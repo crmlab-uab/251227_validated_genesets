@@ -1,2 +1,0 @@
-genesets/sources/kinases/201006_composite_kinases_curated.csv
-genesets/sources/kinases/manning_2002_TableS1.csv

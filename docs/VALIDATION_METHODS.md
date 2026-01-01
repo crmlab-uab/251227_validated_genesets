@@ -61,12 +61,18 @@ For UNCONFIRMED genes, investigate:
 
 ### Kinase Validation
 
-Script: `kinases/comprehensive_kinase_validation.R`
+Scripts located in `scripts/kinases/`:
+
+| Script | Purpose |
+|--------|---------|
+| `01_fetch_geneset_BioMart.R` | Fetch baseline kinases from BioMart |
+| `03_build_annotations.R` | Build comprehensive annotations (HGNC, KEGG) |
+| `lib/comprehensive_kinase_validation.R` | Full validation against GO/UniProt |
 
 **Requirements:**
 ```r
 library(data.table)
-library(UniProt.ws)
+library(biomaRt)
 library(GO.db)
 library(org.Mm.eg.db)  # For mouse
 library(org.Hs.eg.db)  # For human
@@ -75,12 +81,14 @@ library(AnnotationDbi)
 
 **Execution:**
 ```bash
-Rscript kinases/comprehensive_kinase_validation.R
+cd /data/251227_validated_genesets
+Rscript scripts/kinases/01_fetch_geneset_BioMart.R --species=human
+Rscript scripts/kinases/03_build_annotations.R --species=human
 ```
 
 **Output:**
-- `mouse_kinome_comprehensive_validation.csv` - Full validation results
-- `VALIDATION_REPORT.md` - Summary statistics
+- `curated/kinases/outputs/kinases_human_annotated.csv` - Annotated kinases
+- `curated/kinases/outputs/kinases_mouse_orthologs.csv` - Mouse orthologs
 
 ## Quality Thresholds
 
@@ -112,12 +120,13 @@ All validation scripts are version-controlled and include:
 
 To reproduce validation:
 ```bash
-# Use voldog/bRNA3F Docker environment (includes all required packages)
-docker pull voldog/bRNA3F:latest
+cd /data/251227_validated_genesets
 
-# Run validation script
-docker run -v /data:/data voldog/bRNA3F:latest \
-  Rscript /data/251227_validated_genesets/kinases/comprehensive_kinase_validation.R
+# Run the kinases pipeline
+Rscript scripts/kinases/01_fetch_geneset_BioMart.R --species=human
+Rscript scripts/kinases/03_build_annotations.R --species=human
+Rscript scripts/kinases/04_map_human_to_mouse.R
+Rscript scripts/kinases/05_export_gmt.R
 ```
 
 ## References

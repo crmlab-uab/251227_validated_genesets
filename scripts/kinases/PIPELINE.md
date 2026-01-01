@@ -1,38 +1,54 @@
-# Kinases Pipeline (ordered entrypoints)
+# Kinases Pipeline
 
-This file documents the canonical, ordered pipeline entrypoints under `scripts/kinases/bin/`.
+This file documents the canonical, ordered pipeline entrypoints under `scripts/kinases/`.
 
+## Configuration
 
+All scripts use centralized configuration from `lib/config_loader.R`, which:
+- Automatically finds repo root by searching for `genesets_config.yaml`
+- Loads paths from config file
+- Provides helper functions: `input_path()`, `output_path()`, `val_sources_path()`
+- Ensures all outputs go to canonical locations (no hardcoded paths)
 
-Order (run sequentially):
+## Pipeline Steps (run sequentially)
 
-- `01_fetch_geneset_BioMart.R`: fetch baseline gene lists from BioMart (species). Produces `kinases_human.csv` / `kinases_mouse.csv` in working dir.
-- `02_fetch_validation_sources.R`: fetch external validation sources (KinHub, HGNC, etc) and produce raw validation files under `val_sources/`.
-- `03_build_annotations.R`: assemble annotations (Manning, HGNC merges, alias augmentation, metabolic/lipid/provenance) into an annotated kinases table. This is the canonical annotation step.
-- `04_map_human_to_mouse.R`: map canonical human kinases to mouse via BioMart/UniProt (produces `mouse_kinome_definitive.csv`).
-- `05_export_gmt.R`: export final GMT files from validated canonical outputs into `curated/kinases/outputs/`.
+| Step | Script | Purpose | Output |
+|------|--------|---------|--------|
+| 01 | `01_fetch_geneset_BioMart.R` | Fetch baseline kinase genes from BioMart | `inputs/kinases_human_biomart.csv` or `inputs/kinases_mouse_biomart.csv` |
+| 02 | `02_fetch_validation_sources.R` | Fetch external validation sources (KinHub, HGNC) | `outputs/kinases_human_kinhub.csv`, `outputs/kinases_human_hgnc.csv` |
+| 03 | `03_build_annotations.R` | Build comprehensive annotations (HGNC, KEGG metabolic/lipid) | `outputs/kinases_human_annotated.csv` or `outputs/kinases_mouse_annotated.csv` |
+| 04 | `04_map_human_to_mouse.R` | Map human kinases to mouse orthologs via BioMart | `outputs/kinases_mouse_orthologs.csv` |
+| 05 | `05_export_gmt.R` | Export GMT files for GSEA | `outputs/kinases_human_allsources.gmt`, `outputs/kinases_mouse_allsources.gmt` |
 
-**Notes:**
-- All mapping and validation logic is now consolidated in canonical scripts under `scripts/kinases/lib/` (see `map_human_to_mouse_uniprot.R`, `merge_kinase_uniprot_validation.R`, `comprehensive_kinase_validation.R`).
-- Deprecated scripts (`05_generate_from_biomart.R`, `05_merge_and_flag_validation_sources.R`, `06_merge_and_validate.R`) have been removed. Use only the canonical entrypoints above.
+## Example Run (from repo root)
 
-Notes:
+```bash
+cd /data/251227_validated_genesets
 
-- `lib/` contains reusable helper functions (mapping, merging, validators) and intentionally is not numbered — helpers are modular and do not imply execution order.
-- `archive/` preserves original scripts and is not part of the runnable ordered pipeline.
-- Checksums: canonical outputs should have colocated `.md5` files next to their CSVs.
-- Example run (from repo root):
+# Human kinases with mouse orthologs
+Rscript scripts/kinases/01_fetch_geneset_BioMart.R --species=human
+Rscript scripts/kinases/02_fetch_validation_sources.R --source=kinhub
+Rscript scripts/kinases/03_build_annotations.R --species=human
+Rscript scripts/kinases/04_map_human_to_mouse.R
+Rscript scripts/kinases/05_export_gmt.R
 
-
-
-
+# Verify outputs
+ls -la curated/kinases/outputs/
 ```
-Rscript scripts/kinases/bin/01_fetch_geneset_BioMart.R --species human
-Rscript scripts/kinases/bin/02_fetch_validation_sources.R --source=kinhub
-Rscript scripts/kinases/bin/02_fetch_validation_sources.R --source=hgnc
-Rscript scripts/kinases/bin/03_build_annotations.R
-Rscript scripts/kinases/bin/04_map_human_to_mouse.R
-Rscript scripts/kinases/bin/05_export_gmt.R
-```
 
-Maintainers: follow README.md and INVENTORY.md for more details.
+## Output Locations
+
+All outputs use config-driven canonical paths:
+- **Inputs**: `curated/kinases/inputs/`
+- **Outputs**: `curated/kinases/outputs/`
+
+## Notes
+
+- `lib/` contains reusable helper functions and `config_loader.R`
+- `archives/` preserves original scripts (not part of runnable pipeline)
+- All canonical outputs have colocated `.md5` checksum files
+- Species can be set via `--species=human|mouse` argument or in `genesets_config.yaml`
+
+## Maintainers
+
+See README.md and INVENTORY.md for more details.

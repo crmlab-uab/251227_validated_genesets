@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+*.DS_Store
+
+# Logs
+*.log
+
+# R session files
+.Rhistory
+.RData
+.Rproj.user/
+
+# Temporary/cache
+*.tmp
+*.bak
+cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Session artifacts (dev runs)
+sessions/
+external/CORAL

@@ -1,7 +1,0 @@
-Working dir: /data/251227_validated_genesets 
-Using baseline: genesets/curated/kinases/inputs/kinases_human.csv 
-Processing validation source: genesets/curated/kinases/val_sources/KinHub.html (ext= html )
-Parsing KinHub HTML and creating kinases/kinhub_mapping_raw.tsv
-Wrote genesets/curated/kinases/val_sources/kinhub_mapping_raw.tsv (rows: 536 )
-KinHub merge runner error: Sources baseline kinases_human.csv not found — expected kinases/kinases_human.csv or genesets/curated/kinases/outputs/kinases_human__*.csv 
-Wrote merged output: genesets/curated/kinases/outputs/05_kinases_human.with_val_sources__251230.csv and checksum genesets/curated/kinases/outputs/05_kinases_human.with_val_sources__251230.csv.md5 

@@ -1,9 +1,17 @@
+
 # Generic genesets pipeline configuration
 # Put this in the repo root to override defaults used by kinases scripts.
 
+# Directory configuration for kinases pipeline
+input_dir: "curated/kinases/inputs"
+output_dir: "curated/kinases/outputs"
+
+# Species for pipeline (required: 'mouse' or 'human')
+species: "human"
+
 input_files:
-  manning: "genesets/curated/kinases/inputs/manning_TableS1__251229.csv"
-  base_gene_list: "genesets/curated/kinases/inputs/manning_TableS1__251229.csv" # path to an existing baseline table (optional)
+  manning: "curated/kinases/inputs/Manning_tableS1__251228.csv"
+  base_gene_list: "curated/kinases/inputs/Manning_tableS1__251228.csv" # path to an existing baseline table (optional)
 
 hgnc:
   use_rest: true
@@ -24,19 +32,45 @@ steps:
 # Explicit validation toggles
 validation:
   kinhub_enabled: true
+  # Genes to exclude from validation (e.g., human constructs, controls, deprecated symbols)
+  # These will be filtered out before validation checks
+  exclude_genes:
+    - hEGFR  # Human EGFR construct used as positive control, not a true mouse gene
 
 # External validation/data sources to merge. Each entry may be a local path or URL.
 # Keys are logical names used by the pipeline; the importer recognizes file types.
 sources:
   manning:
     type: excel
-    path: "genesets/curated/kinases/inputs/manning_TableS1__251229.csv"
+    path: "curated/kinases/inputs/Manning_tableS1__251228.csv"
     prefer: true
   kinhub:
     type: html
-    path: "genesets/curated/kinases/inputs/KinHub.html"
+    path: "curated/kinases/inputs/KinHub.html"
     prefer: false
 
 # Optional: URLs or local paths for other resources
 resources:
-  kinhub_page: "genesets/curated/kinases/inputs/KinHub.html"
+  kinhub_page: "curated/kinases/inputs/KinHub.html"
+
+# CORAL kinome tree visualization settings
+coral:
+  # Path to CORAL repository (will clone from GitHub if not present)
+  repo_path: "external/CORAL"
+  repo_url: "https://github.com/dphansti/CORAL.git"
+
+  # Color scale settings for fold-change visualization
+  fc_limit: 3.0  # Symmetric limit for color scale (-3 to +3)
+  colors:
+    low: "blue"      # Color for downregulated kinases
+    mid: "white"     # Color for unchanged kinases
+    high: "red"      # Color for upregulated kinases
+    background: "#D3D3D3"  # Color for kinases without data
+
+  # Node display settings
+  node_radius: 5           # Default node radius
+  node_radius_matched: 6   # Radius for kinases with expression data
+
+  # Output formats
+  output_svg: true
+  output_pdf: true  # Requires 'rsvg' package

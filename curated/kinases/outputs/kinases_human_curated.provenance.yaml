@@ -1,0 +1,184 @@
+file: kinases_human_curated.csv
+generated: 2026-01-01 00:28:22
+primary_source: HGNC Kinase Gene Group
+validation_sources:
+- Manning Table S1 (2002)
+- KinHub
+total_kinases: 546
+sources:
+  hgnc:
+    name: HGNC Gene Names
+    url: https://www.genenames.org/
+    role: Primary source
+  manning:
+    name: Manning et al. 2002
+    file: Manning_tableS1__251228.csv
+    url: https://doi.org/10.1126/science.1075762
+    role: Validation source
+  kinhub:
+    name: KinHub Database
+    file: 251231_KinHub_Human_Kinases.csv
+    url: http://www.kinhub.org/
+    role: Validation source
+  kegg:
+    name: KEGG Pathway Database
+    url: https://www.kegg.jp/
+    role: Metabolic and lipid pathway annotations
+  biomart:
+    name: Ensembl BioMart
+    url: https://www.ensembl.org/biomart
+    role: Mouse ortholog mapping
+columns:
+  kinase_id:
+    source: derived
+    description: Primary key in K#### format (ordered by HGNC_symbol)
+    added: '2026-01-01'
+  Substrate_protein:
+    source: derived
+    description: Y if phosphorylates protein substrates
+    added: '2026-01-01'
+  Substrate_lipid:
+    source: derived
+    description: Y if phosphorylates lipid substrates
+    added: '2026-01-01'
+  Substrate_nucleotide:
+    source: derived
+    description: Y if phosphorylates nucleotide substrates
+    added: '2026-01-01'
+  Substrate_carbohydrate:
+    source: derived
+    description: Y if phosphorylates carbohydrate substrates
+    added: '2026-01-01'
+  Substrate_other:
+    source: derived
+    description: Y if phosphorylates other substrates (vitamins, small molecules)
+    added: '2026-01-01'
+  Is_phosphatase:
+    source: derived
+    description: Y if entry is a phosphatase (not a kinase)
+    added: '2026-01-01'
+  Is_kinase_regulator:
+    source: derived
+    description: Y if entry is a kinase regulator (not a kinase itself)
+    added: '2026-01-01'
+  Is_anchoring_protein:
+    source: derived
+    description: Y if A-kinase anchoring protein (not a kinase itself)
+    added: '2026-01-01'
+  Is_pseudokinase:
+    source: derived
+    description: Y if catalytically inactive kinase domain
+    added: '2026-01-01'
+  HGNC_symbol:
+    source: hgnc
+    description: Authoritative human gene symbol from HGNC gene groups
+    added: '2026-01-01'
+  HGNC_ID:
+    source: hgnc
+    description: HGNC database identifier
+    added: '2026-01-01'
+  Name_hgnc:
+    source: hgnc
+    description: Full gene name from HGNC
+    added: '2026-01-01'
+  Group_hgnc:
+    source: hgnc
+    description: HGNC gene group name (contains 'kinase')
+    added: '2026-01-01'
+  Group_ID_hgnc:
+    source: hgnc
+    description: HGNC gene group numeric ID
+    added: '2026-01-01'
+  Status_hgnc:
+    source: hgnc
+    description: HGNC gene approval status
+    added: '2026-01-01'
+  Locus_type_hgnc:
+    source: hgnc
+    description: HGNC locus type classification
+    added: '2026-01-01'
+  kinase_id_manning:
+    source: manning
+    description: Manning accession (SK###)
+    added: '2026-01-01'
+  manning_name:
+    source: manning
+    description: Kinase name from Manning et al. 2002
+    added: '2026-01-01'
+  Group_manning:
+    source: manning
+    description: Top-level kinase classification (10 groups)
+    added: '2026-01-01'
+  Family_manning:
+    source: manning
+    description: Mid-level kinase classification
+    added: '2026-01-01'
+  SubFamily_manning:
+    source: manning
+    description: Optional lower-level classification
+    added: '2026-01-01'
+  Pseudogene_manning:
+    source: manning
+    description: 'Pseudogene status: Y=yes, N=no, R=related'
+    added: '2026-01-01'
+  Novelty_manning:
+    source: manning
+    description: 'Annotation status: Known vs Novel'
+    added: '2026-01-01'
+  InManning:
+    source: validation
+    description: Present in Manning Table S1 (Y/N)
+    added: '2026-01-01'
+  Group_kinhub:
+    source: kinhub
+    description: Kinase group from KinHub database
+    added: '2026-01-01'
+  Family_kinhub:
+    source: kinhub
+    description: Kinase family from KinHub database
+    added: '2026-01-01'
+  SubFamily_kinhub:
+    source: kinhub
+    description: Kinase subfamily from KinHub database
+    added: '2026-01-01'
+  UniProt_kinhub:
+    source: kinhub
+    description: UniProt accession from KinHub
+    added: '2026-01-01'
+  InKinHub:
+    source: validation
+    description: Present in KinHub database (Y/N)
+    added: '2026-01-01'
+  Group_match_manning_kinhub:
+    source: validation
+    description: TRUE if Manning and KinHub groups agree
+    added: '2026-01-01'
+  Family_match_manning_kinhub:
+    source: validation
+    description: TRUE if Manning and KinHub families agree
+    added: '2026-01-01'
+  Group_consensus:
+    source: derived
+    description: Consensus group (Manning > KinHub > HGNC priority)
+    added: '2026-01-01'
+  Family_consensus:
+    source: derived
+    description: Consensus family (Manning > KinHub > HGNC priority)
+    added: '2026-01-01'
+  Metabolic_kegg:
+    source: kegg
+    description: Metabolic pathway membership from KEGG (Verified = Mammalian Metabolic
+      DB)
+    added: '2026-01-01'
+  Lipid_kegg:
+    source: kegg
+    description: Lipid pathway membership from KEGG
+    added: '2026-01-01'
+  Mouse_Symbol:
+    source: biomart
+    description: Mouse ortholog gene symbol from Ensembl BioMart
+    added: '2026-01-01'
+  Ensembl_Mouse:
+    source: biomart
+    description: Mouse Ensembl gene ID from BioMart
+    added: '2026-01-01'

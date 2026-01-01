@@ -1,5 +1,0 @@
-Copilot-instructions audit (per-repo)
-Repo: /data/251227_validated_genesets
-4:Template md5: 99cce03a25de139d1e8b2a018252f5c3
-7:  Exists: yes
-8:  Pointer: present
