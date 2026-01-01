@@ -19,6 +19,6 @@ cache/
 .vscode/
 .idea/
 
-# Session artifacts (dev runs)
-sessions/
+# Session artifacts (dev runs) - only at root level
+/sessions/
 external/CORAL

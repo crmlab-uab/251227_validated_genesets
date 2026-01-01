@@ -1,5 +1,5 @@
 file: tf_human_curated.csv
-generated: 2025-12-31 23:14:45
+generated: 2026-01-01 15:15:22
 primary_source: HGNC Gene Groups (TF-related)
 validation_sources:
 - Lambert et al. 2018 TF Census
@@ -36,72 +36,80 @@ columns:
   HGNC_symbol:
     source: hgnc
     description: Authoritative human gene symbol from HGNC gene groups
-    added: '2025-12-31'
+    added: '2026-01-01'
   HGNC_ID:
     source: hgnc
     description: HGNC database identifier
-    added: '2025-12-31'
+    added: '2026-01-01'
   Name_hgnc:
     source: hgnc
     description: Full gene name from HGNC
-    added: '2025-12-31'
+    added: '2026-01-01'
   Group_hgnc:
     source: hgnc
     description: HGNC gene group name (TF-related)
-    added: '2025-12-31'
+    added: '2026-01-01'
   Group_ID_hgnc:
     source: hgnc
     description: HGNC gene group numeric ID
-    added: '2025-12-31'
+    added: '2026-01-01'
   Status_hgnc:
     source: hgnc
     description: HGNC gene approval status
-    added: '2025-12-31'
+    added: '2026-01-01'
   Locus_type_hgnc:
     source: hgnc
     description: HGNC locus type classification
-    added: '2025-12-31'
+    added: '2026-01-01'
   Ensembl_ID_lambert:
     source: lambert
     description: Ensembl gene ID from Lambert et al. 2018 TF Census
-    added: '2025-12-31'
+    added: '2026-01-01'
   DBD_lambert:
     source: lambert
     description: DNA-binding domain classification from Lambert TF Census
-    added: '2025-12-31'
+    added: '2026-01-01'
   TF_assessment_lambert:
     source: lambert
     description: TF assessment/confidence from Lambert TF Census
-    added: '2025-12-31'
+    added: '2026-01-01'
   InLambert:
     source: validation
     description: Present in Lambert et al. 2018 TF Census (Y/N)
-    added: '2025-12-31'
+    added: '2026-01-01'
   Ensembl_ID_biomart:
     source: biomart
     description: Ensembl gene ID from BioMart
-    added: '2025-12-31'
+    added: '2026-01-01'
   GO_TF_biomart:
     source: biomart
     description: GO terms for TF activity from BioMart
-    added: '2025-12-31'
+    added: '2026-01-01'
   InGO_TF:
     source: validation
     description: Has GO:0003700 or GO:0000981 annotation (Y/N)
-    added: '2025-12-31'
+    added: '2026-01-01'
   JASPAR_matrix_ids:
     source: jaspar
     description: JASPAR matrix ID(s) for known binding motifs
-    added: '2025-12-31'
+    added: '2026-01-01'
   InJASPAR:
     source: validation
     description: Has binding motif in JASPAR 2020 database (Y/N)
-    added: '2025-12-31'
+    added: '2026-01-01'
   Ensembl_ID:
     source: derived
     description: Consensus Ensembl ID (Lambert > BioMart > HGNC priority)
-    added: '2025-12-31'
+    added: '2026-01-01'
   Ensembl_ID_status:
     source: derived
     description: 'Source status: confirmed, lambert, biomart, hgnc'
-    added: '2025-12-31'
+    added: '2026-01-01'
+  Mouse_Symbol:
+    source: biomart
+    description: Mouse ortholog gene symbol from Ensembl BioMart
+    added: '2026-01-01'
+  Ensembl_Mouse:
+    source: biomart
+    description: Mouse Ensembl gene ID from BioMart
+    added: '2026-01-01'

@@ -1,0 +1,199 @@
+file: phosphatases_human_curated.csv
+generated: 2026-01-01
+primary_source: HGNC Gene Groups
+total_phosphatases: 437
+catalytic_phosphatases: 222
+regulatory_subunits: 215
+with_mouse_ortholog: 427
+description: |
+  Comprehensive collection of human phosphatases from HGNC gene groups.
+  Includes all phosphatase types (protein, lipid, nucleotide, carbohydrate)
+  as well as regulatory subunits that modulate phosphatase activity.
+
+sources:
+  hgnc:
+    name: HGNC Gene Names
+    url: https://www.genenames.org/
+    file: hgnc_gene_groups.csv
+    role: Primary source for gene symbols and group classifications
+  biomart:
+    name: Ensembl BioMart
+    url: https://www.ensembl.org/biomart
+    role: Mouse ortholog mapping
+
+substrate_counts:
+  protein: 357
+  lipid: 51
+  carbohydrate: 28
+  other: 11
+  nucleotide: 7
+
+included_groups:
+  protein_phosphatases_catalytic:
+    - Protein phosphatase catalytic subunits
+    - Protein phosphatases
+    - Protein phosphatases, Mg2+/Mn2+ dependent
+    - Serine/threonine phosphatases
+    - Calcineurin subunits
+    - Protein tyrosine phosphatases receptor type
+    - Protein tyrosine phosphatases non-receptor type
+    - Protein tyrosine phosphatase 4A family
+    - LAR protein receptor tyrosine phosphatase family
+    - Atypical dual specificity phosphatases
+    - MAP kinase phosphatases
+    - CDC14 phosphatases
+    - Slingshot protein phosphatases
+    - CTD family phosphatases
+    - PTEN protein phosphatases
+    - Class II Cys-based phosphatases
+    - Class III Cys-based CDC25 phosphatases
+    - HAD Asp-based protein phosphatases
+    - HAD Asp-based non-protein phosphatases
+    - EYA transcriptional coactivator and phosphatases
+  protein_phosphatases_regulatory:
+    - Protein phosphatase 1 regulatory subunits
+    - Protein phosphatase 2 regulatory subunits
+    - Protein phosphatase 2 modulatory subunits
+    - Protein phosphatase 2 scaffold subunits
+    - Protein phosphatase 3 regulatory subunits
+    - Protein phosphatase 4 regulatory subunits
+    - Protein phosphatase 6 regulatory subunits
+    - Myosin phosphatase targeting family
+    - Phosphatase and actin regulators
+  lipid_phosphatases:
+    - Lipid phosphatases
+    - Phosphoinositide phosphatases
+    - Phospholipid phosphatases
+    - Phospholipid phosphatase related
+    - Sphingosine-1-phosphate phosphatases
+  carbohydrate_phosphatases:
+    - Acid phosphatases
+    - Alkaline phosphatases
+    - Bisphosphoglycerate phosphatases
+    - Fructose-1,6-bisphosphatases
+    - Glucose 6-phosphatases, catalytic
+    - Sugar phosphatases
+    - Phosphoglycerate mutases
+  nucleotide_phosphatases:
+    - Ectonucleotide pyrophosphatase/phosphodiesterase family
+  bifunctional:
+    - 6-phosphofructo-2-kinase/fructose-2,6-biphosphatase family
+
+columns:
+  phosphatase_id:
+    source: derived
+    description: Primary key in P#### format (ordered by HGNC_symbol)
+  HGNC_symbol:
+    source: hgnc
+    description: Authoritative human gene symbol from HGNC
+  HGNC_ID:
+    source: hgnc
+    description: HGNC database identifier
+  Name_hgnc:
+    source: hgnc
+    description: Full gene name from HGNC
+  Substrate_protein:
+    source: derived
+    description: Y if dephosphorylates protein substrates
+  Substrate_lipid:
+    source: derived
+    description: Y if dephosphorylates lipid substrates (phosphoinositides, phospholipids)
+  Substrate_nucleotide:
+    source: derived
+    description: Y if dephosphorylates nucleotide substrates
+  Substrate_carbohydrate:
+    source: derived
+    description: Y if dephosphorylates carbohydrate/metabolic substrates
+  Substrate_other:
+    source: derived
+    description: Y if dephosphorylates other substrates
+  Is_catalytic:
+    source: derived
+    description: Y if entry has phosphatase catalytic activity
+  Is_regulatory:
+    source: derived
+    description: Y if entry is a phosphatase regulatory/modulatory subunit
+  Is_receptor_type:
+    source: derived
+    description: Y if receptor-type phosphatase (transmembrane)
+  Class_primary:
+    source: derived
+    description: Primary phosphatase classification
+    values:
+      # Protein phosphatases
+      - Ser/Thr phosphatase
+      - Receptor PTP
+      - Non-receptor PTP
+      - PTP4A family
+      - Dual specificity phosphatase
+      - Atypical dual specificity
+      - MAP kinase phosphatase
+      - CDC25 phosphatase
+      - CTD phosphatase
+      - EYA phosphatase
+      - Calcineurin
+      - PTEN phosphatase
+      - HAD protein phosphatase
+      - HAD non-protein phosphatase
+      - Class II Cys-based
+      # Lipid phosphatases
+      - Phosphoinositide phosphatase
+      - Phospholipid phosphatase
+      - Sphingosine phosphatase
+      - Lipid phosphatase
+      # Metabolic phosphatases
+      - Acid phosphatase
+      - Alkaline phosphatase
+      - Glucose-6-phosphatase
+      - Fructose-1,6-bisphosphatase
+      - Bisphosphoglycerate phosphatase
+      - Sugar phosphatase
+      - Phosphoglycerate mutase
+      # Nucleotide phosphatases
+      - Ectonucleotide phosphatase
+      # Bifunctional
+      - Bifunctional kinase/phosphatase
+      # Regulatory
+      - PP1 regulatory
+      - PP2 regulatory
+      - PP3 regulatory
+      - PP4 regulatory
+      - PP6 regulatory
+      - Cytoskeletal regulatory
+      - Other
+  Group_hgnc:
+    source: hgnc
+    description: HGNC gene group name(s), semicolon-separated if multiple
+  Group_ID_hgnc:
+    source: hgnc
+    description: HGNC gene group ID(s)
+  Status_hgnc:
+    source: hgnc
+    description: HGNC gene approval status
+  Locus_type_hgnc:
+    source: hgnc
+    description: HGNC locus type classification
+  Chromosome:
+    source: hgnc
+    description: Chromosomal location
+  NCBI_Gene_ID:
+    source: hgnc
+    description: NCBI Gene database identifier
+  Ensembl_ID:
+    source: hgnc
+    description: Ensembl gene identifier
+  Mouse_Symbol:
+    source: biomart
+    description: Mouse ortholog gene symbol from Ensembl BioMart
+  Ensembl_Mouse:
+    source: biomart
+    description: Mouse Ensembl gene ID from BioMart
+
+notes:
+  - Comprehensive phosphatase list covering all substrate types
+  - Substrate columns are not mutually exclusive (e.g., PTEN is both protein and lipid)
+  - Regulatory subunits included because they determine substrate specificity
+  - Some genes appear in multiple HGNC groups and are listed once with combined groups
+  - PP1 regulatory subunits (179 genes) are the largest group, reflecting PP1's broad role
+  - Filter on Substrate_protein=Y to get protein phosphatases only
+  - Filter on Is_catalytic=Y to get only the enzymatically active phosphatases
